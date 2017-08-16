@@ -38,12 +38,13 @@ module.exports = {
         'camelcase': 'error',
         'no-var': 2,
         'prefer-arrow-callback': 2,
-        'func-style': [2, 'expression'], 
+        'func-style': [2, 'expression'],
         'no-trailing-spaces': 2,
-        'keyword-spacing': 2, 
-        'space-before-blocks': 2, 
+        'keyword-spacing': 2,
+        'space-before-blocks': 2,
+        'indent': ['error', 2, { 'SwitchCase': 1 }],
 
-    
+
         /** React **/
         'react/display-name': 0,
         'react/jsx-curly-spacing': [2, {'when': 'never', 'children': true}],
