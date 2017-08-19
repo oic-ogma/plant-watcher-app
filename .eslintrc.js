@@ -52,5 +52,6 @@ module.exports = {
         'react/jsx-indent': [2, 'tab'| 2],
         'react/jsx-wrap-multilines': 2,
         'react/prop-types': 0,
+        'jsx-quotes': [2, 'prefer-single']
     }
 };
