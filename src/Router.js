@@ -1,17 +1,17 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-import TestComponent from './components/TestComponent';
+import RegistrationForm from './components/RegistrationForm';
 import Home from './components/Home';
 
 const RouterComponent = () => (
   <Router getSceneStyle={()=>({ backgroundColor: '#fff' })}>
     <Scene key="root" hideNavBar={true}>
       <Scene key="auth">
-        <Scene key="temporary" component={TestComponent} title="一時的なページ" />
+        <Scene key="registration" component={RegistrationForm} title="ユーザー登録" />
       </Scene>
 
       <Scene key="main">
-        <Scene key="home" component={Home} title="ホーム" />
+        <Scene initial key="home" component={Home} title="ホーム" />
       </Scene>
     </Scene>
   </Router>
