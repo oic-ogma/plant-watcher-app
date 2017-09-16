@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "eslint": "4.4.x",
+    "eslint-plugin-jest": "^21.1.0",
     "expo": "19.0.x",
     "firebase": "4.2.x",
     "react": "16.0.0-alpha.12",
