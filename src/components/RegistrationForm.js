@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Card, CardSection, Input, Spinner } from './common';
-import { connect } from 'react-redux';
 import { Text } from 'react-native';
-import { emailChanged, passwordChanged, registerUser } from '../actions';
 
 class RegistrationForm extends Component {
   onEmailChange (text) {
@@ -73,13 +71,4 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ auth }) => {
-  const { email, password, loading, error } = auth;
-  return { email, password, loading, error };
-};
-
-export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, registerUser
-})(RegistrationForm);
-
-
+export default RegistrationForm;
