@@ -1,15 +1,15 @@
 import React from 'react';
-import RegistrationForm from '../src/components/RegistrationForm';
+import LoginForm from '../../src/components/LoginForm';
 import renderer from 'react-test-renderer';
 
-describe ('登録フォーム', () => {
+describe ('ログインフォーム', () => {
   it ('正しくrenderできる', () => {
-    const rendered = renderer.create(<RegistrationForm />).toJSON();
+    const rendered = renderer.create(<LoginForm />).toJSON();
     expect(rendered).toBeTruthy();
   });
 
   it ('snapshot-普通', () => {
-    const tree = renderer.create(<RegistrationForm />).toJSON();
+    const tree = renderer.create(<LoginForm />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -21,7 +21,7 @@ describe ('登録フォーム', () => {
       error: '',
       loading: false
     };
-    const tree = renderer.create(<RegistrationForm {...INITIAL_STATE}/>).toJSON();
+    const tree = renderer.create(<LoginForm {...INITIAL_STATE}/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -33,7 +33,7 @@ describe ('登録フォーム', () => {
       error: '',
       loading: true
     };
-    const tree = renderer.create(<RegistrationForm {...INITIAL_STATE}/>).toJSON();
+    const tree = renderer.create(<LoginForm {...INITIAL_STATE}/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -45,7 +45,7 @@ describe ('登録フォーム', () => {
       error: 'Error',
       loading: true
     };
-    const tree = renderer.create(<RegistrationForm {...INITIAL_STATE}/>).toJSON();
+    const tree = renderer.create(<LoginForm {...INITIAL_STATE}/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
