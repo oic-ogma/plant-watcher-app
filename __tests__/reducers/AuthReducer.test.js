@@ -10,11 +10,11 @@ const INITIAL_STATE = {
 };
 
 describe('authReducer', () => {
-  it ('初期のステートを戻す', () => {
+  it('初期のステートを戻す', () => {
     expect(reducer(undefined, {})).toEqual(INITIAL_STATE);
   });
 
-  it ('EMAIL_CHANGEDを処理できる', () => {
+  it('EMAIL_CHANGEDを処理できる', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.EMAIL_CHANGED,
       payload: 'existinguser1@plantwatcher.com'
@@ -24,7 +24,7 @@ describe('authReducer', () => {
     });
   });
 
-  it ('PASSWORD_CHANGEDを処理できる', () => {
+  it('PASSWORD_CHANGEDを処理できる', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.PASSWORD_CHANGED,
       payload: 'password'
@@ -34,7 +34,7 @@ describe('authReducer', () => {
     });
   });
 
-  it ('PROCESSINGを処理出来る', () => {
+  it('PROCESSINGを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.PROCESSING,
     })).toEqual({
@@ -44,7 +44,7 @@ describe('authReducer', () => {
     });
   });
 
-  it ('USER_AUTH_SUCCESSを処理出来る', () => {
+  it('USER_AUTH_SUCCESSを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.USER_AUTH_SUCCESS,
       payload: { email: 'existinguser1@plantwatcher.com' },
@@ -54,7 +54,7 @@ describe('authReducer', () => {
     });
   });
 
-  it ('USER_AUTH_FAILを処理出来る', () => {
+  it('USER_AUTH_FAILを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.USER_AUTH_FAIL,
       payload: 'error',

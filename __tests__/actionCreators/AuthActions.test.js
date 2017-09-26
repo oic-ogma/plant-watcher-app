@@ -35,9 +35,9 @@ describe('認証アクション', () => {
 const middlewares = [ thunk ];
 const mockStore = configureMockStore(middlewares);
 
-describe ('認証アクション（非同期）', () => {
-  describe ('ユーザー登録', () => {
-    it ('ユーザーが登録できる', () => {
+describe('認証アクション（非同期）', () => {
+  describe('ユーザー登録', () => {
+    it('ユーザーが登録できる', () => {
       const email = 'newuser@plantwatcher.com';
       const password = 'password1234';
       const expectedActions = [
@@ -55,7 +55,7 @@ describe ('認証アクション（非同期）', () => {
       });
     });
 
-    it ('不正なメールアドレスを入力し、ユーザー登録に失敗する', () => {
+    it('不正なメールアドレスを入力し、ユーザー登録に失敗する', () => {
       const email = 'newuser.com';
       const password = 'password1234';
       const expectedActions = [
@@ -73,7 +73,7 @@ describe ('認証アクション（非同期）', () => {
       });
     });
 
-    it ('既に存在するメールアドレスを入力し、ユーザー登録に失敗する', () => {
+    it('既に存在するメールアドレスを入力し、ユーザー登録に失敗する', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'existingpassword1';
       const expectedActions = [
@@ -91,7 +91,7 @@ describe ('認証アクション（非同期）', () => {
       });
     });
 
-    it ('パスワードが短くてユーザー登録に失敗する', () => {
+    it('パスワードが短くてユーザー登録に失敗する', () => {
       const email = 'newuser@plantwatcher.com';
       const password = 'short';
       const expectedActions = [
@@ -110,8 +110,8 @@ describe ('認証アクション（非同期）', () => {
     });
 
   });
-  describe ('ユーザーログイン', () => {
-    it ('ログイン出来る', () => {
+  describe('ユーザーログイン', () => {
+    it('ログイン出来る', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'existingpassword1';
       const expectedActions = [
@@ -128,7 +128,7 @@ describe ('認証アクション（非同期）', () => {
       });
     });
 
-    it ('メールアドレスが間違っていてユーザー認証に失敗する', () => {
+    it('メールアドレスが間違っていてユーザー認証に失敗する', () => {
       const email = 'existinguser3@plantwatcher.com';
       const password = 'existingpassword2';
       const expectedActions = [
@@ -145,7 +145,7 @@ describe ('認証アクション（非同期）', () => {
       });
     });
 
-    it ('パスワードが間違っていてユーザー認証に失敗する', () => {
+    it('パスワードが間違っていてユーザー認証に失敗する', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'password1234';
       const expectedActions = [
