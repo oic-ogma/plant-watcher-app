@@ -22,7 +22,7 @@ export const passwordChanged = text => {
   };
 };
 
-export const userAuthSuccess = (dispatch, user) => {
+const userAuthSuccess = (dispatch, user) => {
   dispatch({
     type: USER_AUTH_SUCCESS,
     payload: user,
@@ -31,7 +31,7 @@ export const userAuthSuccess = (dispatch, user) => {
   Actions.main();
 };
 
-export const userAuthFail = (dispatch, error) => {
+const userAuthFail = (dispatch, error) => {
   let errorMessage = '';
   switch (error.code) {
     case 'auth/invalid-email':
@@ -58,7 +58,7 @@ export const userAuthFail = (dispatch, error) => {
 
 export const userLogin = (email, password) => {
   return dispatch => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    return firebase.auth().signInWithEmailAndPassword(email, password)
       .then (user => userAuthSuccess(dispatch, user))
       .catch (error => userAuthFail(dispatch, error));
   };
@@ -68,7 +68,7 @@ export const registerUser = (email, password) => {
   return dispatch => {
     dispatch({ type: PROCESSING });
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
       .then (user=>userAuthSuccess(dispatch, user))
       .catch (error=>userAuthFail(dispatch, error));
   };

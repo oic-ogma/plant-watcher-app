@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Card, CardSection, Spinner, Input } from './common';
-import { connect } from 'react-redux';
-import { emailChanged, passwordChanged, userLogin } from '../actions';
 import { Actions } from 'react-native-router-flux';
 import { View, Text } from 'react-native';
 
@@ -81,11 +79,4 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ auth }) => {
-  const { email, password, loading, error } = auth;
-  return { email, password, loading, error };
-};
-
-export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, userLogin
-})(LoginForm);
+export default LoginForm;
