@@ -30,6 +30,7 @@
     "react-native-router-flux": "4.0.0-beta.17",
     "react-redux": "5.0.x",
     "redux": "3.7.x",
-    "redux-thunk": "2.2.x"
+    "redux-thunk": "2.2.x",
+    "validator": "9.0.x"
   }
 }
