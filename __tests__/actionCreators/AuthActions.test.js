@@ -106,6 +106,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'existingpassword1';
       const expectedActions = [
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_SUCCESS,
           payload: { user: { email } },
@@ -123,6 +124,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'existinguser3@plantwatcher.com';
       const password = 'existingpassword2';
       const expectedActions = [
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_FAIL,
           payload: 'ユーザーが見つかりません',
@@ -140,6 +142,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'password1234';
       const expectedActions = [
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_FAIL,
           payload: 'パスワードが間違っています',
