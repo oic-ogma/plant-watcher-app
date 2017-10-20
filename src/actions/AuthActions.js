@@ -58,6 +58,8 @@ const userAuthFail = (dispatch, error) => {
 
 export const userLogin = (email, password) => {
   return dispatch => {
+    dispatch({ type: AUTH_PROCESSING });
+
     return firebase.auth().signInWithEmailAndPassword(email, password)
       .then (user => userAuthSuccess(dispatch, user))
       .catch (error => userAuthFail(dispatch, error));
