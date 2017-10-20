@@ -3,7 +3,7 @@ import { Button, Card, CardSection, Spinner, Input, Error } from './common';
 import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 
-class LoginForm extends Component {
+export default class LoginForm extends Component {
   onEmailChanged(text) {
     this.props.emailChanged(text);
   }
@@ -67,5 +67,3 @@ class LoginForm extends Component {
     );
   }
 }
-
-export default LoginForm;

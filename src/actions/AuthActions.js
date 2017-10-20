@@ -1,7 +1,7 @@
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
-  PROCESSING,
+  AUTH_PROCESSING,
   USER_AUTH_SUCCESS,
   USER_AUTH_FAIL,
 } from './types';
@@ -66,7 +66,7 @@ export const userLogin = (email, password) => {
 
 export const registerUser = (email, password) => {
   return dispatch => {
-    dispatch({ type: PROCESSING });
+    dispatch({ type: AUTH_PROCESSING });
 
     return firebase.auth().createUserWithEmailAndPassword(email, password)
       .then (user=>userAuthSuccess(dispatch, user))

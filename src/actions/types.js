@@ -1,6 +1,6 @@
 export const EMAIL_CHANGED = 'email_changed';
 export const PASSWORD_CHANGED = 'password_changed';
-export const PROCESSING = 'processing';
+export const AUTH_PROCESSING = 'auth_processing';
 export const USER_AUTH_SUCCESS = 'user_auth_success';
 export const USER_AUTH_FAIL = 'user_auth_fail';
 export const PLANT_NAME_CHANGED = 'plant_name_changed';

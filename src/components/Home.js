@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Card, CardSection } from './common';
 import { Actions } from 'react-native-router-flux';
 
-class Home extends Component {
+export default class Home extends Component {
   render() {
     return (
       <Card>
@@ -21,5 +21,3 @@ class Home extends Component {
     );
   }
 }
-
-export default Home;

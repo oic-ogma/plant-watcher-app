@@ -11,6 +11,7 @@ const mapStateToProps = ({ auth }) => {
   const { email, password, loding, error } = auth;
   return { email, password, loding, error };
 };
-export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, registerUser
-})(RegistrationFormContainer);
+
+const mapDispatchToProps = { emailChanged, passwordChanged, registerUser };
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormContainer);
