@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Card, CardSection, Spinner, Input } from './common';
+import { Button, Card, CardSection, Spinner, Input, Error } from './common';
 import { Actions } from 'react-native-router-flux';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 class LoginForm extends Component {
   onEmailChanged(text) {
@@ -60,23 +60,12 @@ class LoginForm extends Component {
           />
         </CardSection>
 
-        <Text style={styles.errorTextStyle}>
-          {this.props.error}
-        </Text>
+        <Error message={this.props.error}/>
 
         {this.renderButtons()}
       </Card>
     );
   }
 }
-
-const styles = {
-  errorTextStyle: {
-    paddingTop: 5,
-    fontSize: 18,
-    alignSelf: 'center',
-    color: '#FF0000',
-  }
-};
 
 export default LoginForm;

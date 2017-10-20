@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardSection, Spinner, Input, Button } from './common';
-import { Text } from 'react-native';
+import { Card, CardSection, Spinner, Input, Button, Error } from './common';
 
 export default class AddArticle extends Component {
   onPlantNameChanged(text) {
@@ -51,20 +50,9 @@ export default class AddArticle extends Component {
             height={120}
           />
         </CardSection>
-        <Text style={styles.errorTextStyle}>
-          {this.props.error}
-        </Text>
+        <Error message={this.props.error}/>
         {this.renderButtons()}
       </Card>
     );
   }
 }
-
-const styles = {
-  errorTextStyle: {
-    paddingTop: 5,
-    fontSize: 18,
-    alignSelf: 'center',
-    color: '#FF0000',
-  }
-};
