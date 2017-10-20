@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, CardSection, Input, Spinner, Error } from './common';
 
-class RegistrationForm extends Component {
+export default class RegistrationForm extends Component {
   onEmailChange (text) {
     this.props.emailChanged(text);
   }
@@ -58,5 +58,3 @@ class RegistrationForm extends Component {
     );
   }
 }
-
-export default RegistrationForm;

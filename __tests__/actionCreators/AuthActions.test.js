@@ -21,15 +21,6 @@ describe('認証アクション', () => {
     };
     expect(actions.passwordChanged(password)).toEqual(expectedAction);
   });
-
-  it('ユーザー認証の成功', () => {
-    const password = 'testPassword';
-    const expectedAction = {
-      type: types.PASSWORD_CHANGED,
-      payload: password,
-    };
-    expect(actions.passwordChanged(password)).toEqual(expectedAction);
-  });
 });
 
 const middlewares = [ thunk ];
@@ -41,7 +32,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'newuser@plantwatcher.com';
       const password = 'password1234';
       const expectedActions = [
-        { type: types.PROCESSING },
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_SUCCESS,
           payload: { user: { email } },
@@ -59,7 +50,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'newuser.com';
       const password = 'password1234';
       const expectedActions = [
-        { type: types.PROCESSING },
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_FAIL,
           payload: 'メールアドレスの形式が正しくありません',
@@ -77,7 +68,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'existinguser1@plantwatcher.com';
       const password = 'existingpassword1';
       const expectedActions = [
-        { type: types.PROCESSING },
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_FAIL,
           payload: 'このメールアドレスは既に使用されています',
@@ -95,7 +86,7 @@ describe('認証アクション（非同期）', () => {
       const email = 'newuser@plantwatcher.com';
       const password = 'short';
       const expectedActions = [
-        { type: types.PROCESSING },
+        { type: types.AUTH_PROCESSING },
         {
           type: types.USER_AUTH_FAIL,
           payload: 'パスワードは6文字以上にしてください',
