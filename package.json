@@ -4,7 +4,9 @@
   "private": true,
   "devDependencies": {
     "eslint": "4.4.x",
+    "eslint-plugin-jest": "21.2.x",
     "eslint-plugin-react": "7.2.x",
+    "faker": "^4.1.0",
     "jest-expo": "19.0.x",
     "react-native-scripts": "1.1.x",
     "react-test-renderer": "16.0.0-alpha.12",

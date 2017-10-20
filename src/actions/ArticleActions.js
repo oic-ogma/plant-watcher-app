@@ -23,13 +23,13 @@ export const saveArticle = (plantName, articleContents) => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
 
-  if (validator.isInt(plantName) || plantName >= 25 || plantName === '') {
+  if (validator.isInt(plantName) || plantName.length >= 25 || plantName === '') {
     return {
       type: ADD_ARTICLE_FAIL,
       payload: '植物名は文字列かつ、25文字以下で入力してください。'
     };
   }
-  if (validator.isInt(articleContents) || articleContents >= 1000 || articleContents === '') {
+  if (validator.isInt(articleContents) || articleContents.length >= 1000 || articleContents === '') {
     return {
       type: ADD_ARTICLE_FAIL,
       payload: '記事内容は文字列かつ、1000文字以下で入力してください。'
@@ -39,7 +39,7 @@ export const saveArticle = (plantName, articleContents) => {
   return dispatch => {
     dispatch({ type: ADD_ARTICLE_PROCESSING });
     const postKey = firebase.database().ref().child('articles').push().key;
-    firebase.database().ref(`/articles/${postKey}`)
+    return firebase.database().ref(`/articles/${postKey}`)
       .set({ plantName, articleContents, uid })
       .then(() => {
         dispatch({ type: ADD_ARTICLE_SUCCESS });
