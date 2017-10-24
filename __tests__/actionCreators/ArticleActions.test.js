@@ -25,18 +25,8 @@ describe('記事関連のアクション', () => {
     expect(actions.articleContentsChanged(articleContents)).toEqual(expectedAction);
   });
 
-  it('記事内容の変更', () => {
-    const articleContents = 'きいろ\nまるい';
-    const expectedAction = {
-      type: types.ARTICLE_CONTENTS_CHANGED,
-      payload: articleContents,
-    };
-
-    expect(actions.articleContentsChanged(articleContents)).toEqual(expectedAction);
-  });
-
-  it('25文字以上の植物名を入力して失敗する', () => {
-    const plantName = 'ひまわりひまわりひまわりひまわりひまわりひまわりひまわりひまわりひまわりひまわりひま';
+  it('26文字以上の植物名を入力して失敗する', () => {
+    const plantName = faker.lorem.words(26);
     const articleContents = 'きいろ\nまるい';
     const expectedAction = {
       type: types.ADD_ARTICLE_FAIL,
@@ -46,9 +36,9 @@ describe('記事関連のアクション', () => {
     expect(actions.saveArticle(plantName, articleContents)).toEqual(expectedAction);
   });
 
-  it('1000文字以上の記事を入力して失敗する', () => {
+  it('1001文字以上の記事を入力して失敗する', () => {
     const plantName = 'ひまわり';
-    const articleContents = faker.lorem.words(1000);
+    const articleContents = faker.lorem.words(1001);
     const expectedAction = {
       type: types.ADD_ARTICLE_FAIL,
       payload: '記事内容は文字列かつ、1000文字以下で入力してください。'
