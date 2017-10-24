@@ -50,6 +50,7 @@ export default class AddArticle extends Component {
             height={120}
           />
         </CardSection>
+
         <Error message={this.props.error}/>
         {this.renderButtons()}
       </Card>

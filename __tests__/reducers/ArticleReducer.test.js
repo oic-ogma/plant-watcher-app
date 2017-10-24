@@ -60,7 +60,7 @@ describe('Article reducer', () => {
     expect(reducer(MODIFIED_STATE, {
       type: types.ADD_ARTICLE_FAIL,
       payload: 'error',
-    })).toEqual({ 
+    })).toEqual({
       ...MODIFIED_STATE,
       error: 'error',
       loading: false
