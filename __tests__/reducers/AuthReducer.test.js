@@ -34,9 +34,9 @@ describe('authReducer', () => {
     });
   });
 
-  it('PROCESSINGを処理出来る', () => {
+  it('AUTH_PROCESSINGを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
-      type: types.PROCESSING,
+      type: types.AUTH_PROCESSING,
     })).toEqual({
       ...INITIAL_STATE,
       loading: true,

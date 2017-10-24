@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Card, CardSection, Input, Spinner } from './common';
-import { Text } from 'react-native';
+import { Button, Card, CardSection, Input, Spinner, Error } from './common';
 
-class RegistrationForm extends Component {
+export default class RegistrationForm extends Component {
   onEmailChange (text) {
     this.props.emailChanged(text);
   }
@@ -49,9 +48,7 @@ class RegistrationForm extends Component {
           />
         </CardSection>
 
-        <Text style={styles.errorTextStyle}>
-          {this.props.error}
-        </Text>
+        <Error message={this.props.error}/>
 
         <CardSection>
           {this.renderButton()}
@@ -61,14 +58,3 @@ class RegistrationForm extends Component {
     );
   }
 }
-
-const styles = {
-  errorTextStyle: {
-    paddingTop: 5,
-    fontSize: 18,
-    alignSelf: 'center',
-    color: '#FF0000',
-  }
-};
-
-export default RegistrationForm;

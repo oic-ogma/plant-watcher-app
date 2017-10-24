@@ -1,7 +1,7 @@
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
-  PROCESSING,
+  AUTH_PROCESSING,
   USER_AUTH_SUCCESS,
   USER_AUTH_FAIL
 } from '../actions/types';
@@ -20,7 +20,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, email: action.payload };
     case PASSWORD_CHANGED:
       return { ...state, password: action.payload };
-    case PROCESSING:
+    case AUTH_PROCESSING:
       return { ...state, loading: true, error: '' };
     case USER_AUTH_SUCCESS:
       return { ...state, ...INITIAL_STATE, user: action.payload };

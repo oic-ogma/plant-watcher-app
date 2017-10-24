@@ -1,26 +1,13 @@
+import { findUserByEmail, validateEmail } from './helpers/firebase/functions';
+import firebaseData from './helpers/firebase/data';
+import faker from 'faker';
+
 let firebase = jest.genMockFromModule('firebase');
 
-const userList = [
-  { email: 'existinguser1@plantwatcher.com', password: 'existingpassword1' },
-  { email: 'existinguser2@plantwatcher.com', password: 'existingpassword2' }
-];
+const { currentUser } = firebaseData;
 
-const findUserByEmail = email => {
-  let exists = null;
-  userList.forEach(user => {
-    if (user.email === email) {
-      exists = user;
-    }
-  });
-  return exists;
-};
+const auth = () => ({ currentUser, createUserWithEmailAndPassword, signInWithEmailAndPassword });
 
-const validateEmail = email => {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-};
-
-const auth = () => ({ createUserWithEmailAndPassword, signInWithEmailAndPassword });
 const createUserWithEmailAndPassword = (email, password) => {
   if (!validateEmail(email)) {
     return Promise.reject({ code:'auth/invalid-email' });
@@ -49,5 +36,21 @@ const signInWithEmailAndPassword = (email, password) => {
   return Promise.resolve({ user: { email } });
 };
 
-firebase.auth = auth;
+const database = () => ({ ref });
+
+const ref = () => {
+  return { child, set };
+};
+
+const child = () => ({ push });
+
+const push = () => ({ key: faker.random.alphaNumeric(19) });
+
+const set = insertionObj => {
+  if (insertionObj) {
+    return Promise.resolve('Success');
+  }
+  return Promise.reject('Fail');
+};
+firebase = { ...firebase, auth, database };
 export default firebase;

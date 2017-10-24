@@ -65,6 +65,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
@@ -78,6 +79,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value="example@gmail.com"
       />
     </View>
@@ -125,6 +127,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="パスワード"
         secureTextEntry={true}
@@ -138,6 +141,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value=""
       />
     </View>
@@ -259,6 +263,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
@@ -272,6 +277,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value="example@gmail.com"
       />
     </View>
@@ -319,6 +325,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="パスワード"
         secureTextEntry={true}
@@ -332,6 +339,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value="PassWord"
       />
     </View>
@@ -488,6 +496,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
@@ -501,6 +510,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value="example@gmail.com"
       />
     </View>
@@ -548,6 +558,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="パスワード"
         secureTextEntry={true}
@@ -561,6 +572,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value="PassWord"
       />
     </View>
@@ -682,6 +694,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
@@ -695,6 +708,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value={undefined}
       />
     </View>
@@ -742,6 +756,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
       </Text>
       <TextInput
         autoCorrect={false}
+        multiline={undefined}
         onChangeText={[Function]}
         placeholder="パスワード"
         secureTextEntry={true}
@@ -755,6 +770,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
             "paddingRight": 5,
           }
         }
+        underlineColorAndroid="transparent"
         value={undefined}
       />
     </View>
