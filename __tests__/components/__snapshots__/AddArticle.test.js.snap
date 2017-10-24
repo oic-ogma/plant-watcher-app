@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
+exports[`記事投稿 snapshot-エラーが出ている 1`] = `
 <View
   style={
     Object {
@@ -61,13 +61,13 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
           }
         }
       >
-        メールアドレス
+        植物名
       </Text>
       <TextInput
         autoCorrect={false}
         multiline={undefined}
         onChangeText={[Function]}
-        placeholder="example@hoge.com"
+        placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
           Object {
@@ -80,7 +80,7 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value="example@gmail.com"
+        value="ひまわり"
       />
     </View>
   </View>
@@ -102,12 +102,17 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 40,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 40,
+          },
+          Object {
+            "height": 120,
+          },
+        ]
       }
     >
       <Text
@@ -123,14 +128,14 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
           }
         }
       >
-        パスワード
+        記事
       </Text>
       <TextInput
         autoCorrect={false}
-        multiline={undefined}
+        multiline={true}
         onChangeText={[Function]}
-        placeholder="パスワード"
-        secureTextEntry={true}
+        placeholder="植物についての説明"
+        secureTextEntry={undefined}
         style={
           Object {
             "color": "#000",
@@ -142,7 +147,7 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value=""
+        value={undefined}
       />
     </View>
   </View>
@@ -160,7 +165,7 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
       }
     }
   >
-    Error
+    hogehoge
   </Text>
   <View
     style={
@@ -179,26 +184,61 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
     }
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#fff",
+          "borderColor": "#007aff",
+          "borderRadius": 5,
+          "borderWidth": 1,
           "flex": 1,
-          "justifyContent": "center",
+          "marginLeft": 5,
+          "marginRight": 5,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <ActivityIndicator
-        animating={true}
-        color="#999999"
-        hidesWhenStopped={true}
-        size="large"
-      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "#007aff",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "paddingBottom": 15,
+            "paddingTop": 15,
+          }
+        }
+      >
+        投稿
+      </Text>
     </View>
   </View>
 </View>
 `;
 
-exports[`ログインフォーム snapshot-メールアドレスとパスワードが入力されている 1`] = `
+exports[`記事投稿 snapshot-ロード中 1`] = `
 <View
   style={
     Object {
@@ -259,13 +299,13 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
           }
         }
       >
-        メールアドレス
+        植物名
       </Text>
       <TextInput
         autoCorrect={false}
         multiline={undefined}
         onChangeText={[Function]}
-        placeholder="example@hoge.com"
+        placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
           Object {
@@ -278,7 +318,7 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
           }
         }
         underlineColorAndroid="transparent"
-        value="example@gmail.com"
+        value="ひまわり"
       />
     </View>
   </View>
@@ -300,12 +340,17 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 40,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 40,
+          },
+          Object {
+            "height": 120,
+          },
+        ]
       }
     >
       <Text
@@ -321,254 +366,13 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
           }
         }
       >
-        パスワード
+        記事
       </Text>
       <TextInput
         autoCorrect={false}
-        multiline={undefined}
+        multiline={true}
         onChangeText={[Function]}
-        placeholder="パスワード"
-        secureTextEntry={true}
-        style={
-          Object {
-            "color": "#000",
-            "flex": 5,
-            "fontSize": 18,
-            "lineHeight": 23,
-            "paddingLeft": 5,
-            "paddingRight": 5,
-          }
-        }
-        underlineColorAndroid="transparent"
-        value="PassWord"
-      />
-    </View>
-  </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "alignSelf": "center",
-        "color": "#FF0000",
-        "fontSize": 18,
-        "paddingTop": 5,
-      }
-    }
-  >
-    
-  </Text>
-  <View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#fff",
-            "borderBottomWidth": 1,
-            "borderColor": "#ddd",
-            "flexDirection": "row",
-            "justifyContent": "flex-start",
-            "padding": 5,
-            "position": "relative",
-          },
-          undefined,
-        ]
-      }
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        collapsable={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#fff",
-            "borderColor": "#007aff",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flex": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignSelf": "center",
-              "color": "#007aff",
-              "fontSize": 18,
-              "fontWeight": "600",
-              "paddingBottom": 15,
-              "paddingTop": 15,
-            }
-          }
-        >
-          ログイン
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#fff",
-            "borderBottomWidth": 1,
-            "borderColor": "#ddd",
-            "flexDirection": "row",
-            "justifyContent": "flex-start",
-            "padding": 5,
-            "position": "relative",
-          },
-          undefined,
-        ]
-      }
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        collapsable={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#fff",
-            "borderColor": "#007aff",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flex": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignSelf": "center",
-              "color": "#007aff",
-              "fontSize": 18,
-              "fontWeight": "600",
-              "paddingBottom": 15,
-              "paddingTop": 15,
-            }
-          }
-        >
-          ユーザー登録
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`ログインフォーム snapshot-ロード中 1`] = `
-<View
-  style={
-    Object {
-      "borderBottomWidth": 0,
-      "borderColor": "#ddd",
-      "borderRadius": 2,
-      "borderWidth": 1,
-      "elevation": 1,
-      "marginLeft": 5,
-      "marginRight": 5,
-      "marginTop": 10,
-      "shadowColor": "#000",
-      "shadowOffset": Object {
-        "height": 2,
-        "width": 0,
-      },
-      "shadowOpacity": 0.1,
-      "shadowRadius": 2,
-    }
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#fff",
-          "borderBottomWidth": 1,
-          "borderColor": "#ddd",
-          "flexDirection": "row",
-          "justifyContent": "flex-start",
-          "padding": 5,
-          "position": "relative",
-        },
-        undefined,
-      ]
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 40,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "flex": 3,
-            "fontSize": 18,
-            "paddingLeft": 10,
-          }
-        }
-      >
-        メールアドレス
-      </Text>
-      <TextInput
-        autoCorrect={false}
-        multiline={undefined}
-        onChangeText={[Function]}
-        placeholder="example@hoge.com"
+        placeholder="植物についての説明"
         secureTextEntry={undefined}
         style={
           Object {
@@ -581,69 +385,7 @@ exports[`ログインフォーム snapshot-ロード中 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value="example@gmail.com"
-      />
-    </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#fff",
-          "borderBottomWidth": 1,
-          "borderColor": "#ddd",
-          "flexDirection": "row",
-          "justifyContent": "flex-start",
-          "padding": 5,
-          "position": "relative",
-        },
-        undefined,
-      ]
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 40,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "flex": 3,
-            "fontSize": 18,
-            "paddingLeft": 10,
-          }
-        }
-      >
-        パスワード
-      </Text>
-      <TextInput
-        autoCorrect={false}
-        multiline={undefined}
-        onChangeText={[Function]}
-        placeholder="パスワード"
-        secureTextEntry={true}
-        style={
-          Object {
-            "color": "#000",
-            "flex": 5,
-            "fontSize": 18,
-            "lineHeight": 23,
-            "paddingLeft": 5,
-            "paddingRight": 5,
-          }
-        }
-        underlineColorAndroid="transparent"
-        value="PassWord"
+        value={undefined}
       />
     </View>
   </View>
@@ -699,7 +441,7 @@ exports[`ログインフォーム snapshot-ロード中 1`] = `
 </View>
 `;
 
-exports[`ログインフォーム snapshot-普通 1`] = `
+exports[`記事投稿 snapshot-普通 1`] = `
 <View
   style={
     Object {
@@ -760,13 +502,13 @@ exports[`ログインフォーム snapshot-普通 1`] = `
           }
         }
       >
-        メールアドレス
+        植物名
       </Text>
       <TextInput
         autoCorrect={false}
         multiline={undefined}
         onChangeText={[Function]}
-        placeholder="example@hoge.com"
+        placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
           Object {
@@ -801,12 +543,17 @@ exports[`ログインフォーム snapshot-普通 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 40,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 40,
+          },
+          Object {
+            "height": 120,
+          },
+        ]
       }
     >
       <Text
@@ -822,14 +569,14 @@ exports[`ログインフォーム snapshot-普通 1`] = `
           }
         }
       >
-        パスワード
+        記事
       </Text>
       <TextInput
         autoCorrect={false}
-        multiline={undefined}
+        multiline={true}
         onChangeText={[Function]}
-        placeholder="パスワード"
-        secureTextEntry={true}
+        placeholder="植物についての説明"
+        secureTextEntry={undefined}
         style={
           Object {
             "color": "#000",
@@ -859,142 +606,310 @@ exports[`ログインフォーム snapshot-普通 1`] = `
       }
     }
   />
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "backgroundColor": "#fff",
-            "borderBottomWidth": 1,
-            "borderColor": "#ddd",
-            "flexDirection": "row",
-            "justifyContent": "flex-start",
-            "padding": 5,
-            "position": "relative",
-          },
-          undefined,
-        ]
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#fff",
+          "borderColor": "#007aff",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flex": 1,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "opacity": 1,
+        }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#fff",
-            "borderColor": "#007aff",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flex": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "opacity": 1,
+            "alignSelf": "center",
+            "color": "#007aff",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "paddingBottom": 15,
+            "paddingTop": 15,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignSelf": "center",
-              "color": "#007aff",
-              "fontSize": 18,
-              "fontWeight": "600",
-              "paddingBottom": 15,
-              "paddingTop": 15,
-            }
-          }
-        >
-          ログイン
-        </Text>
-      </View>
+        投稿
+      </Text>
     </View>
+  </View>
+</View>
+`;
+
+exports[`記事投稿 snapshot-植物名と記事が入力されている 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 0,
+      "borderColor": "#ddd",
+      "borderRadius": 2,
+      "borderWidth": 1,
+      "elevation": 1,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 10,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 2,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 40,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "flex": 3,
+            "fontSize": 18,
+            "paddingLeft": 10,
+          }
+        }
+      >
+        植物名
+      </Text>
+      <TextInput
+        autoCorrect={false}
+        multiline={undefined}
+        onChangeText={[Function]}
+        placeholder="ひまわり"
+        secureTextEntry={undefined}
+        style={
+          Object {
+            "color": "#000",
+            "flex": 5,
+            "fontSize": 18,
+            "lineHeight": 23,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value="ひまわり"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
     <View
       style={
         Array [
           Object {
-            "backgroundColor": "#fff",
-            "borderBottomWidth": 1,
-            "borderColor": "#ddd",
+            "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "flex-start",
-            "padding": 5,
-            "position": "relative",
+            "height": 40,
           },
-          undefined,
+          Object {
+            "height": 120,
+          },
         ]
       }
     >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#fff",
-            "borderColor": "#007aff",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flex": 1,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "opacity": 1,
+            "flex": 3,
+            "fontSize": 18,
+            "paddingLeft": 10,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignSelf": "center",
-              "color": "#007aff",
-              "fontSize": 18,
-              "fontWeight": "600",
-              "paddingBottom": 15,
-              "paddingTop": 15,
-            }
+        記事
+      </Text>
+      <TextInput
+        autoCorrect={false}
+        multiline={true}
+        onChangeText={[Function]}
+        placeholder="植物についての説明"
+        secureTextEntry={undefined}
+        style={
+          Object {
+            "color": "#000",
+            "flex": 5,
+            "fontSize": 18,
+            "lineHeight": 23,
+            "paddingLeft": 5,
+            "paddingRight": 5,
           }
-        >
-          ユーザー登録
-        </Text>
-      </View>
+        }
+        underlineColorAndroid="transparent"
+        value={undefined}
+      />
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#FF0000",
+        "fontSize": 18,
+        "paddingTop": 5,
+      }
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#fff",
+          "borderColor": "#007aff",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flex": 1,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "#007aff",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "paddingBottom": 15,
+            "paddingTop": 15,
+          }
+        }
+      >
+        投稿
+      </Text>
     </View>
   </View>
 </View>
