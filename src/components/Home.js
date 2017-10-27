@@ -11,7 +11,7 @@ export default class Home extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>記事を検索</Button>
+          <Button onPress={Actions.articlesearch}>記事を検索</Button>
         </CardSection>
 
         <CardSection>
