@@ -4,6 +4,7 @@ import LoginFormContainer from './containers/LoginFormContainer';
 import RegistrationFormContainer from './containers/RegistrationFormContainer';
 import AddArticleContainer from './containers/AddArticleContainer';
 import Home from './components/Home';
+import ArticleListContainer from './containers/ArticleListContainer';
 
 const RouterComponent = () => (
   <Router getSceneStyle={()=>({ backgroundColor: '#fff' })}>
@@ -16,6 +17,7 @@ const RouterComponent = () => (
       <Scene key='main'>
         <Scene initial key='home' component={Home} title='ホーム' />
         <Scene key='addarticle' component={AddArticleContainer} title='記事投稿' />
+        <Scene key='articlelist' component={ArticleListContainer} title='記事一覧' />
       </Scene>
     </Scene>
   </Router>
