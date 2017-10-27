@@ -4,10 +4,11 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Home extends Component {
   render() {
+
     return (
       <Card>
         <CardSection>
-          <Button>自分の記事の一覧</Button>
+          <Button onPress={Actions.articlelist}>自分の記事の一覧</Button>
         </CardSection>
 
         <CardSection>
