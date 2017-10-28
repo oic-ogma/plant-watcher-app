@@ -17,7 +17,6 @@ describe('登録フォーム', () => {
     const INITIAL_STATE = {
       email: 'example@gmail.com',
       password: 'PassWord',
-      user: null,
       error: '',
       loading: false
     };
@@ -29,7 +28,6 @@ describe('登録フォーム', () => {
     const INITIAL_STATE = {
       email: 'example@gmail.com',
       password: 'PassWord',
-      user: null,
       error: '',
       loading: true
     };
@@ -41,7 +39,6 @@ describe('登録フォーム', () => {
     const INITIAL_STATE = {
       email: 'example@gmail.com',
       password: '',
-      user: null,
       error: 'Error',
       loading: true
     };
