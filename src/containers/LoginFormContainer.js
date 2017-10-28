@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, userLogin } from '../actions';
 import LoginForm from '../components/LoginForm';
 
-const LoginFormContainer = (props) => (
+const LoginFormContainer = props => (
   <LoginForm {...props} />
 );
 

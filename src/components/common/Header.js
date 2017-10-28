@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-export const Header = (props) => {
+export const Header = props => {
   const { textStyle, viewStyle } = styles;
 
   return (
