@@ -33,10 +33,7 @@ describe('認証アクション（非同期）', () => {
       const password = 'password1234';
       const expectedActions = [
         { type: types.AUTH_PROCESSING },
-        {
-          type: types.USER_AUTH_SUCCESS,
-          payload: { user: { email } },
-        }
+        { type: types.USER_AUTH_SUCCESS }
       ];
 
       const store = mockStore({ auth: [] });
@@ -107,10 +104,7 @@ describe('認証アクション（非同期）', () => {
       const password = 'existingpassword1';
       const expectedActions = [
         { type: types.AUTH_PROCESSING },
-        {
-          type: types.USER_AUTH_SUCCESS,
-          payload: { user: { email } },
-        }
+        { type: types.USER_AUTH_SUCCESS }
       ];
 
       const store = mockStore({ auth: [] });
