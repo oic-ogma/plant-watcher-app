@@ -3,11 +3,6 @@ import LoginForm from '../../src/components/LoginForm';
 import renderer from 'react-test-renderer';
 
 describe('ログインフォーム', () => {
-  it('正しくrenderできる', () => {
-    const rendered = renderer.create(<LoginForm />).toJSON();
-    expect(rendered).toBeTruthy();
-  });
-
   it('snapshot-普通', () => {
     const tree = renderer.create(<LoginForm />).toJSON();
     expect(tree).toMatchSnapshot();

@@ -3,11 +3,6 @@ import RegistrationForm from '../../src/components/RegistrationForm';
 import renderer from 'react-test-renderer';
 
 describe('登録フォーム', () => {
-  it('正しくrenderできる', () => {
-    const rendered = renderer.create(<RegistrationForm />).toJSON();
-    expect(rendered).toBeTruthy();
-  });
-
   it('snapshot-普通', () => {
     const tree = renderer.create(<RegistrationForm />).toJSON();
     expect(tree).toMatchSnapshot();
