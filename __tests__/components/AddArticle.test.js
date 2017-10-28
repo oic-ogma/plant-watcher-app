@@ -3,11 +3,6 @@ import AddArticle from '../../src/components/AddArticle';
 import renderer from 'react-test-renderer';
 
 describe('記事投稿', () => {
-  it('正しくrenderできる', () => {
-    const tree = renderer.create(<AddArticle/>).toJSON();
-    expect(tree).toBeTruthy();
-  });
-
   it('snapshot-普通', () => {
     const tree = renderer.create(<AddArticle/>).toJSON();
     expect(tree).toMatchSnapshot();
