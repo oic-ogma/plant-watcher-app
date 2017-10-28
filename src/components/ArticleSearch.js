@@ -6,6 +6,7 @@ import { SearchBarComponent } from './common/SearchBar';
 export default class ArticleSearch extends Component {
   render() {
     const { buttonStyle } = styles;
+
     return (
       <View style={{ marginTop: 140 }}>
         <SearchBarComponent
