@@ -66,7 +66,7 @@ exports[`記事投稿 snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
@@ -133,7 +133,7 @@ exports[`記事投稿 snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={true}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="植物についての説明"
         secureTextEntry={undefined}
         style={
@@ -304,7 +304,7 @@ exports[`記事投稿 snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
@@ -371,7 +371,7 @@ exports[`記事投稿 snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={true}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="植物についての説明"
         secureTextEntry={undefined}
         style={
@@ -507,7 +507,7 @@ exports[`記事投稿 snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
@@ -574,7 +574,7 @@ exports[`記事投稿 snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={true}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="植物についての説明"
         secureTextEntry={undefined}
         style={
@@ -743,7 +743,7 @@ exports[`記事投稿 snapshot-植物名と記事が入力されている 1`] = 
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="ひまわり"
         secureTextEntry={undefined}
         style={
@@ -810,7 +810,7 @@ exports[`記事投稿 snapshot-植物名と記事が入力されている 1`] = 
       <TextInput
         autoCorrect={false}
         multiline={true}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="植物についての説明"
         secureTextEntry={undefined}
         style={
