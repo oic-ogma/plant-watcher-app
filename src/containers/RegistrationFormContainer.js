@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, registerUser } from '../actions';
 import RegistrationForm from '../components/RegistrationForm';
 
-const RegistrationFormContainer = (props) => (
+const RegistrationFormContainer = props => (
   <RegistrationForm {...props} />
 );
 
