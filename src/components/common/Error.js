@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-const Error = ({ message }) => (
+export const Error = ({ message }) => (
   <Text style={styles.errorTextStyle}>
     {message}
   </Text>
@@ -15,5 +15,3 @@ const styles = {
     color: '#FF0000',
   }
 };
-
-export { Error };
