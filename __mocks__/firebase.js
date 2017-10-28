@@ -39,12 +39,17 @@ const signInWithEmailAndPassword = (email, password) => {
 const database = () => ({ ref });
 
 const ref = () => {
-  return { child, set };
+  return { child, set, push };
 };
 
 const child = () => ({ push });
 
-const push = () => ({ key: faker.random.alphaNumeric(19) });
+const push = insertionObj => {
+  if (insertionObj) {
+    return Promise.resolve({ key: faker.random.alphaNumeric(19) });
+  }
+  return Promise.reject('Fail');
+};
 
 const set = insertionObj => {
   if (insertionObj) {
