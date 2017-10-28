@@ -1,7 +1,7 @@
 import React from 'react';
 import { SearchBar } from 'react-native-elements';
 
-const SearchBarComponent = ({ placeholder }) => {
+export const SearchBarComponent = ({ placeholder }) => {
   const { container, input, icon, clearIcon } = styles;
   return (
     <SearchBar
@@ -15,8 +15,6 @@ const SearchBarComponent = ({ placeholder }) => {
     />
   );
 };
-
-export { SearchBarComponent };
 
 const styles = {
   container: {

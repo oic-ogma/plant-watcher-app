@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Header = (props) => {
+export const Header = (props) => {
   const { textStyle, viewStyle } = styles;
 
   return (
@@ -27,5 +27,3 @@ const styles = {
     fontSize: 20
   }
 };
-
-export { Header };

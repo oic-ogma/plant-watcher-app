@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const CardSection = (props) => {
+export const CardSection = (props) => {
   return (
     <View style={[styles.containerStyle, props.style]}>
       {props.children}
@@ -20,5 +20,3 @@ const styles = {
     position: 'relative',
   }
 };
-
-export { CardSection };
