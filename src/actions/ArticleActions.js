@@ -38,9 +38,9 @@ export const saveArticle = (plantName, articleContents) => {
 
   return dispatch => {
     dispatch({ type: ADD_ARTICLE_PROCESSING });
-    const postKey = firebase.database().ref().child('articles').push().key;
-    return firebase.database().ref(`/articles/${postKey}`)
-      .set({ plantName, articleContents, uid })
+    const ref = firebase.database().ref('articles');
+    return ref
+      .push({ plantName, articleContents, uid })
       .then(() => {
         dispatch({ type: ADD_ARTICLE_SUCCESS });
         Actions.pop();
