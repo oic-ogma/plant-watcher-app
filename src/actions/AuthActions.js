@@ -22,11 +22,8 @@ export const passwordChanged = text => {
   };
 };
 
-const userAuthSuccess = (dispatch, user) => {
-  dispatch({
-    type: USER_AUTH_SUCCESS,
-    payload: user,
-  });
+const userAuthSuccess = dispatch => {
+  dispatch({ type: USER_AUTH_SUCCESS });
 
   Actions.main();
 };
@@ -61,7 +58,7 @@ export const userLogin = (email, password) => {
     dispatch({ type: AUTH_PROCESSING });
 
     return firebase.auth().signInWithEmailAndPassword(email, password)
-      .then (user => userAuthSuccess(dispatch, user))
+      .then (() => userAuthSuccess(dispatch))
       .catch (error => userAuthFail(dispatch, error));
   };
 };
@@ -71,7 +68,7 @@ export const registerUser = (email, password) => {
     dispatch({ type: AUTH_PROCESSING });
 
     return firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then (user=>userAuthSuccess(dispatch, user))
+      .then (()=>userAuthSuccess(dispatch))
       .catch (error=>userAuthFail(dispatch, error));
   };
 };
