@@ -66,7 +66,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -128,7 +128,7 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -264,7 +264,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -326,7 +326,7 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -497,7 +497,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -559,7 +559,7 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -695,7 +695,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -757,7 +757,7 @@ exports[`登録フォーム snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={

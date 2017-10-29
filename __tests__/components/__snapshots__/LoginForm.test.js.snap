@@ -66,7 +66,7 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -128,7 +128,7 @@ exports[`ログインフォーム snapshot-エラーが出ている 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -264,7 +264,7 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -326,7 +326,7 @@ exports[`ログインフォーム snapshot-メールアドレスとパスワー�
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -567,7 +567,7 @@ exports[`ログインフォーム snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -629,7 +629,7 @@ exports[`ログインフォーム snapshot-ロード中 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
@@ -765,7 +765,7 @@ exports[`ログインフォーム snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="example@hoge.com"
         secureTextEntry={undefined}
         style={
@@ -827,7 +827,7 @@ exports[`ログインフォーム snapshot-普通 1`] = `
       <TextInput
         autoCorrect={false}
         multiline={undefined}
-        onChangeText={[Function]}
+        onChangeText={undefined}
         placeholder="パスワード"
         secureTextEntry={true}
         style={
