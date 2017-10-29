@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, registerUser } from '../actions';
 import RegistrationForm from '../components/RegistrationForm';
 
-const RegistrationFormContainer = (props) => (
+const RegistrationFormContainer = props => (
   <RegistrationForm {...props} />
 );
 
 const mapStateToProps = ({ auth }) => {
-  const { email, password, loding, error } = auth;
-  return { email, password, loding, error };
+  const { email, password, loading, error } = auth;
+  return { email, password, loading, error };
 };
 
 const mapDispatchToProps = { emailChanged, passwordChanged, registerUser };

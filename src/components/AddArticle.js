@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { Card, CardSection, Spinner, Input, Button, Error } from './common';
 
 export default class AddArticle extends Component {
-  onPlantNameChanged(text) {
-    this.props.plantNameChanged(text);
-  }
-
-  onArticleContentsChanged(text) {
-    this.props.articleContentsChanged(text);
-  }
-
   saveArticle() {
     const { plantName, articleContents, saveArticle } = this.props;
     saveArticle(plantName, articleContents);
@@ -29,14 +21,22 @@ export default class AddArticle extends Component {
   }
 
   render() {
+    const {
+      plantName,
+      articleName,
+      plantNameChanged,
+      articleContentsChanged,
+      error
+    } = this.props;
+
     return (
       <Card>
         <CardSection>
           <Input
             label='植物名'
             placeholder='ひまわり'
-            onChangeText={this.onPlantNameChanged.bind(this)}
-            value={this.props.plantName}
+            onChangeText={plantNameChanged}
+            value={plantName}
           />
         </CardSection>
 
@@ -44,14 +44,14 @@ export default class AddArticle extends Component {
           <Input
             label='記事'
             placeholder='植物についての説明'
-            onChangeText={this.onArticleContentsChanged.bind(this)}
-            value={this.props.articleName}
+            onChangeText={articleContentsChanged}
+            value={articleName}
             multiline={true}
             height={120}
           />
         </CardSection>
 
-        <Error message={this.props.error}/>
+        <Error message={error}/>
         {this.renderButtons()}
       </Card>
     );

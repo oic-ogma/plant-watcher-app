@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { Button, Card, CardSection, Input, Spinner, Error } from './common';
 
 export default class RegistrationForm extends Component {
-  onEmailChange (text) {
-    this.props.emailChanged(text);
-  }
-
-  onPasswordChange (text) {
-    this.props.passwordChanged(text);
-  }
-
   onButtonPress () {
     const { email, password, registerUser } = this.props;
     registerUser(email, password);
@@ -27,14 +19,22 @@ export default class RegistrationForm extends Component {
   }
 
   render() {
+    const {
+      email,
+      password,
+      emailChanged,
+      passwordChanged,
+      error
+    } = this.props;
+
     return (
       <Card>
         <CardSection>
           <Input
             label='メールアドレス'
             placeholder='example@hoge.com'
-            onChangeText={this.onEmailChange.bind(this)}
-            value={this.props.email}
+            onChangeText={emailChanged}
+            value={email}
           />
         </CardSection>
 
@@ -43,12 +43,12 @@ export default class RegistrationForm extends Component {
             secureTextEntry
             label='パスワード'
             placeholder='パスワード'
-            onChangeText={this.onPasswordChange.bind(this)}
-            value={this.props.password}
+            onChangeText={passwordChanged}
+            value={password}
           />
         </CardSection>
 
-        <Error message={this.props.error}/>
+        <Error message={error}/>
 
         <CardSection>
           {this.renderButton()}

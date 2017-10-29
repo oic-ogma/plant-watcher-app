@@ -4,14 +4,6 @@ import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 
 export default class LoginForm extends Component {
-  onEmailChanged(text) {
-    this.props.emailChanged(text);
-  }
-
-  onPasswordChanged(text) {
-    this.props.passwordChanged(text);
-  }
-
   onButtonPress() {
     const { email, password } = this.props;
 
@@ -39,14 +31,22 @@ export default class LoginForm extends Component {
   }
 
   render() {
+    const {
+      email,
+      password,
+      emailChanged,
+      passwordChanged,
+      error
+    } = this.props;
+
     return (
       <Card>
         <CardSection>
           <Input
             label='メールアドレス'
             placeholder='example@hoge.com'
-            onChangeText={this.onEmailChanged.bind(this)}
-            value={this.props.email}
+            onChangeText={emailChanged}
+            value={email}
           />
         </CardSection>
 
@@ -55,12 +55,12 @@ export default class LoginForm extends Component {
             secureTextEntry
             label='パスワード'
             placeholder='パスワード'
-            onChangeText={this.onPasswordChanged.bind(this)}
-            value={this.props.password}
+            onChangeText={passwordChanged}
+            value={password}
           />
         </CardSection>
 
-        <Error message={this.props.error}/>
+        <Error message={error}/>
 
         {this.renderButtons()}
       </Card>
