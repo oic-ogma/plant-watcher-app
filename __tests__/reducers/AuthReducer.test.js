@@ -4,7 +4,6 @@ import * as types from '../../src/actions/types';
 const INITIAL_STATE = {
   email: '',
   password: '',
-  user: null,
   error: '',
   loading: false
 };
@@ -47,10 +46,8 @@ describe('authReducer', () => {
   it('USER_AUTH_SUCCESSを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.USER_AUTH_SUCCESS,
-      payload: { email: 'existinguser1@plantwatcher.com' },
     })).toEqual({
       ...INITIAL_STATE,
-      user: { email: 'existinguser1@plantwatcher.com' }
     });
   });
 
