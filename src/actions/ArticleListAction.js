@@ -2,7 +2,7 @@ import firebase from 'firebase';
 import {
   FETCH_ARTICLES_SUCSESS,
   FETCH_ARTICLES_FAIL,
-  PROCESSING
+  FETCH_ARTICLES_PROCESSING
 } from './types';
 
 const fetchArticlesFail = (dispatch, error) => {
@@ -25,6 +25,7 @@ export const getMyArticles = () => {
 
   const articleRef = firebase.database().ref('/articles/');
   return (dispatch) => {
+    dispatch({ type: FETCH_ARTICLES_PROCESSING });
     articleRef.orderByChild('uid').equalTo(uid).on('value', snapshot => {
       if (snapshot.val() != null) {
         fetchArticlesSuccess(dispatch, snapshot.val());
