@@ -9,13 +9,13 @@ const ArticleListContainer = props => {
 };
 
 const mapStateToProps = ({ articleList }) => {
-  const { list, error } = articleList;
+  const { list, error, loading } = articleList;
 
   const articles = _.map(list, (val, articleId) => {
     return { ...val, articleId };
   });
 
-  return { articles, error };
+  return { articles, error, loading };
 };
 
 export default connect(mapStateToProps, {

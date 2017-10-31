@@ -10,3 +10,4 @@ export const ADD_ARTICLE_SUCCESS = 'add_article_success';
 export const ADD_ARTICLE_FAIL = 'add_article_fail';
 export const FETCH_ARTICLES_SUCSESS = 'fetch_articles_sucsess';
 export const FETCH_ARTICLES_FAIL = 'fetch_articles_fail';
+export const FETCH_ARTICLES_PROCESSING = 'fetch_articles_processing';
