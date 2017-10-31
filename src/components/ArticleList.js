@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { ListItem } from './common';
+import { ListItem, Error } from './common';
 import { ListView } from 'react-native';
 
 class ArticleList extends Component {
 
   componentWillMount() {
     this.props.getMyArticles();
-
     this.createDataSource(this.props);
   }
 
@@ -22,11 +21,15 @@ class ArticleList extends Component {
     this.dataSource = ds.cloneWithRows(articles);
   }
 
-  renderRow({ plantName, articleContents, shortArticleTexts }) {
-    return <ListItem plantName={plantName} articleContents={articleContents} shortArticleTexts={shortArticleTexts}/>;
+  renderRow({ plantName, articleContents, error }) {
+    return <ListItem plantName={plantName} articleContents={articleContents} error={error} />;
+
   }
 
   render() {
+    if (this.props.error) {
+      return (<Error message={this.props.error} />);
+    }
     return (
       <ListView
         enableEmptySections
