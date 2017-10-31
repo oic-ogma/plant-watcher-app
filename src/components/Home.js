@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 const Home = () => (
   <Card>
     <CardSection>
-      <Button onPress={Actions.articlelist}>自分の記事の一覧</Button>
+      <Button onPress={Actions.listarticles}>自分の記事の一覧</Button>
     </CardSection>
 
     <CardSection>
