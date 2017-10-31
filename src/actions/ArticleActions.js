@@ -6,9 +6,13 @@ import {
   ARTICLE_CONTENTS_CHANGED,
   ADD_ARTICLE_PROCESSING,
   ADD_ARTICLE_SUCCESS,
-  ADD_ARTICLE_FAIL
+  ADD_ARTICLE_FAIL,
+  FETCH_ARTICLES_SUCCESS,
+  FETCH_ARTICLES_FAIL,
+  FETCH_ARTICLES_PROCESSING
 } from './types';
 
+// addArticle
 export const plantNameChanged = text => ({
   type: PLANT_NAME_CHANGED,
   payload: text
@@ -45,5 +49,38 @@ export const saveArticle = (plantName, articleContents) => {
         dispatch({ type: ADD_ARTICLE_SUCCESS });
         Actions.pop();
       });
+  };
+};
+
+
+// listArticles
+const fetchArticlesFail = (dispatch, error) => {
+  dispatch({
+    type: FETCH_ARTICLES_FAIL,
+    payload: error,
+  });
+};
+
+const fetchArticlesSuccess = (dispatch, articles) => {
+  dispatch ({
+    type: FETCH_ARTICLES_SUCCESS,
+    payload: articles,
+  });
+};
+
+export const fetchArticles = () => {
+  const { currentUser } = firebase.auth();
+  const { uid } = currentUser;
+  const articleRef = firebase.database().ref('/articles/');
+
+  return (dispatch) => {
+    dispatch({ type: FETCH_ARTICLES_PROCESSING });
+    articleRef.orderByChild('uid').equalTo(uid).on('value', snapshot => {
+      if (snapshot.val() != null) {
+        fetchArticlesSuccess(dispatch, snapshot.val());
+      } else {
+        fetchArticlesFail(dispatch, '記事が見つかりません');
+      }
+    });
   };
 };

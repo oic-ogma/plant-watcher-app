@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { ListItem, Error, Spinner } from './common';
+import { ListItem, Error, Spinner } from './';
 import { ListView } from 'react-native';
 
-
-
-class ArticleList extends Component {
-
-
+class ListArticles extends Component {
   componentWillMount() {
-    this.props.getMyArticles();
+    this.props.fetchArticles();
     this.createDataSource(this.props);
   }
 
@@ -29,12 +25,15 @@ class ArticleList extends Component {
   }
 
   render() {
-    if (this.props.loading) {
+    const { loading, error } = this.props;
+
+    if (loading) {
       return <Spinner size='large' />;
     }
-    if (this.props.error) {
-      return (<Error message={this.props.error} />);
+    if (error) {
+      return (<Error message={error} />);
     }
+
     return (
       <ListView
         enableEmptySections
@@ -45,4 +44,4 @@ class ArticleList extends Component {
   }
 }
 
-export default ArticleList;
+export default ListArticles;
