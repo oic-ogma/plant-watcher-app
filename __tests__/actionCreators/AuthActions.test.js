@@ -21,6 +21,12 @@ describe('認証アクション', () => {
     };
     expect(actions.passwordChanged(password)).toEqual(expectedAction);
   });
+
+  it('ページ移動が行われた時', () => {
+    const expectedAction = { type: types.AUTH_PAGE_MOVED };
+    expect(actions.pageMoved()).toEqual(expectedAction);
+  });
+
 });
 
 const middlewares = [ thunk ];
