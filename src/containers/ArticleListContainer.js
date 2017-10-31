@@ -1,19 +1,21 @@
 import React from 'react';
+import _ from 'lodash';
+import { connect } from 'react-redux';
 import ArticleList from '../components/ArticleList';
 import { getMyArticles } from '../actions';
-import { connect } from 'react-redux';
-import _ from 'lodash';
 
+const ArticleListContainer = props => {
+  return <ArticleList {...props} />;
+};
 
-const ArticleListContainer = props => (
-  <ArticleList {...props}/>
-);
+const mapStateToProps = ({ articleList }) => {
+  const { list, error } = articleList;
 
-const mapStateToProps = state => {
-  const articles = _.map(state.articleList.list, (val, articleId) => {
+  const articles = _.map(list, (val, articleId) => {
     return { ...val, articleId };
   });
-  return { articles };
+
+  return { articles, error };
 };
 
 export default connect(mapStateToProps, {
