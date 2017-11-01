@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`記事の表示 snapshot-エラー 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 0,
+      "borderColor": "#ddd",
+      "borderRadius": 2,
+      "borderWidth": 1,
+      "elevation": 1,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 10,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 2,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#FF0000",
+        "fontSize": 18,
+        "paddingTop": 5,
+      }
+    }
+  >
+    error message
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`記事の表示 snapshot-普通 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 0,
+      "borderColor": "#ddd",
+      "borderRadius": 2,
+      "borderWidth": 1,
+      "elevation": 1,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 10,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 2,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#FF0000",
+        "fontSize": 18,
+        "paddingTop": 5,
+      }
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        testName
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomWidth": 1,
+          "borderColor": "#ddd",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 5,
+          "position": "relative",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        this is test contents. 
+         this contens is test data.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
