@@ -6,7 +6,8 @@ import {
   USER_AUTH_FAIL,
 } from './types';
 import firebase from 'firebase';
-import { Actions } from 'react-native-router-flux';
+import { NavigationActions } from 'react-navigation';
+// import { Actions } from 'react-native-router-flux';
 
 export const emailChanged = text => {
   return {
@@ -25,7 +26,15 @@ export const passwordChanged = text => {
 const userAuthSuccess = dispatch => {
   dispatch({ type: USER_AUTH_SUCCESS });
 
-  Actions.main();
+  const resetAction = NavigationActions.reset({
+    index: 0,
+    actions: [
+      NavigationActions.navigate({ routeName: 'home' })
+    ]
+  });
+
+  // Actions.main();
+  dispatch(resetAction);
 };
 
 const userAuthFail = (dispatch, error) => {

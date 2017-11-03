@@ -6,6 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './src/reducers';
 import ReduxThunk from 'redux-thunk';
+import { addNavigationHelpers } from 'react-navigation';
+import AppContainer from './src/containers/AppContainer';
 
 class App extends Component {
   componentWillMount() {
@@ -16,7 +18,7 @@ class App extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <Router />
+        <AppContainer />
       </Provider>
     );
   }

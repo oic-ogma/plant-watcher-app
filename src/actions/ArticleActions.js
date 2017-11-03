@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import validator from 'validator';
 import {
   PLANT_NAME_CHANGED,
@@ -43,7 +43,7 @@ export const saveArticle = (plantName, articleContents) => {
       .push({ plantName, articleContents, uid })
       .then(() => {
         dispatch({ type: ADD_ARTICLE_SUCCESS });
-        Actions.pop();
+        // Actions.pop();
       });
   };
 };

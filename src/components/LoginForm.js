@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Card, CardSection, Spinner, Input, Error } from './common';
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 
 export default class LoginForm extends Component {
@@ -22,7 +22,7 @@ export default class LoginForm extends Component {
           </Button>
         </CardSection>
         <CardSection>
-          <Button onPress={Actions.registration}>
+          <Button>
             ユーザー登録
           </Button>
         </CardSection>
