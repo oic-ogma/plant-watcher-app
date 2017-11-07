@@ -43,6 +43,23 @@ describe('authReducer', () => {
     });
   });
 
+  it('AUTH_PAGE_MOVEDを処理できる', () => {
+    const MODIFIED_STATE = {
+      email: 'test@oic.jp',
+      password: 'hogehoge',
+      error: 'test',
+      loading: false
+    };
+
+    expect(reducer(MODIFIED_STATE, {
+      type: types.AUTH_PAGE_MOVED,
+    })).toEqual({
+      ...MODIFIED_STATE,
+      password: '',
+      error: ''
+    });
+  });
+
   it('USER_AUTH_SUCCESSを処理出来る', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.USER_AUTH_SUCCESS,
