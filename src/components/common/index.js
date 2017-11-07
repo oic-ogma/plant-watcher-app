@@ -6,3 +6,5 @@ export * from './Input';
 export * from './Spinner';
 export * from './Confirm';
 export * from './Error';
+export * from './Label';
+export * from './FormInput';
