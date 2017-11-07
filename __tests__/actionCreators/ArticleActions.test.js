@@ -66,4 +66,15 @@ describe('記事関連のアクション（非同期）', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
+  // list articles
+  it('記事の取得', () => {
+    const expectedAction = [
+      { type: types.FETCH_ARTICLES_PROCESSING }
+    ];
+
+    const store = mockStore({ auth: [] });
+    store.dispatch(actions.fetchArticles());
+    expect(store.getActions()).toEqual(expectedAction);
+  });
 });
