@@ -33,6 +33,17 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run:
+          name: "ESLint"
+          command: |
+            mkdir -p ~/reports
+            yarn eslint ./src/ --format junit --output-file ~/reports/eslint.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
+
       # run tests!
       - run:
           name: jest tests
