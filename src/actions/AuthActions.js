@@ -2,6 +2,7 @@ import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
   AUTH_PROCESSING,
+  AUTH_PAGE_MOVED,
   USER_AUTH_SUCCESS,
   USER_AUTH_FAIL,
 } from './types';
@@ -21,6 +22,10 @@ export const passwordChanged = text => {
     payload: text,
   };
 };
+
+export const pageMoved = () => ({
+  type: AUTH_PAGE_MOVED
+});
 
 const userAuthSuccess = dispatch => {
   dispatch({ type: USER_AUTH_SUCCESS });
