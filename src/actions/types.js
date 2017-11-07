@@ -9,3 +9,6 @@ export const ARTICLE_CONTENTS_CHANGED = 'article_contents_changed';
 export const ADD_ARTICLE_PROCESSING = 'add_article_processing';
 export const ADD_ARTICLE_SUCCESS = 'add_article_success';
 export const ADD_ARTICLE_FAIL = 'add_article_fail';
+export const FETCH_ARTICLES_SUCCESS = 'fetch_articles_success';
+export const FETCH_ARTICLES_FAIL = 'fetch_articles_fail';
+export const FETCH_ARTICLES_PROCESSING = 'fetch_articles_processing';

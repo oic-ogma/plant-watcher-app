@@ -1,7 +1,7 @@
 import { findUserByEmail, validateEmail } from './helpers/firebase/functions';
 import firebaseData from './helpers/firebase/data';
 import faker from 'faker';
-
+import { EventEmitter } from 'events';
 let firebase = jest.genMockFromModule('firebase');
 
 const { currentUser } = firebaseData;
@@ -39,7 +39,7 @@ const signInWithEmailAndPassword = (email, password) => {
 const database = () => ({ ref });
 
 const ref = () => {
-  return { child, set, push };
+  return { child, set, push, orderByChild };
 };
 
 const child = () => ({ push });
@@ -57,5 +57,21 @@ const set = insertionObj => {
   }
   return Promise.reject('Fail');
 };
+
+const orderByChild = orderBy => {
+  return { equalTo };
+};
+
+const equalTo = uid => {
+  const myEE = new EventEmitter();
+
+  myEE.emit('value', snapshot);
+  return myEE;
+};
+
+const snapshot = {
+  val: () => ({ name: 'ArticleList' })
+};
+
 firebase = { ...firebase, auth, database };
 export default firebase;
