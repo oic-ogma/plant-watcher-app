@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput snapshot-multilineあり、valueあり 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "borderBottomColor": "#bdc6cf",
+      "borderBottomWidth": 1,
+      "marginLeft": 20,
+      "marginRight": 20,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <TextInput
+    autoGrow={true}
+    blurOnSubmit={false}
+    maxHeight={150}
+    multiline={true}
+    onChangeText={undefined}
+    placeholder="ひまわり"
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "minHeight": 36,
+          "width": 750,
+        },
+        Object {
+          "fontSize": 17.5,
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+    value="あ\\\\nい\\\\nう\\\\nえ\\\\nお\\\\n"
+  />
+</View>
+`;
+
+exports[`FormInput snapshot-multilineあり、valueなし 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "borderBottomColor": "#bdc6cf",
+      "borderBottomWidth": 1,
+      "marginLeft": 20,
+      "marginRight": 20,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <TextInput
+    autoGrow={true}
+    blurOnSubmit={false}
+    maxHeight={150}
+    multiline={true}
+    onChangeText={undefined}
+    placeholder="ひまわり"
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "minHeight": 36,
+          "width": 750,
+        },
+        Object {
+          "fontSize": 17.5,
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+    value={undefined}
+  />
+</View>
+`;
+
+exports[`FormInput snapshot-placeholderあり、valueあり 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "borderBottomColor": "#bdc6cf",
+      "borderBottomWidth": 1,
+      "marginLeft": 20,
+      "marginRight": 20,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <TextInput
+    onChangeText={undefined}
+    placeholder="ひまわり"
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "minHeight": 36,
+          "width": 750,
+        },
+        Object {
+          "fontSize": 17.5,
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+    value="たんぽぽ"
+  />
+</View>
+`;
+
+exports[`FormInput snapshot-placeholderあり、valueなし 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "borderBottomColor": "#bdc6cf",
+      "borderBottomWidth": 1,
+      "marginLeft": 20,
+      "marginRight": 20,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <TextInput
+    onChangeText={undefined}
+    placeholder="ひまわり"
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "minHeight": 36,
+          "width": 750,
+        },
+        Object {
+          "fontSize": 17.5,
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+    value={undefined}
+  />
+</View>
+`;
+
+exports[`FormInput snapshot-placeholderが空 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "borderBottomColor": "#bdc6cf",
+      "borderBottomWidth": 1,
+      "marginLeft": 20,
+      "marginRight": 20,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+    }
+  }
+>
+  <TextInput
+    onChangeText={undefined}
+    placeholder={undefined}
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "minHeight": 36,
+          "width": 750,
+        },
+        Object {
+          "fontSize": 17.5,
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+    value={undefined}
+  />
+</View>
+`;
