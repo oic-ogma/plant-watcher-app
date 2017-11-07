@@ -1,5 +1,5 @@
 import React from 'react';
-import  ListArticles from '../../src/components/common/ListArticles';
+import ListArticles from '../../src/components/common/ListArticles';
 import renderer from 'react-test-renderer';
 
 describe('記事の表示', () => {
@@ -11,7 +11,7 @@ describe('記事の表示', () => {
       fetchArticles:()=>{},
       articles: [
         {
-          articleContents: 'this is test contents. \n this contens is test data.',
+          articleContents: 'this is test contents. \n this contents is test data.',
           articleId: '-KxRJa7r69I46Xey3MnO',
           plantName: 'テスト',
           uid: 'esyBvhxqwxP5UjaUeQyokRszulJ3',

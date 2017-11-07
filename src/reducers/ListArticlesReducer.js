@@ -5,7 +5,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE =  {
-  list: '',
+  list: {},
   error: '',
   loading: false
 };

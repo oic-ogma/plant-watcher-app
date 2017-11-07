@@ -31,7 +31,7 @@ class ListArticles extends Component {
       return <Spinner size='large' />;
     }
     if (error) {
-      return (<Error message={error} />);
+      return <Error message={error} />;
     }
 
     return (

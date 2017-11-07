@@ -18,4 +18,6 @@ const mapStateToProps = ({ listArticles }) => {
   return { articles, error, loading };
 };
 
-export default connect(mapStateToProps, { fetchArticles })(ListArticlesContainer);
+const mapDispatchToProps = { fetchArticles };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListArticlesContainer);
