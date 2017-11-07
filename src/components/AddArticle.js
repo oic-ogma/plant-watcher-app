@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardSection, Spinner, Input, Button, Error } from './common';
+import { View } from 'react-native';
+import { Label, FormInputComponent } from './common';
+import { FormValidationMessage, Button } from 'react-native-elements';
 
 export default class AddArticle extends Component {
   saveArticle() {
@@ -7,53 +9,43 @@ export default class AddArticle extends Component {
     saveArticle(plantName, articleContents);
   }
 
-  renderButtons() {
-    if (this.props.loading) {
-      return <CardSection><Spinner size='large'/></CardSection>;
-    }
-    return (
-      <CardSection>
-        <Button onPress={this.saveArticle.bind(this)}>
-          投稿
-        </Button>
-      </CardSection>
-    );
-  }
-
   render() {
     const {
       plantName,
-      articleName,
+      articleContents,
       plantNameChanged,
       articleContentsChanged,
       error
     } = this.props;
 
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label='植物名'
-            placeholder='ひまわり'
-            onChangeText={plantNameChanged}
-            value={plantName}
-          />
-        </CardSection>
+      <View>
+        <Label placeholder='植物名' />
+        <FormInputComponent
+          onChangeText={plantNameChanged}
+          placeholder='ひまわり'
+          value={plantName}
+        />
 
-        <CardSection>
-          <Input
-            label='記事'
-            placeholder='植物についての説明'
-            onChangeText={articleContentsChanged}
-            value={articleName}
-            multiline={true}
-            height={120}
-          />
-        </CardSection>
+        <Label placeholder='記事'/>
+        <FormInputComponent
+          placeholder='黄色い'
+          onChangeText={articleContentsChanged}
+          multiline={true}
+          value={articleContents}
+        />
+        <FormValidationMessage labelStyle={{ fontSize: 16 }}>{error}</FormValidationMessage>
 
-        <Error message={error}/>
-        {this.renderButtons()}
-      </Card>
+        <Button
+          onPress={this.saveArticle.bind(this)}
+          title='投稿'
+          raised
+          large
+          loading={this.props.loading}
+          backgroundColor='green'
+        />
+
+      </View>
     );
   }
 }
