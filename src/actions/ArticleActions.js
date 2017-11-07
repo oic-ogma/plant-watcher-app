@@ -54,32 +54,24 @@ export const saveArticle = (plantName, articleContents) => {
 
 
 // listArticles
-const fetchArticlesFail = (dispatch, error) => {
-  dispatch({
-    type: FETCH_ARTICLES_FAIL,
-    payload: error,
-  });
-};
-
-const fetchArticlesSuccess = (dispatch, articles) => {
-  dispatch ({
-    type: FETCH_ARTICLES_SUCCESS,
-    payload: articles,
-  });
-};
-
 export const fetchArticles = () => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
-  const articleRef = firebase.database().ref('/articles/');
+  const ref = firebase.database().ref('articles');
 
-  return (dispatch) => {
+  return dispatch => {
     dispatch({ type: FETCH_ARTICLES_PROCESSING });
-    articleRef.orderByChild('uid').equalTo(uid).on('value', snapshot => {
+    ref.orderByChild('uid').equalTo(uid).on('value', snapshot => {
       if (snapshot.val() != null) {
-        fetchArticlesSuccess(dispatch, snapshot.val());
+        dispatch({
+          type: FETCH_ARTICLES_SUCCESS,
+          payload: snapshot.val()
+        });
       } else {
-        fetchArticlesFail(dispatch, '記事が見つかりません');
+        dispatch({
+          type: FETCH_ARTICLES_FAIL,
+          payload: '記事が見つかりません',
+        });
       }
     });
   };

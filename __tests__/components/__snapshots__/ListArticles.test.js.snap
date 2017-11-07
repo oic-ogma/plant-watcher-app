@@ -98,7 +98,7 @@ exports[`記事の表示 snapshot-正しく画面が呼び出される 1`] = `
             ellipsizeMode="tail"
           >
             this is test contents. 
-             this contens is test data.
+             this contents is test data.
           </Text>
         </View>
       </View>

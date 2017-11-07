@@ -184,7 +184,7 @@ exports[`記事の表示 snapshot-普通 1`] = `
         ellipsizeMode="tail"
       >
         this is test contents. 
-         this contens is test data.
+         this contents is test data.
       </Text>
     </View>
   </View>

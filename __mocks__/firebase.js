@@ -70,7 +70,7 @@ const equalTo = uid => {
 };
 
 const snapshot = {
-  val: () => ({ name: 'Davis' })
+  val: () => ({ name: 'ArticleList' })
 };
 
 firebase = { ...firebase, auth, database };
