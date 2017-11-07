@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelComponent snapshot-placeholderが渡されている 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {},
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        Array [
+          Object {
+            "color": "#86939e",
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "marginBottom": 1,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 15,
+          },
+          Object {
+            "fontSize": 20,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    ひまわり
+  </Text>
+</View>
+`;
+
+exports[`LabelComponent snapshot-普通 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {},
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        Array [
+          Object {
+            "color": "#86939e",
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "marginBottom": 1,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 15,
+          },
+          Object {
+            "fontSize": 20,
+          },
+          undefined,
+        ],
+      ]
+    }
+  />
+</View>
+`;
