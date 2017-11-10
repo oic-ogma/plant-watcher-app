@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import ListArticles from '../components/common/ListArticles';
 import { fetchArticles } from '../actions';
 
-class ListArticlesContainer extends Component {
-  componentWillMount() {
-    this.props.fetchArticles();
-  }
-  render() {
-    return <ListArticles {...this.props} />;
-  }
-}
+const SearchResultsContainer = props => {
+  return <ListArticles {...props} />;
+};
 
 const mapStateToProps = ({ listArticles }) => {
   const { list, error, loading } = listArticles;
@@ -24,4 +19,4 @@ const mapStateToProps = ({ listArticles }) => {
 
 const mapDispatchToProps = { fetchArticles };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListArticlesContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResultsContainer);

@@ -9,7 +9,10 @@ import {
   ADD_ARTICLE_FAIL,
   FETCH_ARTICLES_SUCCESS,
   FETCH_ARTICLES_FAIL,
-  FETCH_ARTICLES_PROCESSING
+  FETCH_ARTICLES_PROCESSING,
+  TEXT_SEARCH_ARTICLE_SUCCESS,
+  TEXT_SEARCH_ARTICLE_FAIL,
+  TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED
 } from './types';
 
 // addArticle
@@ -20,6 +23,11 @@ export const plantNameChanged = text => ({
 
 export const articleContentsChanged = text => ({
   type: ARTICLE_CONTENTS_CHANGED,
+  payload: text
+});
+
+export const searchArticlePlantNameChanged = text => ({
+  type: TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
   payload: text
 });
 
@@ -75,4 +83,43 @@ export const fetchArticles = () => {
       }
     });
   };
+};
+
+// articleSearch
+export const textSearchArticle = plantName => {
+  if (!plantName) {
+    return {
+      type: TEXT_SEARCH_ARTICLE_FAIL,
+      payload: '植物名が入力されていません。'
+    };
+  } else if (plantName.length >= 25) {
+    return {
+      type: TEXT_SEARCH_ARTICLE_FAIL,
+      payload: '植物名が長すぎます。'
+    };
+  }
+  return dispatch => {
+    dispatch({ type: TEXT_SEARCH_ARTICLE_SUCCESS });
+    dispatch({ type: FETCH_ARTICLES_PROCESSING });
+    getSearchResults(dispatch, plantName);
+  };
+};
+
+const getSearchResults = (dispatch, plantName) => {
+  Actions.searchresults();
+  const ref = firebase.database().ref('articles');
+
+  ref.orderByChild('plantName').equalTo(plantName).on('value', snapshot => {
+    if (snapshot.val()) {
+      dispatch({
+        type: FETCH_ARTICLES_SUCCESS,
+        payload: snapshot.val()
+      });
+    } else {
+      dispatch({
+        type: FETCH_ARTICLES_FAIL,
+        payload: '一致する結果が見つかりませんでした。'
+      });
+    }
+  });
 };

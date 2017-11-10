@@ -4,7 +4,6 @@ import { ListView } from 'react-native';
 
 class ListArticles extends Component {
   componentWillMount() {
-    this.props.fetchArticles();
     this.createDataSource(this.props);
   }
 
