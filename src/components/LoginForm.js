@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Card, CardSection, Spinner, Input, Error } from './common';
+import { Label, Error, FormInputComponent } from './common';
 import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
+import { Button } from 'react-native-elements';
+import { Platform } from 'react-native';
 
 export default class LoginForm extends Component {
   onButtonPress() {
@@ -11,21 +13,23 @@ export default class LoginForm extends Component {
   }
 
   renderButtons() {
-    if (this.props.loading) {
-      return <CardSection><Spinner size='large' /></CardSection>;
-    }
     return (
       <View>
-        <CardSection>
-          <Button onPress={this.onButtonPress.bind(this)}>
-            ログイン
-          </Button>
-        </CardSection>
-        <CardSection>
-          <Button onPress={Actions.registration}>
-            ユーザー登録
-          </Button>
-        </CardSection>
+        <Button style={style.buttonStyle}
+          onPress={this.onButtonPress.bind(this)}
+          raised
+          large
+          loading={this.props.loading}
+          loadingRight={true}
+          title='ログイン'
+          backgroundColor='blue'/>
+
+        <Button style={style.buttonStyle}
+          onPress={Actions.registration}
+          raised
+          large
+          title='ユーザー登録'
+          backgroundColor='#228b22'/>
       </View>
     );
   }
@@ -40,30 +44,37 @@ export default class LoginForm extends Component {
     } = this.props;
 
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label='メールアドレス'
-            placeholder='example@hoge.com'
-            onChangeText={emailChanged}
-            value={email}
-          />
-        </CardSection>
+      <View>
+        <Label placeholder='メールアドレス'/>
+        <FormInputComponent
+          placeholder='example@hoge.com'
+          onChangeText={emailChanged}
+          value={email}
+        />
 
-        <CardSection>
-          <Input
-            secureTextEntry
-            label='パスワード'
-            placeholder='パスワード'
-            onChangeText={passwordChanged}
-            value={password}
-          />
-        </CardSection>
+        <Label placeholder='パスワード'/>
+        <FormInputComponent
+          secureTextEntry
+          placeholder='パスワード'
+          onChangeText={passwordChanged}
+          value={password}
+        />
 
         <Error message={error}/>
 
         {this.renderButtons()}
-      </Card>
+      </View>
     );
   }
 }
+
+const style = {
+  buttonStyle: {
+    marginBottom: 5,
+    ...Platform.select({
+      android: {
+        marginBottom: 5
+      }
+    })
+  }
+};
