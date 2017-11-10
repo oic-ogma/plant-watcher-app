@@ -110,6 +110,7 @@ exports[`FormInput snapshot-placeholderあり、valueあり 1`] = `
   <TextInput
     onChangeText={undefined}
     placeholder="ひまわり"
+    secureTextEntry={undefined}
     selectionColor="#86939e"
     style={
       Array [
@@ -151,6 +152,7 @@ exports[`FormInput snapshot-placeholderあり、valueなし 1`] = `
   <TextInput
     onChangeText={undefined}
     placeholder="ひまわり"
+    secureTextEntry={undefined}
     selectionColor="#86939e"
     style={
       Array [
@@ -192,6 +194,7 @@ exports[`FormInput snapshot-placeholderが空 1`] = `
   <TextInput
     onChangeText={undefined}
     placeholder={undefined}
+    secureTextEntry={undefined}
     selectionColor="#86939e"
     style={
       Array [
