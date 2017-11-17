@@ -19,8 +19,8 @@ export default class ArticleSearch extends Component {
         <SearchBarComponent
           onChangeText={searchArticlePlantNameChanged}
           placeholder='植物名'
-          hasText={!!plantName}
           onSubmitEditing={this.onSubmit.bind(this)}
+          value={plantName}
         />
 
         <FormValidationMessage>
