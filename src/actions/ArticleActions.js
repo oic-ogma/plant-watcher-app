@@ -52,7 +52,7 @@ export const saveArticle = (plantName, articleContents) => {
     dispatch({ type: ADD_ARTICLE_PROCESSING });
     const ref = firebase.database().ref('articles');
     return ref
-      .push({ plantName, articleContents, uid })
+      .push({ plantName, articleContents, uid, createdAt: firebase.database.ServerValue.TIMESTAMP })
       .then(() => {
         dispatch({ type: ADD_ARTICLE_SUCCESS });
         Actions.pop();
