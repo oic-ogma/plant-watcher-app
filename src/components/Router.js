@@ -5,8 +5,9 @@ import LoginFormContainer from '../containers/LoginFormContainer';
 import RegistrationFormContainer from '../containers/RegistrationFormContainer';
 import AddArticleContainer from '../containers/AddArticleContainer';
 import Home from './Home';
+import ArticleSearchContainer from '../containers/ArticleSearchContainer';
 import ListArticlesContainer from '../containers/ListArticlesContainer';
-import ArticleSearch from './ArticleSearch';
+import SearchResultsContainer from '../containers/SearchResultsContainer';
 import firebase from 'firebase';
 
 const checkLoginStatus = () => {
@@ -23,9 +24,10 @@ const RouterComponent = ({ pageMoved }) => (
       </Scene>
       <Scene key='main'>
         <Scene initial key='home' component={Home} title='ホーム' panHandlers={null} />
-        <Scene key='articlesearch' component={ArticleSearch} title='検索' />
+        <Scene key='articlesearch' component={ArticleSearchContainer} title='検索' />
         <Scene key='addarticle' component={AddArticleContainer} title='記事投稿' />
         <Scene key='listarticles' component={ListArticlesContainer} title='記事一覧' />
+        <Scene key='searchresults' component={SearchResultsContainer} title='検索結果' />
       </Scene>
     </Scene>
   </Router>

@@ -46,6 +46,34 @@ describe('記事関連のアクション', () => {
 
     expect(actions.saveArticle(plantName, articleContents)).toEqual(expectedAction);
   });
+
+  it('検索フィールドで植物名の変更', () => {
+    const plantName = 'ひまわり';
+    const expectedAction = {
+      type: types.TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
+      payload: plantName,
+    };
+
+    expect(actions.searchArticlePlantNameChanged(plantName)).toEqual(expectedAction);
+  });
+
+  it('植物名を入力せず記事検索', () => {
+    const expectedAction = {
+      type: types.TEXT_SEARCH_ARTICLE_FAIL,
+      payload: '植物名が入力されていません。'
+    };
+
+    expect(actions.textSearchArticle('')).toEqual(expectedAction);
+  });
+
+  it('植物名が長すぎる記事検索', () => {
+    const expectedAction = {
+      type: types.TEXT_SEARCH_ARTICLE_FAIL,
+      payload: '植物名が長すぎます。'
+    };
+
+    expect(actions.textSearchArticle(faker.lorem.words(26))).toEqual(expectedAction);
+  });
 });
 
 const middlewares = [ thunk ];
@@ -76,5 +104,16 @@ describe('記事関連のアクション（非同期）', () => {
     const store = mockStore({ auth: [] });
     store.dispatch(actions.fetchArticles());
     expect(store.getActions()).toEqual(expectedAction);
+  });
+
+  it('正しく入力された記事検索', () => {
+    const expectedActions = [
+      { type: types.TEXT_SEARCH_ARTICLE_SUCCESS },
+      { type: types.FETCH_ARTICLES_PROCESSING }
+    ];
+
+    const store = mockStore({ auth: [] });
+    store.dispatch(actions.textSearchArticle('ひまわり'));
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
