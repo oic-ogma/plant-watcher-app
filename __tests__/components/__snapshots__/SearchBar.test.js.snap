@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`サーチバー snapshot-hasTextがTrue 1`] = `
+exports[`サーチバー snapshot-valueが入力されていない 1`] = `
 <View
   style={
     Array [
@@ -27,7 +27,108 @@ exports[`サーチバー snapshot-hasTextがTrue 1`] = `
   <TextInput
     onChangeText={undefined}
     onSubmitEditing={undefined}
-    placeholder={undefined}
+    placeholder="植物名"
+    placeholderTextColor="#86939e"
+    selectionColor="#86939e"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#303337",
+          "borderRadius": 3,
+          "color": "#86939e",
+          "fontSize": 17.5,
+          "height": 30,
+          "margin": 8,
+          "overflow": "hidden",
+          "paddingLeft": 26,
+          "paddingRight": 19,
+        },
+        Object {
+          "backgroundColor": "#bdc6cf",
+        },
+        false,
+        Object {
+          "borderRadius": 15,
+        },
+        Object {
+          "fontSize": 20,
+          "height": 50,
+          "paddingLeft": 45,
+        },
+        null,
+        false,
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value={undefined}
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={false}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "#86939e",
+          "fontSize": 16,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "position": "absolute",
+            "top": 15.5,
+          },
+          Object {
+            "left": 16,
+          },
+          Object {
+            "fontSize": 30,
+            "top": 17.5,
+            "width": 30,
+          },
+        ],
+        Object {
+          "fontFamily": "Material Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`サーチバー snapshot-valueに値が入力されている 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#393e42",
+        "borderBottomColor": "#000",
+        "borderBottomWidth": 1,
+        "borderTopColor": "#000",
+        "borderTopWidth": 1,
+      },
+      Object {
+        "backgroundColor": "#e1e8ee",
+        "borderBottomColor": "#e1e1e1",
+        "borderTopColor": "#e1e1e1",
+      },
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomColor": "#FFF",
+        "borderTopColor": "#FFF",
+      },
+    ]
+  }
+>
+  <TextInput
+    onChangeText={undefined}
+    onSubmitEditing={undefined}
+    placeholder="植物名"
     placeholderTextColor="#86939e"
     selectionColor="#86939e"
     style={
@@ -62,6 +163,7 @@ exports[`サーチバー snapshot-hasTextがTrue 1`] = `
       ]
     }
     underlineColorAndroid="transparent"
+    value="ひまわり"
   />
   <Text
     accessible={true}
@@ -139,206 +241,6 @@ exports[`サーチバー snapshot-hasTextがTrue 1`] = `
 </View>
 `;
 
-exports[`サーチバー snapshot-hasTextがfalse 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#393e42",
-        "borderBottomColor": "#000",
-        "borderBottomWidth": 1,
-        "borderTopColor": "#000",
-        "borderTopWidth": 1,
-      },
-      Object {
-        "backgroundColor": "#e1e8ee",
-        "borderBottomColor": "#e1e1e1",
-        "borderTopColor": "#e1e1e1",
-      },
-      Object {
-        "backgroundColor": "#FFF",
-        "borderBottomColor": "#FFF",
-        "borderTopColor": "#FFF",
-      },
-    ]
-  }
->
-  <TextInput
-    onChangeText={undefined}
-    onSubmitEditing={undefined}
-    placeholder={undefined}
-    placeholderTextColor="#86939e"
-    selectionColor="#86939e"
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#303337",
-          "borderRadius": 3,
-          "color": "#86939e",
-          "fontSize": 17.5,
-          "height": 30,
-          "margin": 8,
-          "overflow": "hidden",
-          "paddingLeft": 26,
-          "paddingRight": 19,
-        },
-        Object {
-          "backgroundColor": "#bdc6cf",
-        },
-        false,
-        Object {
-          "borderRadius": 15,
-        },
-        Object {
-          "fontSize": 20,
-          "height": 50,
-          "paddingLeft": 45,
-        },
-        null,
-        false,
-      ]
-    }
-    underlineColorAndroid="transparent"
-  />
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#86939e",
-          "fontSize": 16,
-        },
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "position": "absolute",
-            "top": 15.5,
-          },
-          Object {
-            "left": 16,
-          },
-          Object {
-            "fontSize": 30,
-            "top": 17.5,
-            "width": 30,
-          },
-        ],
-        Object {
-          "fontFamily": "Material Icons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
-    }
-  >
-    
-  </Text>
-</View>
-`;
-
-exports[`サーチバー snapshot-placeholderが入力されている 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#393e42",
-        "borderBottomColor": "#000",
-        "borderBottomWidth": 1,
-        "borderTopColor": "#000",
-        "borderTopWidth": 1,
-      },
-      Object {
-        "backgroundColor": "#e1e8ee",
-        "borderBottomColor": "#e1e1e1",
-        "borderTopColor": "#e1e1e1",
-      },
-      Object {
-        "backgroundColor": "#FFF",
-        "borderBottomColor": "#FFF",
-        "borderTopColor": "#FFF",
-      },
-    ]
-  }
->
-  <TextInput
-    onChangeText={undefined}
-    onSubmitEditing={undefined}
-    placeholder="植物名"
-    placeholderTextColor="#86939e"
-    selectionColor="#86939e"
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#303337",
-          "borderRadius": 3,
-          "color": "#86939e",
-          "fontSize": 17.5,
-          "height": 30,
-          "margin": 8,
-          "overflow": "hidden",
-          "paddingLeft": 26,
-          "paddingRight": 19,
-        },
-        Object {
-          "backgroundColor": "#bdc6cf",
-        },
-        false,
-        Object {
-          "borderRadius": 15,
-        },
-        Object {
-          "fontSize": 20,
-          "height": 50,
-          "paddingLeft": 45,
-        },
-        null,
-        false,
-      ]
-    }
-    underlineColorAndroid="transparent"
-  />
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#86939e",
-          "fontSize": 16,
-        },
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "position": "absolute",
-            "top": 15.5,
-          },
-          Object {
-            "left": 16,
-          },
-          Object {
-            "fontSize": 30,
-            "top": 17.5,
-            "width": 30,
-          },
-        ],
-        Object {
-          "fontFamily": "Material Icons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
-    }
-  >
-    
-  </Text>
-</View>
-`;
-
 exports[`サーチバー snapshot-普通 1`] = `
 <View
   style={
@@ -399,6 +301,7 @@ exports[`サーチバー snapshot-普通 1`] = `
       ]
     }
     underlineColorAndroid="transparent"
+    value={undefined}
   />
   <Text
     accessible={true}

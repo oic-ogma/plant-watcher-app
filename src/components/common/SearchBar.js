@@ -1,7 +1,7 @@
 import React from 'react';
 import { SearchBar } from 'react-native-elements';
 
-export const SearchBarComponent = ({ placeholder, onChangeText, hasText, onSubmitEditing }) => {
+export const SearchBarComponent = ({ placeholder, onChangeText, onSubmitEditing, value }) => {
   const { container, input, icon, clearIcon } = styles;
   return (
     <SearchBar
@@ -12,8 +12,9 @@ export const SearchBarComponent = ({ placeholder, onChangeText, hasText, onSubmi
       inputStyle={input}
       icon={{ style: icon }}
       placeholder={placeholder}
-      clearIcon={hasText ? { style: clearIcon } : null}
+      clearIcon={value ? { style: clearIcon } : null}
       onSubmitEditing={onSubmitEditing}
+      value={value}
     />
   );
 };

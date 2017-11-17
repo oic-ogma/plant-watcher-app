@@ -8,18 +8,13 @@ describe('サーチバー', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('snapshot-placeholderが入力されている', () => {
+  it('snapshot-valueが入力されていない', () => {
     const tree = renderer.create(<SearchBarComponent placeholder={'植物名'}/>);
     expect(tree).toMatchSnapshot();
   });
 
-  it('snapshot-hasTextがTrue', () => {
-    const tree = renderer.create(<SearchBarComponent hasText={true}/>);
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('snapshot-hasTextがfalse', () => {
-    const tree = renderer.create(<SearchBarComponent hasText={false}/>);
+  it('snapshot-valueに値が入力されている',() => {
+    const tree = renderer.create(<SearchBarComponent value={'ひまわり'} placeholder={'植物名'}/>);
     expect(tree).toMatchSnapshot();
   });
 });

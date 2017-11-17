@@ -67,6 +67,7 @@ exports[`記事検索 snapshot-errorが出ている 1`] = `
         ]
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <Text
       accessible={true}
@@ -365,6 +366,7 @@ exports[`記事検索 snapshot-plantNameが入力されている 1`] = `
         ]
       }
       underlineColorAndroid="transparent"
+      value="ひまわり"
     />
     <Text
       accessible={true}
@@ -698,6 +700,7 @@ exports[`記事検索 snapshot-普通 1`] = `
         ]
       }
       underlineColorAndroid="transparent"
+      value={undefined}
     />
     <Text
       accessible={true}
