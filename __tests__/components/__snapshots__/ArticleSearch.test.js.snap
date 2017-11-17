@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`記事検索 snapshot-普通 1`] = `
+exports[`記事検索 snapshot-errorが出ている 1`] = `
 <View
   style={
     Object {
@@ -32,6 +32,305 @@ exports[`記事検索 snapshot-普通 1`] = `
     }
   >
     <TextInput
+      onChangeText={undefined}
+      onSubmitEditing={[Function]}
+      placeholder="植物名"
+      placeholderTextColor="#86939e"
+      selectionColor="#86939e"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#303337",
+            "borderRadius": 3,
+            "color": "#86939e",
+            "fontSize": 17.5,
+            "height": 30,
+            "margin": 8,
+            "overflow": "hidden",
+            "paddingLeft": 26,
+            "paddingRight": 19,
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+          },
+          false,
+          Object {
+            "borderRadius": 15,
+          },
+          Object {
+            "fontSize": 20,
+            "height": 50,
+            "paddingLeft": 45,
+          },
+          null,
+          false,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#86939e",
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "position": "absolute",
+              "top": 15.5,
+            },
+            Object {
+              "left": 16,
+            },
+            Object {
+              "fontSize": 30,
+              "top": 17.5,
+              "width": 30,
+            },
+          ],
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {},
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Array [
+            Object {
+              "color": "#ff190c",
+              "fontSize": 15,
+              "marginBottom": 1,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 5,
+            },
+            undefined,
+            undefined,
+          ],
+        ]
+      }
+    >
+      ほげほげ
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "marginLeft": 15,
+          "marginRight": 15,
+        },
+        Object {
+          "shadowColor": "rgba(0,0,0, .4)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 1,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 1,
+        },
+        Object {
+          "marginBottom": 30,
+          "marginTop": 50,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9E9E9E",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 19,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {
+              "backgroundColor": "green",
+            },
+            undefined,
+            false,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "white",
+                "fontSize": 26,
+              },
+              Array [
+                Object {
+                  "marginRight": 10,
+                },
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                },
+                undefined,
+                false,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          カメラで撮影して検索
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`記事検索 snapshot-plantNameが入力されている 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#393e42",
+          "borderBottomColor": "#000",
+          "borderBottomWidth": 1,
+          "borderTopColor": "#000",
+          "borderTopWidth": 1,
+        },
+        Object {
+          "backgroundColor": "#e1e8ee",
+          "borderBottomColor": "#e1e1e1",
+          "borderTopColor": "#e1e1e1",
+        },
+        Object {
+          "backgroundColor": "#FFF",
+          "borderBottomColor": "#FFF",
+          "borderTopColor": "#FFF",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onChangeText={undefined}
+      onSubmitEditing={[Function]}
       placeholder="植物名"
       placeholderTextColor="#86939e"
       selectionColor="#86939e"
@@ -67,6 +366,7 @@ exports[`記事検索 snapshot-普通 1`] = `
         ]
       }
       underlineColorAndroid="transparent"
+      value="ひまわり"
     />
     <Text
       accessible={true}
@@ -141,6 +441,344 @@ exports[`記事検索 snapshot-普通 1`] = `
     >
       
     </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {},
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Array [
+            Object {
+              "color": "#ff190c",
+              "fontSize": 15,
+              "marginBottom": 1,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 5,
+            },
+            undefined,
+            undefined,
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "marginLeft": 15,
+          "marginRight": 15,
+        },
+        Object {
+          "shadowColor": "rgba(0,0,0, .4)",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 1,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 1,
+        },
+        Object {
+          "marginBottom": 30,
+          "marginTop": 50,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#9E9E9E",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "padding": 19,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {
+              "backgroundColor": "green",
+            },
+            undefined,
+            false,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "white",
+                "fontSize": 26,
+              },
+              Array [
+                Object {
+                  "marginRight": 10,
+                },
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "white",
+                  "fontSize": 20,
+                },
+                undefined,
+                false,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        >
+          カメラで撮影して検索
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`記事検索 snapshot-普通 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#393e42",
+          "borderBottomColor": "#000",
+          "borderBottomWidth": 1,
+          "borderTopColor": "#000",
+          "borderTopWidth": 1,
+        },
+        Object {
+          "backgroundColor": "#e1e8ee",
+          "borderBottomColor": "#e1e1e1",
+          "borderTopColor": "#e1e1e1",
+        },
+        Object {
+          "backgroundColor": "#FFF",
+          "borderBottomColor": "#FFF",
+          "borderTopColor": "#FFF",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onChangeText={undefined}
+      onSubmitEditing={[Function]}
+      placeholder="植物名"
+      placeholderTextColor="#86939e"
+      selectionColor="#86939e"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#303337",
+            "borderRadius": 3,
+            "color": "#86939e",
+            "fontSize": 17.5,
+            "height": 30,
+            "margin": 8,
+            "overflow": "hidden",
+            "paddingLeft": 26,
+            "paddingRight": 19,
+          },
+          Object {
+            "backgroundColor": "#bdc6cf",
+          },
+          false,
+          Object {
+            "borderRadius": 15,
+          },
+          Object {
+            "fontSize": 20,
+            "height": 50,
+            "paddingLeft": 45,
+          },
+          null,
+          false,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value={undefined}
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#86939e",
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "position": "absolute",
+              "top": 15.5,
+            },
+            Object {
+              "left": 16,
+            },
+            Object {
+              "fontSize": 30,
+              "top": 17.5,
+              "width": 30,
+            },
+          ],
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {},
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Array [
+            Object {
+              "color": "#ff190c",
+              "fontSize": 15,
+              "marginBottom": 1,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 5,
+            },
+            undefined,
+            undefined,
+          ],
+        ]
+      }
+    />
   </View>
   <View
     style={
