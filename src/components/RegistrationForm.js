@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Card, CardSection, Input, Spinner, Error } from './common';
+import { Error, Label, FormInputComponent } from './common';
+import { Button } from 'react-native-elements';
+import { View } from 'react-native';
 
 export default class RegistrationForm extends Component {
   onButtonPress () {
@@ -8,13 +10,16 @@ export default class RegistrationForm extends Component {
   }
 
   renderButton () {
-    if (this.props.loading) {
-      return <Spinner size='large' />;
-    }
+
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>
-        登録
-      </Button>
+      <Button onPress={this.onButtonPress.bind(this)}
+        raised
+        large
+        loading={this.props.loading}
+        loadingRight={true}
+        title='登録'
+        backgroundColor='#228b22'/>
+
     );
   }
 
@@ -28,33 +33,27 @@ export default class RegistrationForm extends Component {
     } = this.props;
 
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label='メールアドレス'
-            placeholder='example@hoge.com'
-            onChangeText={emailChanged}
-            value={email}
-          />
-        </CardSection>
+      <View>
+        <Label placeholder='メールアドレス'/>
+        <FormInputComponent
+          placeholder='example@hoge.com'
+          onChangeText={emailChanged}
+          value={email}
+        />
 
-        <CardSection>
-          <Input
-            secureTextEntry
-            label='パスワード'
-            placeholder='パスワード'
-            onChangeText={passwordChanged}
-            value={password}
-          />
-        </CardSection>
+        <Label placeholder='パスワード'/>
+        <FormInputComponent
+          secureTextEntry
+          placeholder='パスワード'
+          onChangeText={passwordChanged}
+          value={password}
+        />
 
         <Error message={error}/>
 
-        <CardSection>
-          {this.renderButton()}
-        </CardSection>
+        {this.renderButton()}
 
-      </Card>
+      </View>
     );
   }
 }
