@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormInput } from 'react-native-elements';
-import { Platform } from 'react-native';
+import { Platform  } from 'react-native';
 
-export const FormInputComponent = ({ placeholder, multiline, onChangeText, value }) => {
+export const FormInputComponent = ({ placeholder, multiline, onChangeText, value, secureTextEntry }) => {
   const { input, multilineInput } = styles;
   if (multiline) {
     return (
@@ -20,6 +20,7 @@ export const FormInputComponent = ({ placeholder, multiline, onChangeText, value
   }
   return (
     <FormInput
+      secureTextEntry={secureTextEntry}
       onChangeText={onChangeText}
       placeholder={placeholder}
       value={value}

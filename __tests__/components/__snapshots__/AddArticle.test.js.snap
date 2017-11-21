@@ -67,6 +67,7 @@ exports[`記事投稿 snapshot-エラーが出ている 1`] = `
     <TextInput
       onChangeText={undefined}
       placeholder="ひまわり"
+      secureTextEntry={undefined}
       selectionColor="#86939e"
       style={
         Array [
@@ -405,6 +406,7 @@ exports[`記事投稿 snapshot-ロード中 1`] = `
     <TextInput
       onChangeText={undefined}
       placeholder="ひまわり"
+      secureTextEntry={undefined}
       selectionColor="#86939e"
       style={
         Array [
@@ -758,6 +760,7 @@ exports[`記事投稿 snapshot-普通 1`] = `
     <TextInput
       onChangeText={undefined}
       placeholder="ひまわり"
+      secureTextEntry={undefined}
       selectionColor="#86939e"
       style={
         Array [
@@ -1093,6 +1096,7 @@ exports[`記事投稿 snapshot-植物名と記事が入力されている 1`] = 
     <TextInput
       onChangeText={undefined}
       placeholder="ひまわり"
+      secureTextEntry={undefined}
       selectionColor="#86939e"
       style={
         Array [
