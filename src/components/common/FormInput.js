@@ -1,11 +1,10 @@
 import React from 'react';
 import { FormInput } from 'react-native-elements';
-import { Platform,  } from 'react-native';
+import { Platform  } from 'react-native';
 
 export const FormInputComponent = ({ placeholder, multiline, onChangeText, value, secureTextEntry }) => {
   const { input, multilineInput } = styles;
   if (multiline) {
-
     return (
       <FormInput
         placeholder={placeholder}
