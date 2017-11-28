@@ -105,7 +105,7 @@ export const textSearchArticle = plantName => {
   };
 };
 
-const getSearchResults = (dispatch, plantName) => {
+export const getSearchResults = (dispatch, plantName) => {
   Actions.searchresults();
   const ref = firebase.database().ref('articles');
 
