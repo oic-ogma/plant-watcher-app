@@ -33,7 +33,7 @@ export default class RegistrationForm extends Component {
     } = this.props;
 
     return (
-      <View>
+      <View  style={{ marginTop: 140 }}>
         <Label placeholder='メールアドレス'/>
         <FormInputComponent
           placeholder='example@hoge.com'

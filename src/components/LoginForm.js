@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Label, Error, FormInputComponent } from './common';
-import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Platform } from 'react-native';
@@ -23,13 +22,6 @@ export default class LoginForm extends Component {
           loadingRight={true}
           title='ログイン'
           backgroundColor='blue'/>
-
-        <Button style={style.buttonStyle}
-          onPress={Actions.registration}
-          raised
-          large
-          title='ユーザー登録'
-          backgroundColor='#228b22'/>
       </View>
     );
   }
@@ -44,7 +36,7 @@ export default class LoginForm extends Component {
     } = this.props;
 
     return (
-      <View>
+      <View style={style.margin}>
         <Label placeholder='メールアドレス'/>
         <FormInputComponent
           placeholder='example@hoge.com'
@@ -76,5 +68,8 @@ const style = {
         marginBottom: 5
       }
     })
+  },
+  margin: {
+    marginTop: 140,
   }
 };
