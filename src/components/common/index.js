@@ -10,3 +10,4 @@ export * from './ListItem';
 export * from './ListArticles';
 export * from './Label';
 export * from './FormInput';
+export * from './IconWrapper';

@@ -6,10 +6,17 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './src/reducers';
 import ReduxThunk from 'redux-thunk';
+import { Font } from 'expo';
 
 class App extends Component {
   componentWillMount() {
     firebase.initializeApp(config);
+  }
+
+  componentDidMount() {
+    Font.loadAsync({
+      'Great Vibes': require('./src/assets/fonts/GreatVibes-Regular.ttf'),
+    });
   }
 
   render() {

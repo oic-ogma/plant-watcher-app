@@ -21,21 +21,25 @@ export const SearchBarComponent = ({ placeholder, onChangeText, onSubmitEditing,
 
 const styles = {
   container: {
-    backgroundColor: '#FFF',
-    borderBottomColor: '#FFF',
-    borderTopColor: '#FFF'
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderBottomColor: 'rgba(0,0,0,0)',
+    borderTopColor: 'rgba(0,0,0,0)',
   },
   input: {
     fontSize: 20,
     height: 50,
-    paddingLeft: 45
+    paddingLeft: '10%',
+    marginLeft: '10%',
+    marginRight: '10%'
   },
   icon: {
     top: 17.5,
     width: 30,
+    marginLeft: '8%',
     fontSize: 30
   },
   clearIcon: {
+    marginRight: '3%',
     top: 17.5,
     width: 30,
     fontSize: 30
