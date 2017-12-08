@@ -3,6 +3,7 @@ import { Button } from  'react-native-elements';
 import { View, Keyboard } from 'react-native';
 import { FormValidationMessage } from 'react-native-elements';
 import { SearchBarComponent } from './common/SearchBar';
+import { Actions } from 'react-native-router-flux';
 
 export default class ArticleSearch extends Component {
   onSubmit() {
@@ -34,6 +35,7 @@ export default class ArticleSearch extends Component {
           containerViewStyle={buttonStyle}
           title='カメラで撮影して検索'
           backgroundColor='green'
+          onPress={Actions.imagesearch}
         />
       </View>
     );
