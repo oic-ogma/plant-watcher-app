@@ -13,7 +13,7 @@ import { IconWrapper } from './common';
 import ImageSearchContainer from '../containers/ImageSearchContainer';
 
 const checkLoginStatus = () => {
-  firebase.auth().onAuthStateChanged(user => user ? Actions.main() : Actions.auth());
+  firebase.auth().onAuthStateChanged(user => user ? Actions.auth() : Actions.auth());
 };
 
 const RouterComponent = ({ pageMoved }) => (
@@ -49,7 +49,6 @@ const RouterComponent = ({ pageMoved }) => (
           tabBarLabel='ログイン'
           panHandlers={null}
           name='login'
-
           type='simple-line-icon'
           icon={IconWrapper}
         />

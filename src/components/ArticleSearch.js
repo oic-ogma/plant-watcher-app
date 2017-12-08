@@ -68,7 +68,7 @@ const styles = {
   textStyle: {
     marginBottom: '15%',
     marginTop: '15%',
-    fontWeight: 85,
+    letterSpacing: 5,
     textAlign: 'center',
     color: 'rgb(255,255,255)',
     backgroundColor: 'rgba(0,0,0,0)'

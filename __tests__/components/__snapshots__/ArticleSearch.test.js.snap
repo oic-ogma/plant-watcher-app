@@ -61,6 +61,7 @@ exports[`記事検索 snapshot-errorが出ている 1`] = `
         Object {
           "backgroundColor": "rgba(0,0,0,0)",
           "color": "rgb(255,255,255)",
+          "letterSpacing": 5,
           "marginBottom": "15%",
           "marginTop": "15%",
           "textAlign": "center",
@@ -433,6 +434,7 @@ exports[`記事検索 snapshot-plantNameが入力されている 1`] = `
         Object {
           "backgroundColor": "rgba(0,0,0,0)",
           "color": "rgb(255,255,255)",
+          "letterSpacing": 5,
           "marginBottom": "15%",
           "marginTop": "15%",
           "textAlign": "center",
@@ -845,6 +847,7 @@ exports[`記事検索 snapshot-普通 1`] = `
         Object {
           "backgroundColor": "rgba(0,0,0,0)",
           "color": "rgb(255,255,255)",
+          "letterSpacing": 5,
           "marginBottom": "15%",
           "marginTop": "15%",
           "textAlign": "center",
