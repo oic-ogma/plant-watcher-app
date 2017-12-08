@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`登録フォーム snapshot-エラーが出ている 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
   <View
     style={
       Array [
@@ -322,7 +328,13 @@ exports[`登録フォーム snapshot-エラーが出ている 1`] = `
 `;
 
 exports[`登録フォーム snapshot-メールアドレスとパスワードが入力されている 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
   <View
     style={
       Array [
@@ -628,7 +640,13 @@ exports[`登録フォーム snapshot-メールアドレスとパスワードが�
 `;
 
 exports[`登録フォーム snapshot-ロード中 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
   <View
     style={
       Array [
@@ -949,7 +967,13 @@ exports[`登録フォーム snapshot-ロード中 1`] = `
 `;
 
 exports[`登録フォーム snapshot-普通 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "marginTop": 140,
+    }
+  }
+>
   <View
     style={
       Array [
