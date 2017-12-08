@@ -6,10 +6,10 @@ module.exports = {
     },
     'extends': ['eslint:recommended', 'plugin:react/recommended'],
     'parserOptions': {
+        'ecmaVersion': 8,
         'ecmaFeatures': {
             'experimentalObjectRestSpread': true,
             'jsx': true,
-            'ecmaVersion': 6
         },
         'sourceType': 'module'
     },

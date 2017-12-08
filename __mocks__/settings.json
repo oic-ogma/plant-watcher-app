@@ -1,0 +1,11 @@
+{
+  "firebase": {
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": ""
+  },
+  "backendUrl": "http://172.24.50.204:8000"
+}
