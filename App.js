@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import config from './config';
 import RouterContainer from './src/containers/RouterContainer';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './src/reducers';
 import ReduxThunk from 'redux-thunk';
+<<<<<<< HEAD
 import { Font } from 'expo';
+=======
+import settings from './settings.json';
+
+>>>>>>> 34ae9f8... 17 - カメラを使用できるようにする
 
 class App extends Component {
   componentWillMount() {
-    firebase.initializeApp(config);
+    firebase.initializeApp(settings.firebase);
   }
 
   componentDidMount() {
