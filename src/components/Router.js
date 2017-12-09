@@ -33,46 +33,45 @@ const RouterComponent = ({ pageMoved }) => (
           title='ユーザー登録'
         />
       </Scene>
-      <Scene key='main' tabs showLabel={false}>
-        <Scene
-          initial
-          hideNavBar={true}
-          key='articlesearch'
-          component={ArticleSearchContainer}
-          tabBarLabel='検索'
-          icon={IconWrapper}
-          type='simple-line-icon'
-          name='magnifier'
-        />
-        <Scene
-          key='addarticle'
-          component={AddArticleContainer}
-          tabBarLabel='記事投稿'
-          title='記事投稿'
-          icon={IconWrapper}
-          type='simple-line-icon'
-          name='note'
-        />
-        <Scene
-          key='searchresults'
-          component={SearchResultsContainer}
-          tabBarLabel='検索結果'
-          title='検索結果'
-          icon={IconWrapper}
-          type='font-awesome'
-          name='bookmark-o'
-        />
-        <Scene
-          key='listarticles'
-          component={ListArticlesContainer}
-          tabBarLabel='記事一覧'
-          title='ユーザー記事一覧'
-          icon={IconWrapper}
-          type='simple-line-icon'
-          name='user'
-        />
+      <Scene key='main'>
+        <Scene key='mainwithtabs' tabs showLabel={false} hideNavBar={true} panHandlers={null}>
+          <Scene
+            initial
+            hideNavBar={true}
+            key='articlesearch'
+            component={ArticleSearchContainer}
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='magnifier'
+          />
+          <Scene
+            key='addarticle'
+            component={AddArticleContainer}
+            title='記事投稿'
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='note'
+          />
+          <Scene
+            key='bookmarks'
+            component={Spinner}
+            title='ブックマーク'
+            icon={IconWrapper}
+            type='font-awesome'
+            name='bookmark-o'
+          />
+          <Scene
+            key='listarticles'
+            component={ListArticlesContainer}
+            title='ユーザー記事一覧'
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='user'
+          />
+        </Scene>
+        <Scene key='searchresults' component={SearchResultsContainer} title='検索結果'/>
+        <Scene key='imagesearch' component={ImageSearchContainer} title='写真で検索'/>
       </Scene>
-      <Scene key='imagesearch' component={ImageSearchContainer} title='写真で検索'/>
     </Scene>
   </Router>
 );
