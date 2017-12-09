@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Label, Error, FormInputComponent } from './common';
+import { Label, Error, FormInputComponent, HideKeyboardOnPress } from './common';
 import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
@@ -44,26 +44,28 @@ export default class LoginForm extends Component {
     } = this.props;
 
     return (
-      <View style={style.margin}>
-        <Label placeholder='メールアドレス'/>
-        <FormInputComponent
-          placeholder='example@hoge.com'
-          onChangeText={emailChanged}
-          value={email}
-        />
+      <HideKeyboardOnPress>
+        <View style={style.margin}>
+          <Label placeholder='メールアドレス'/>
+          <FormInputComponent
+            placeholder='example@hoge.com'
+            onChangeText={emailChanged}
+            value={email}
+          />
 
-        <Label placeholder='パスワード'/>
-        <FormInputComponent
-          secureTextEntry
-          placeholder='パスワード'
-          onChangeText={passwordChanged}
-          value={password}
-        />
+          <Label placeholder='パスワード'/>
+          <FormInputComponent
+            secureTextEntry
+            placeholder='パスワード'
+            onChangeText={passwordChanged}
+            value={password}
+          />
 
-        <Error message={error}/>
+          <Error message={error}/>
 
-        {this.renderButtons()}
-      </View>
+          {this.renderButtons()}
+        </View>
+      </HideKeyboardOnPress>
     );
   }
 }

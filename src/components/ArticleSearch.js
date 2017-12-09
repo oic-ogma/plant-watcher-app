@@ -4,6 +4,7 @@ import { View, Keyboard, ImageBackground } from 'react-native';
 import { FormValidationMessage, Text } from 'react-native-elements';
 import { SearchBarComponent } from './common/SearchBar';
 import { Actions } from 'react-native-router-flux';
+import { HideKeyboardOnPress } from './common';
 
 export default class ArticleSearch extends Component {
   onSubmit() {
@@ -16,36 +17,38 @@ export default class ArticleSearch extends Component {
     const { viewStyle, imageStyle, textStyle, containerViewStyle, buttonStyle } = styles;
 
     return (
-      <View style={viewStyle}>
-        <ImageBackground
-          source={require ('../assets/images/search-background.png')}
-          style={imageStyle}
-        />
+      <HideKeyboardOnPress>
+        <View style={viewStyle}>
+          <ImageBackground
+            source={require ('../assets/images/search-background.png')}
+            style={imageStyle}
+          />
 
-        <Text h1 fontFamily='Great Vibes' style={textStyle}>Plant Watcher</Text>
+          <Text h1 fontFamily='Great Vibes' style={textStyle}>Plant Watcher</Text>
 
-        <SearchBarComponent
-          onChangeText={searchArticlePlantNameChanged}
-          placeholder='植物名'
-          onSubmitEditing={this.onSubmit.bind(this)}
-          value={plantName}
-        />
+          <SearchBarComponent
+            onChangeText={searchArticlePlantNameChanged}
+            placeholder='植物名'
+            onSubmitEditing={this.onSubmit.bind(this)}
+            value={plantName}
+          />
 
-        <FormValidationMessage>
-          {error}
-        </FormValidationMessage>
+          <FormValidationMessage>
+            {error}
+          </FormValidationMessage>
 
-        <Button
-          buttonStyle={buttonStyle}
-          raised
-          fontSize={23}
-          icon={{ name: 'camera-alt' }}
-          containerViewStyle={containerViewStyle}
-          title='カメラで検索'
-          backgroundColor='green'
-          onPress={Actions.imagesearch}
-        />
-      </View>
+          <Button
+            buttonStyle={buttonStyle}
+            raised
+            fontSize={23}
+            icon={{ name: 'camera-alt' }}
+            containerViewStyle={containerViewStyle}
+            title='カメラで検索'
+            backgroundColor='green'
+            onPress={Actions.imagesearch}
+          />
+        </View>
+      </HideKeyboardOnPress>
     );
   }
 }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Label, FormInputComponent } from './common';
+import { Label, FormInputComponent, HideKeyboardOnPress } from './common';
 import { FormValidationMessage, Button } from 'react-native-elements';
+import { Keyboard } from 'react-native';
 
 export default class AddArticle extends Component {
   saveArticle() {
     const { plantName, articleContents, saveArticle } = this.props;
+    Keyboard.dismiss();
     saveArticle(plantName, articleContents);
   }
 
@@ -19,7 +20,7 @@ export default class AddArticle extends Component {
     } = this.props;
 
     return (
-      <View>
+      <HideKeyboardOnPress>
         <Label placeholder='植物名' />
         <FormInputComponent
           onChangeText={plantNameChanged}
@@ -44,8 +45,7 @@ export default class AddArticle extends Component {
           loading={this.props.loading}
           backgroundColor='green'
         />
-
-      </View>
+      </HideKeyboardOnPress>
     );
   }
 }

@@ -1,19 +1,17 @@
 import React from 'react';
 import { Router, Scene, Actions } from 'react-native-router-flux';
-import { Spinner } from './common';
+import { Spinner, IconWrapper } from './common';
 import LoginFormContainer from '../containers/LoginFormContainer';
 import RegistrationFormContainer from '../containers/RegistrationFormContainer';
 import AddArticleContainer from '../containers/AddArticleContainer';
-import Home from './Home';
 import ArticleSearchContainer from '../containers/ArticleSearchContainer';
 import ListArticlesContainer from '../containers/ListArticlesContainer';
 import SearchResultsContainer from '../containers/SearchResultsContainer';
 import firebase from 'firebase';
-import { IconWrapper } from './common';
 import ImageSearchContainer from '../containers/ImageSearchContainer';
 
 const checkLoginStatus = () => {
-  firebase.auth().onAuthStateChanged(user => user ? Actions.auth() : Actions.auth());
+  firebase.auth().onAuthStateChanged(user => user ? Actions.main() : Actions.auth());
 };
 
 const RouterComponent = ({ pageMoved }) => (
@@ -33,13 +31,14 @@ const RouterComponent = ({ pageMoved }) => (
         labelStyle={{ fontSize: 15 }}
       >
         <Scene
-          key='articlesearch'
-          title='検索'
-          component={ArticleSearchContainer}
-          name='magnifier'
-          type='simple-line-icon'
-          icon={IconWrapper}
           hideNavBar={true}
+          title='検索'
+          tabBarLabel='検索'
+          key='articlesearch'
+          component={ArticleSearchContainer}
+          icon={IconWrapper}
+          type='simple-line-icon'
+          name='magnifier'
         />
         <Scene
           key='login'
@@ -58,19 +57,50 @@ const RouterComponent = ({ pageMoved }) => (
           onEnter={pageMoved}
           component={RegistrationFormContainer}
           title='ユーザー登録'
-          tabBarLabel='ユーザ登録'
+          tabBarLabel='登録'
           name='note'
           type='simple-line-icon'
           icon={IconWrapper}
         />
       </Scene>
       <Scene key='main'>
-        <Scene initial key='home' component={Home} title='ホーム' panHandlers={null} />
-        <Scene key='articlesearch' component={ArticleSearchContainer} title='検索' />
-        <Scene key='addarticle' component={AddArticleContainer} title='記事投稿' />
-        <Scene key='listarticles' component={ListArticlesContainer} title='記事一覧' />
+        <Scene key='mainwithtabs' tabs showLabel={false} hideNavBar={true} panHandlers={null}>
+          <Scene
+            initial
+            hideNavBar={true}
+            key='articlesearch'
+            component={ArticleSearchContainer}
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='magnifier'
+          />
+          <Scene
+            key='addarticle'
+            component={AddArticleContainer}
+            title='記事投稿'
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='note'
+          />
+          <Scene
+            key='bookmarks'
+            component={Spinner}
+            title='ブックマーク'
+            icon={IconWrapper}
+            type='font-awesome'
+            name='bookmark-o'
+          />
+          <Scene
+            key='listarticles'
+            component={ListArticlesContainer}
+            title='ユーザー記事一覧'
+            icon={IconWrapper}
+            type='simple-line-icon'
+            name='user'
+          />
+        </Scene>
+        <Scene key='searchresults' component={SearchResultsContainer} title='検索結果'/>
         <Scene key='imagesearch' component={ImageSearchContainer} title='写真で検索'/>
-        <Scene key='searchresults' component={SearchResultsContainer} title='検索結果' />
       </Scene>
     </Scene>
   </Router>
