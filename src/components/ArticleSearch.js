@@ -4,6 +4,7 @@ import { View, Keyboard } from 'react-native';
 import { FormValidationMessage } from 'react-native-elements';
 import { SearchBarComponent } from './common/SearchBar';
 import { Actions } from 'react-native-router-flux';
+import { HideKeyboardOnPress } from './common';
 
 export default class ArticleSearch extends Component {
   onSubmit() {
@@ -16,28 +17,30 @@ export default class ArticleSearch extends Component {
     const { buttonStyle } = styles;
 
     return (
-      <View style={{ marginTop: 140 }}>
-        <SearchBarComponent
-          onChangeText={searchArticlePlantNameChanged}
-          placeholder='植物名'
-          onSubmitEditing={this.onSubmit.bind(this)}
-          value={plantName}
-        />
+      <HideKeyboardOnPress>
+        <View style={{ marginTop: 140 }}>
+          <SearchBarComponent
+            onChangeText={searchArticlePlantNameChanged}
+            placeholder='植物名'
+            onSubmitEditing={this.onSubmit.bind(this)}
+            value={plantName}
+          />
 
-        <FormValidationMessage>
-          {error}
-        </FormValidationMessage>
+          <FormValidationMessage>
+            {error}
+          </FormValidationMessage>
 
-        <Button
-          raised
-          large
-          icon={{ name: 'camera-alt' }}
-          containerViewStyle={buttonStyle}
-          title='カメラで撮影して検索'
-          backgroundColor='green'
-          onPress={Actions.imagesearch}
-        />
-      </View>
+          <Button
+            raised
+            large
+            icon={{ name: 'camera-alt' }}
+            containerViewStyle={buttonStyle}
+            title='カメラで撮影して検索'
+            backgroundColor='green'
+            onPress={Actions.imagesearch}
+          />
+        </View>
+      </HideKeyboardOnPress>
     );
   }
 }
