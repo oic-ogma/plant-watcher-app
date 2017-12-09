@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Error, Label, FormInputComponent } from './common';
+import { Error, Label, FormInputComponent, HideKeyboardOnPress } from './common';
 import { Button } from 'react-native-elements';
-import { View } from 'react-native';
 
 export default class RegistrationForm extends Component {
   onButtonPress () {
@@ -33,7 +32,7 @@ export default class RegistrationForm extends Component {
     } = this.props;
 
     return (
-      <View>
+      <HideKeyboardOnPress>
         <Label placeholder='メールアドレス'/>
         <FormInputComponent
           placeholder='example@hoge.com'
@@ -53,7 +52,7 @@ export default class RegistrationForm extends Component {
 
         {this.renderButton()}
 
-      </View>
+      </HideKeyboardOnPress>
     );
   }
 }
