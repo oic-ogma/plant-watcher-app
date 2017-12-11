@@ -58,11 +58,11 @@ const set = insertionObj => {
   return Promise.reject('Fail');
 };
 
-const orderByChild = orderBy => {
+const orderByChild = () => {
   return { equalTo };
 };
 
-const equalTo = uid => {
+const equalTo = () => {
   const myEE = new EventEmitter();
 
   myEE.emit('value', snapshot);
