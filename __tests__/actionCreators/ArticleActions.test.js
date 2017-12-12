@@ -81,14 +81,15 @@ const mockStore = configureMockStore(middlewares);
 
 describe('記事関連のアクション（非同期）', () => {
   it('記事を投稿できる', () => {
-    const plantName = 'ひまわり';
-    const articleContents = 'きいろ\nまるい';
-    const expectedActions = [
-      { type: types.ADD_ARTICLE_PROCESSING },
-      { type: types.ADD_ARTICLE_SUCCESS }
-    ];
+    // 2017/12/11 #63 未来のテストを書いてくれる人が必要になるであろうから残しておく(本当は中途半端に残したくない・・・)
+    //const plantName = 'ひまわり';
+    //const articleContents = 'きいろ\nまるい';
+    //const expectedActions = [
+    //  { type: types.ADD_ARTICLE_PROCESSING },
+    //  { type: types.ADD_ARTICLE_SUCCESS }
+    //];
 
-    const store = mockStore({ auth: [] });
+    //const store = mockStore({ auth: [] });
 
     // 2017/11/17 shota TIMESTAMPをmockに用意するのが大変で一時的にコメントアウトしてます。
     // return store.dispatch(actions.saveArticle(plantName, articleContents)).then(() => {
