@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { CardSection, Card, Error } from '../common';
+import { CardSection, Error } from '../common';
+import { Card } from 'react-native-elements';
 
 const ListItem = ({ plantName, articleContents, error }) => {
   return (
