@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     Font.loadAsync({
-      'Great Vibes': require('./src/assets/fonts/GreatVibes-Regular.ttf'),
+      'Jandles': require('./src/assets/fonts/jandles.otf'),
     });
   }
 
