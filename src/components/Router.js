@@ -64,7 +64,18 @@ const RouterComponent = ({ pageMoved }) => (
         />
       </Scene>
       <Scene key='main'>
-        <Scene key='mainwithtabs' tabs showLabel={false} hideNavBar={true} panHandlers={null}>
+        <Scene
+          key='mainwithtabs'
+          tabs
+          showLabel={false}
+          hideNavBar={true}
+          panHandlers={null}
+          activeBackgroundColor='#fff'
+          activeTintColor='green'
+          inactiveBackgroundColor='#fff'
+          inactiveTintColor='gray'
+          tabBarStyle={{ backgroundColor: '#fff' }}
+        >
           <Scene
             initial
             hideNavBar={true}
