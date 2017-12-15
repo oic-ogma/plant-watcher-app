@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { pageMoved } from '../actions';
+import { pageMoved, fetchArticles } from '../actions';
 import Router from '../components/Router';
 
 const LoginFormContainer = props => (
@@ -9,7 +9,7 @@ const LoginFormContainer = props => (
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = { pageMoved };
+const mapDispatchToProps = { pageMoved, fetchArticles };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginFormContainer);
 
