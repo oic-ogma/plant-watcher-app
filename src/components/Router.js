@@ -23,7 +23,7 @@ const RouterComponent = ({ pageMoved }) => (
         tabs={true}
         tabBarPosition='bottom'
         activeBackgroundColor='#fff'
-        activeTintColor='green'
+        activeTintColor='#2C9D46'
         inactiveBackgroundColor='#fff'
         inactiveTintColor='gray'
         tabBarStyle={{ backgroundColor: '#fff' }}
@@ -71,7 +71,7 @@ const RouterComponent = ({ pageMoved }) => (
           hideNavBar={true}
           panHandlers={null}
           activeBackgroundColor='#fff'
-          activeTintColor='green'
+          activeTintColor='#2C9D46'
           inactiveBackgroundColor='#fff'
           inactiveTintColor='gray'
           tabBarStyle={{ backgroundColor: '#fff' }}
