@@ -11,7 +11,7 @@ const SearchResultsContainer = props => {
 const mapStateToProps = ({ listArticles }) => {
   const { list, error, loading } = listArticles;
   const articles = _.map(list, (val, articleId) => {
-    return { ...val, articleId };
+    return { ...val, key: articleId };
   }).reverse();
 
   return { articles, error, loading };

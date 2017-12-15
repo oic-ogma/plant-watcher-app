@@ -14,7 +14,7 @@ const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged(user => user ? Actions.main() : Actions.auth());
 };
 
-const RouterComponent = ({ pageMoved }) => (
+const RouterComponent = ({ pageMoved, fetchArticles }) => (
   <Router getSceneStyle={()=>({ backgroundColor: '#fff' })}>
     <Scene key='root' hideNavBar={true}>
       <Scene key='loading' onEnter={checkLoginStatus} component={Spinner}/>
@@ -108,6 +108,7 @@ const RouterComponent = ({ pageMoved }) => (
             icon={IconWrapper}
             type='simple-line-icon'
             name='user'
+            onEnter={fetchArticles}
           />
         </Scene>
         <Scene key='searchresults' component={SearchResultsContainer} title='検索結果'/>
