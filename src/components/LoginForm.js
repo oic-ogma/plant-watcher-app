@@ -45,24 +45,26 @@ export default class LoginForm extends Component {
 
     return (
       <HideKeyboardOnPress>
-        <Label placeholder='メールアドレス'/>
-        <FormInputComponent
-          placeholder='example@hoge.com'
-          onChangeText={emailChanged}
-          value={email}
-        />
+        <View style={style.margin}>
+          <Label placeholder='メールアドレス'/>
+          <FormInputComponent
+            placeholder='example@hoge.com'
+            onChangeText={emailChanged}
+            value={email}
+          />
 
-        <Label placeholder='パスワード'/>
-        <FormInputComponent
-          secureTextEntry
-          placeholder='パスワード'
-          onChangeText={passwordChanged}
-          value={password}
-        />
+          <Label placeholder='パスワード'/>
+          <FormInputComponent
+            secureTextEntry
+            placeholder='パスワード'
+            onChangeText={passwordChanged}
+            value={password}
+          />
 
-        <Error message={error}/>
+          <Error message={error}/>
 
-        {this.renderButtons()}
+          {this.renderButtons()}
+        </View>
       </HideKeyboardOnPress>
     );
   }
@@ -76,5 +78,8 @@ const style = {
         marginBottom: 5
       }
     })
+  },
+  margin: {
+    marginTop: 140,
   }
 };

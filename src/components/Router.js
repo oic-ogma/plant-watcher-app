@@ -18,23 +18,64 @@ const RouterComponent = ({ pageMoved }) => (
   <Router getSceneStyle={()=>({ backgroundColor: '#fff' })}>
     <Scene key='root' hideNavBar={true}>
       <Scene key='loading' onEnter={checkLoginStatus} component={Spinner}/>
-      <Scene key='auth'>
+      <Scene
+        key='auth'
+        tabs={true}
+        tabBarPosition='bottom'
+        activeBackgroundColor='#fff'
+        activeTintColor='#2C9D46'
+        inactiveBackgroundColor='#fff'
+        inactiveTintColor='gray'
+        tabBarStyle={{ backgroundColor: '#fff' }}
+        hideNavBar={true}
+        labelStyle={{ fontSize: 15 }}
+      >
+        <Scene
+          hideNavBar={true}
+          title='検索'
+          tabBarLabel='検索'
+          key='articlesearch'
+          component={ArticleSearchContainer}
+          icon={IconWrapper}
+          type='simple-line-icon'
+          name='magnifier'
+        />
         <Scene
           key='login'
           onExit={pageMoved}
           component={LoginFormContainer}
           title='ログイン'
+          tabBarLabel='ログイン'
           panHandlers={null}
+          name='login'
+          type='simple-line-icon'
+          icon={IconWrapper}
         />
+
         <Scene
           key='registration'
           onEnter={pageMoved}
           component={RegistrationFormContainer}
           title='ユーザー登録'
+          tabBarLabel='登録'
+          name='note'
+          type='simple-line-icon'
+          icon={IconWrapper}
         />
       </Scene>
       <Scene key='main'>
-        <Scene key='mainwithtabs' tabs showLabel={false} hideNavBar={true} panHandlers={null}>
+        <Scene
+          key='mainwithtabs'
+          tabs
+          showLabel={false}
+          hideNavBar={true}
+          panHandlers={null}
+          activeBackgroundColor='#fff'
+          activeTintColor='#2C9D46'
+          inactiveBackgroundColor='#fff'
+          inactiveTintColor='gray'
+          tabBarStyle={{ backgroundColor: '#fff' }}
+        >
           <Scene
             initial
             hideNavBar={true}
