@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormInput } from 'react-native-elements';
-import { Platform  } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const FormInputComponent = ({ placeholder, multiline, onChangeText, value, secureTextEntry }) => {
   const { input, multilineInput } = styles;
@@ -29,7 +29,7 @@ export const FormInputComponent = ({ placeholder, multiline, onChangeText, value
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   multilineInput: {
     fontSize: 18,
     ...Platform.select({
@@ -41,4 +41,4 @@ const styles = {
   input: {
     fontSize: 18,
   }
-};
+});

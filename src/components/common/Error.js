@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 export const Error = ({ message }) => (
   <Text style={styles.errorTextStyle}>
@@ -7,11 +7,11 @@ export const Error = ({ message }) => (
   </Text>
 );
 
-const styles = {
+const styles = StyleSheet.create({
   errorTextStyle: {
     paddingTop: 5,
     fontSize: 18,
     alignSelf: 'center',
     color: '#FF0000',
   }
-};
+});

@@ -1,5 +1,6 @@
 import React from 'react';
 import { SearchBar } from 'react-native-elements';
+import { StyleSheet } from 'react-native';
 
 export const SearchBarComponent = ({ placeholder, onChangeText, onSubmitEditing, value }) => {
   const { container, input, icon, clearIcon } = styles;
@@ -19,7 +20,7 @@ export const SearchBarComponent = ({ placeholder, onChangeText, onSubmitEditing,
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
     borderBottomColor: '#FFF',
@@ -40,4 +41,4 @@ const styles = {
     width: 30,
     fontSize: 30
   }
-};
+});

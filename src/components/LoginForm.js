@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Label, Error, FormInputComponent } from './common';
 import { Actions } from 'react-native-router-flux';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Platform } from 'react-native';
 
@@ -68,7 +68,7 @@ export default class LoginForm extends Component {
   }
 }
 
-const style = {
+const style = StyleSheet.create({
   buttonStyle: {
     marginBottom: 5,
     ...Platform.select({
@@ -77,4 +77,4 @@ const style = {
       }
     })
   }
-};
+});

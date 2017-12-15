@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Modal } from 'react-native';
+import { Text, View, Modal, StyleSheet } from 'react-native';
 import { CardSection } from './CardSection';
 import { Button } from './Button';
 
@@ -29,7 +29,7 @@ export const Confirm = ({ children, visible, onAccept, onDecline }) => {
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   cardSectionStyle: {
     justifyContent: 'center'
   },
@@ -45,4 +45,4 @@ const styles = {
     flex: 1,
     justifyContent: 'center'
   }
-};
+});

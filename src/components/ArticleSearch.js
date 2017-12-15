@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from  'react-native-elements';
-import { View, Keyboard } from 'react-native';
+import { View, Keyboard, StyleSheet } from 'react-native';
 import { FormValidationMessage } from 'react-native-elements';
 import { SearchBarComponent } from './common/SearchBar';
 
@@ -40,9 +40,9 @@ export default class ArticleSearch extends Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   buttonStyle: {
     marginTop: 50,
     marginBottom: 30
   }
-};
+});
