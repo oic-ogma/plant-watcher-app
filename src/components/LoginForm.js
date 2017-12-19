@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Label, Error, FormInputComponent, HideKeyboardOnPress } from './common';
-import { Actions } from 'react-native-router-flux';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Platform } from 'react-native';
