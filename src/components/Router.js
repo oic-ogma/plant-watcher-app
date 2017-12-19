@@ -68,7 +68,6 @@ const RouterComponent = ({ pageMoved, fetchArticles }) => (
           key='mainwithtabs'
           tabs
           showLabel={false}
-          hideNavBar={true}
           panHandlers={null}
           activeBackgroundColor='#fff'
           activeTintColor='#2C9D46'
