@@ -8,8 +8,8 @@ exports[`記事の表示 snapshot-正しく画面が呼び出される 1`] = `
         "articleContents": "this is test contents. 
      this contents is test data.",
         "articleId": "-KxRJa7r69I46Xey3MnO",
+        "key": "esyBvhxqwxP5UjaUeQyokRszulJ3",
         "plantName": "テスト",
-        "uid": "esyBvhxqwxP5UjaUeQyokRszulJ3",
       },
     ]
   }
