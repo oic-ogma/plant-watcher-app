@@ -14,7 +14,7 @@ describe('記事の表示', () => {
           articleContents: 'this is test contents. \n this contents is test data.',
           articleId: '-KxRJa7r69I46Xey3MnO',
           plantName: 'テスト',
-          uid: 'esyBvhxqwxP5UjaUeQyokRszulJ3',
+          key: 'esyBvhxqwxP5UjaUeQyokRszulJ3',
         },
       ],
     };
