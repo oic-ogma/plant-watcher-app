@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { textSearchArticle, searchArticlePlantNameChanged } from '../actions';
+import {
+  textSearchArticle,
+  searchArticlePlantNameChanged,
+  startAsSearch,
+} from '../actions';
 import ArticleSearch from '../components/ArticleSearch';
 
 const ArticleSearchContainer = props => (
@@ -12,6 +16,6 @@ const mapStateToProps = ({ searchArticle }) => {
   return { plantName, error };
 };
 
-const mapDispatchToProps = { textSearchArticle, searchArticlePlantNameChanged };
+const mapDispatchToProps = { textSearchArticle, searchArticlePlantNameChanged, startAsSearch };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleSearchContainer);

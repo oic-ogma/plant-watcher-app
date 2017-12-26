@@ -20,3 +20,6 @@ export const IMAGE_SEARCH_PROCESSING = 'image_search_processing';
 export const IMAGE_SEARCH_SUCCESS = 'image_search_success';
 export const IMAGE_SEARCH_ERROR = 'image_search_error';
 export const IMAGE_SEARCH_RESET = 'image_search_reset';
+export const PHOTO_CAPTURED = 'photo_captured';
+export const STARTED_AS_SEARCH = 'started_as_search';
+export const STARTED_AS_ADD_ARTICLE = 'started_as_add_article';

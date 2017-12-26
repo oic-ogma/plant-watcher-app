@@ -13,46 +13,52 @@ export default class ArticleSearch extends Component {
     textSearchArticle(plantName);
   }
 
+  takePhoto() {
+    this.props.startAsSearch();
+    Actions.camera();
+  }
+
   render() {
     const { searchArticlePlantNameChanged, plantName, error } = this.props;
     const { viewStyle, imageStyle, textStyle, containerViewStyle, buttonStyle } = styles;
 
     return (
-      <Image
-        source={require ('../assets/images/search-background.jpg')}
-        style={imageStyle}
-      >
-        <HideKeyboardOnPress style={viewStyle}>
-          <View style={{ flex: 0.2 }}>
-            <Text h1 fontFamily='Jandles' style={textStyle}>Plant Watcher</Text>
-          </View>
+      <HideKeyboardOnPress style={viewStyle}>
+        <Image
+          source={require ('../assets/images/search-background.jpg')}
+          style={imageStyle}
+        />
 
-          <View style={{ flex: 0.15, flexDirection: 'row' }}>
-            <SearchBarComponent
-              onChangeText={searchArticlePlantNameChanged}
-              placeholder='植物名'
-              onSubmitEditing={this.onSubmit.bind(this)}
-              value={plantName}
-            />
-          </View>
-          <FormValidationMessage>
-            {error}
-          </FormValidationMessage>
+        <View style={{ flex: 0.2 }}>
+          <Text h1 fontFamily='Jandles' style={textStyle}>Plant Watcher</Text>
+        </View>
 
-          <View style={{ flex: 0.2, flexDirection: 'row' }}>
-            <Button
-              buttonStyle={buttonStyle}
-              raised
-              fontSize={18}
-              icon={{ name: 'camera-alt' }}
-              containerViewStyle={containerViewStyle}
-              title='カメラで検索'
-              backgroundColor='#2C9D46'
-              onPress={Actions.imagesearch}
-            />
-          </View>
-        </HideKeyboardOnPress>
-      </Image>
+        <View style={{ flex: 0.15, flexDirection: 'row' }}>
+          <SearchBarComponent
+            onChangeText={searchArticlePlantNameChanged}
+            placeholder='植物名'
+            onSubmitEditing={this.onSubmit.bind(this)}
+            value={plantName}
+          />
+        </View>
+
+        <FormValidationMessage>
+          {error}
+        </FormValidationMessage>
+
+        <View style={{ flex: 0.2, flexDirection: 'row' }}>
+          <Button
+            buttonStyle={buttonStyle}
+            raised
+            fontSize={18}
+            icon={{ name: 'camera-alt' }}
+            containerViewStyle={containerViewStyle}
+            title='カメラで検索'
+            backgroundColor='#2C9D46'
+            onPress={this.takePhoto.bind(this)}
+          />
+        </View>
+      </HideKeyboardOnPress>
     );
   }
 }

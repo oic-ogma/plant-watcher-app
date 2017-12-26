@@ -5,14 +5,19 @@ import { Icon } from 'react-native-elements';
 import { Spinner, Error } from './common';
 import { Button } from 'react-native-elements';
 
-export default class ImageSearch extends Component {
+export default class CameraComponent extends Component {
   componentWillMount() {
     this.props.checkCameraPermissions();
   }
 
   async takePicture() {
     const photo = await this.camera.takePictureAsync({ base64: true, quality: 1 });
-    this.props.imageSearch(photo);
+    const { imageSearch, savePhoto, searchMode } = this.props;
+    if (searchMode) {
+      imageSearch(photo);
+    } else {
+      savePhoto(photo);
+    }
   }
 
   showModal(error) {
