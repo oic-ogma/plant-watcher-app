@@ -3,10 +3,12 @@ import AuthReducer from './AuthReducer';
 import AddArticleReducer from './AddArticleReducer';
 import ListArticlesReducer from './ListArticlesReducer';
 import SearchArticleReducer from './SearchArticleReducer';
+import ArticleDetailsReducer from './ArticleDetailsReducer';
 
 export default combineReducers ({
   auth: AuthReducer,
   addArticle: AddArticleReducer,
   listArticles: ListArticlesReducer,
-  searchArticle: SearchArticleReducer
+  searchArticle: SearchArticleReducer,
+  articleDetails: ArticleDetailsReducer
 });

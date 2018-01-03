@@ -15,3 +15,5 @@ export const FETCH_ARTICLES_PROCESSING = 'fetch_articles_processing';
 export const TEXT_SEARCH_ARTICLE_SUCCESS = 'text_search_article_success';
 export const TEXT_SEARCH_ARTICLE_FAIL = 'text_search_article_fail';
 export const TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED = 'text_search_article_plant_name_changed';
+export const FETCH_ARTICLE_DETAILS = 'fetch_article_details';
+export const DECIDE_USER_ARTICLE = 'decide_user_article';

@@ -1,91 +1,137 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { Rating } from 'react-native-elements';
+import { Spinner } from './common';
+import { Icon } from 'react-native-elements';
 
 export default class ArticleDetails extends Component {
+  componentWillMount() {
+    const { fetchArticleDetails, fetchArticleDecision } = this.props;
+    fetchArticleDetails();
+    fetchArticleDecision();
+  }
+
+  computeDuration(ms) {
+    const dt = new Date();
+    const year = dt.getFullYear(ms);
+    const month = dt.getMonth(ms);
+    const date = dt.getDate(ms);
+
+    return year + '/' + month + '/' + date;
+  }
+
   render() {
     const {
       body,
-      section,
-      section2,
-      childSection,
+      editOrBookmarkBlock,
+      block1,
       uploadImage,
+      blockChild1,
       articleTitle,
       uploadDay,
+      block2,
       bookmarked,
       article,
       review,
-      border
+      border,
+      rating,
     } = styles;
 
     const {
-      articleDetails,
-      rating,
+      plantName,
+      articleContents,
+      createdAt,
+      currentRating,
+      articleDecision,
     } = this.props;
 
-    return (
-      <View style={body}>
-        <View style={section}>
-          <Image
-            source={{ url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pZ0SHqgZhy-_ATEzJPpqXL3241NN8_Y0TKMiNSdO0rZc6STa7A' }}
-            style={uploadImage}
-          />
-          <View style={childSection}>
-            <Text style={articleTitle}>ひまわりの育て方</Text>
-            <Text style={uploadDay}>2000/2/2/</Text>
+    const editOrBookmark = () => {
+      if (articleDecision === true) {
+        const style = {
+          fontSize: 18,
+          color: '#6BC6FD',
+          paddingVertical: 5,
+          paddingHorizontal: 10,
+          borderStyle: 'solid',
+          borderWidth: 1,
+          borderColor: '#6BC6FD',
+          borderRadius: 3
+        };
+        return (
+          <Text style={style}>編集</Text>
+        );
+      } else {
+        return (
+          <Icon type='font-awesome' name='bookmark-o' color='#D04255' size={30}/>
+        );
+      }
+    };
+
+    if (currentRating) {
+      return (
+        <ScrollView style={body}>
+          <View style={editOrBookmarkBlock}>
+            {editOrBookmark()}
           </View>
-        </View>
-        <View style={section2}>
-          <Text style={bookmarked}>0ブックマーク</Text>
-          <Rating
-            type='star'
-            fractions={5}
-            startingValue={5}
-            readonly
-            imageSize={18}
-            onFinishRating={this.ratingCompleted}
-          />
-        </View>
-        <View style={border} />
-        <View>
-          <Text style={article}>
-            以前は実装に悩まされたという人も少なくないであろう、垂直に中央揃え。Flexboxを使えば、これも一行で解決です。使用するプロパティーは align-items 。サムネイル画像の配置なんかに使えそう。
-          </Text>
-        </View>
-        <View>
+          <View style={block1}>
+            <Image
+              source={{ url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pZ0SHqgZhy-_ATEzJPpqXL3241NN8_Y0TKMiNSdO0rZc6STa7A' }}
+              style={uploadImage}
+            />
+            <View style={blockChild1}>
+              <Text style={articleTitle}>{plantName}</Text>
+              <Text style={uploadDay}>{this.computeDuration(createdAt)}</Text>
+            </View>
+          </View>
+          <View style={block2}>
+            <Text style={bookmarked}>0ブックマーク</Text>
+            <Rating
+              type='star'
+              readonly
+              imageSize={18}
+              startingValue={currentRating}
+            />
+          </View>
+          <View style={border}/>
+          <View>
+            <Text style={article}>{articleContents}</Text>
+          </View>
           <Text style={review}>レビュー</Text>
-          <View style={border} />
+          <View style={border}/>
           <Rating
             type='star'
-            readonly
-            imageSize={24}
+            showRating
+            startingValue={3}
+            imageSize={30}
+            onFinishRating={this.ratingCompleted}
+            style={rating}
           />
-        </View>
-      </View>
-    );
+        </ScrollView>
+
+      );
+    }
+    return <Spinner/>;
   }
 }
 
 const styles = StyleSheet.create({
   body: {
-    padding: 30
+    padding: 30,
   },
-  section: {
+  editOrBookmarkBlock: {
+    position: 'absolute',
+    top: -10,
+    right: 5
+  },
+  block1: {
     display: 'flex',
     flexDirection: 'row'
-  },
-  section2: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    marginTop: 15,
-    marginBottom: 20
   },
   uploadImage: {
     width: 80,
     height: 80
   },
-  childSection: {
+  blockChild1: {
     marginLeft: 18,
   },
   articleTitle: {
@@ -96,16 +142,26 @@ const styles = StyleSheet.create({
     color: '#95989A',
     fontSize: 12
   },
+  block2: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 15,
+    marginBottom: 20
+  },
   bookmarked: {
     marginRight: 18,
     fontSize: 12
   },
   article: {
-    fontSize:15,
-    letterSpacing: 1.5
+    fontSize: 15,
+    color: '#555555',
+    letterSpacing: 1.5,
+    lineHeight: 15 * 1.3,
   },
   review: {
-    marginTop: 20,
+    textAlign: 'center',
+    marginTop: 40,
     marginBottom: 5,
     fontSize: 18
   },
@@ -113,5 +169,8 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderBottomColor: '#D1D1D6',
     borderBottomWidth: 1
+  },
+  rating: {
+    marginBottom: 60
   }
 });
