@@ -51,14 +51,22 @@ export const saveArticle = (plantName, articleContents, base64) => {
 
   return async dispatch => {
     dispatch({ type: ADD_ARTICLE_PROCESSING });
-    const ref = firebase.database().ref('articles');
-    const metadata = {
-      contentType: 'image/png',
-    };
-    const result = await ref.push({ plantName, articleContents, uid, createdAt: firebase.database.ServerValue.TIMESTAMP });
-    await firebase.storage().ref().child(`images/${result.key}`).putString(`data:image/png;base64,${base64}`, 'raw', metadata);
-    dispatch({ type: ADD_ARTICLE_SUCCESS });
-    Actions.pop();
+    try {
+      const ref = firebase.database().ref('articles');
+      await ref.push({
+        plantName, articleContents,
+        uid,
+        createdAt: firebase.database.ServerValue.TIMESTAMP,
+        image: `data:image/png;base64,${base64}`
+      });
+      dispatch({ type: ADD_ARTICLE_SUCCESS });
+      Actions.pop();
+    } catch (error) {
+      dispatch({
+        type: ADD_ARTICLE_FAIL,
+        payload: '記事投稿に失敗しました'
+      });
+    }
   };
 };
 
