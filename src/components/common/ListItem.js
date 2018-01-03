@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 
-const ListItem = ({ plantName, articleContents, image }) => (
+export const ListItem = ({ plantName, articleContents, image }) => (
   <Card
     title={plantName}
     image={image ? { uri: image } : require('../../assets/images/imageNotFound.png')}
@@ -18,5 +18,3 @@ const ListItem = ({ plantName, articleContents, image }) => (
     />
   </Card>
 );
-
-export { ListItem };

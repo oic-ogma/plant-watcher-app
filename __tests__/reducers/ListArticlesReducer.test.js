@@ -2,16 +2,19 @@ import reducer from '../../src/reducers/ListArticlesReducer';
 import * as types from '../../src/actions/types';
 
 const INITIAL_STATE =  {
-  list: {},
+  articles: [],
   error: '',
-  loading: false,
+  loading: false
 };
 
 const MODIFIED_STATE = {
-  list: {
+  articles: [{
     plantName: 'ひまわり',
     articleContents: 'きいろ\nまるい',
-  },
+    key: 'articleId',
+    createdAt: 1514994952976,
+    uid: 'brURQVswxEZf2z42nJESTwLaDfr2'
+  }],
   loading: false,
   error: '',
 };
@@ -22,14 +25,18 @@ describe('List Article reducer', () => {
   });
 
   it('FETCH_ARTICLES_SUCCESSを処理できる', () => {
-    const list = {
+    const articles = [{
       plantName: 'ひまわり',
       articleContents: 'きいろ\nまるい',
-    };
+      key: 'articleId',
+      createdAt: 1514994952976,
+      uid: 'brURQVswxEZf2z42nJESTwLaDfr2'
+    }];
 
     expect(reducer(INITIAL_STATE,
       { type: types.FETCH_ARTICLES_SUCCESS,
-        payload: list, })
+        payload: articles
+      })
     ).toEqual({
       ...MODIFIED_STATE,
     });

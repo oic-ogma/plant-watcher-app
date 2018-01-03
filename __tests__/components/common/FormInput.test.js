@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormInputComponent } from '../../src/components/common';
+import { FormInputComponent } from '../../../src/components/common';
 import renderer from 'react-test-renderer';
 
 describe('FormInput', () => {

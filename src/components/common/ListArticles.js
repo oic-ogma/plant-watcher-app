@@ -4,7 +4,7 @@ import { FlatList } from 'react-native';
 
 const renderRow = ({ plantName, articleContents, image }) => <ListItem plantName={plantName} articleContents={articleContents} image={image} />;
 
-const ListArticles = ({ articles, loading, error }) => {
+export const ListArticles = ({ articles, loading, error }) => {
   if (loading) return <Spinner size='large' />;
   if (error) return <Error message={error} />;
   return (
@@ -14,5 +14,3 @@ const ListArticles = ({ articles, loading, error }) => {
     />
   );
 };
-
-export default ListArticles;
