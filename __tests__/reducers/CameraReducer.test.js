@@ -1,10 +1,11 @@
-import reducer from '../../src/reducers/ImageSearchReducer';
+import reducer from '../../src/reducers/CameraReducer';
 import * as types from '../../src/actions/types';
 
 const INITIAL_STATE = {
   hasCameraPermission: null,
   loading: false,
-  error: null
+  error: null,
+  searchMode: false
 };
 
 const IMAGE_SEARCH_PROCESSING_STATE = {

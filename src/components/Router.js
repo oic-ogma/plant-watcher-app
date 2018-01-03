@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Scene, Actions } from 'react-native-router-flux';
-import { Spinner, IconWrapper, CameraRollComponent } from './common';
+import { Spinner, IconWrapper } from './common';
 import LoginFormContainer from '../containers/LoginFormContainer';
 import RegistrationFormContainer from '../containers/RegistrationFormContainer';
 import AddArticleContainer from '../containers/AddArticleContainer';
