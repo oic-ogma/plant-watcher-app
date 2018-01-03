@@ -41,6 +41,25 @@ export default class AddArticle extends Component {
 
     return (
       <HideKeyboardOnPress style={{ flex: 1,flexDirection: 'column' }}>
+        <View style={{ flex: 0.15 }}>
+          <Label placeholder='植物名' />
+          <FormInputComponent
+            onChangeText={plantNameChanged}
+            placeholder='ひまわり'
+            value={plantName}
+          />
+        </View>
+
+        <View style={{ flex: 0.35 }}>
+          <Label placeholder='記事' />
+          <FormInputComponent
+            placeholder='黄色い'
+            onChangeText={articleContentsChanged}
+            multiline={true}
+            value={articleContents}
+          />
+        </View>
+
         <View style={{ flex: 0.4, flexDirection: 'row'  }}>
           <View  style={{ flex: 0.5 }}>
             <Image
@@ -69,25 +88,6 @@ export default class AddArticle extends Component {
               containerViewStyle={{ flex: 0.5 }}
             />
           </View>
-        </View>
-
-        <View style={{ flex: 0.15 }}>
-          <Label placeholder='植物名' />
-          <FormInputComponent
-            onChangeText={plantNameChanged}
-            placeholder='ひまわり'
-            value={plantName}
-          />
-        </View>
-
-        <View style={{ flex: 0.35 }}>
-          <Label placeholder='記事' />
-          <FormInputComponent
-            placeholder='黄色い'
-            onChangeText={articleContentsChanged}
-            multiline={true}
-            value={articleContents}
-          />
         </View>
 
         <FormValidationMessage labelStyle={{ fontSize: 16 }}>

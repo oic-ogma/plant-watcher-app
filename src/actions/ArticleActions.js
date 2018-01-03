@@ -71,7 +71,6 @@ export const saveArticle = (plantName, articleContents, base64) => {
 };
 
 export const savePhoto = photo => {
-  Actions.pop();
   return {
     type: PHOTO_CAPTURED,
     payload: photo

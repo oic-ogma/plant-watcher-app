@@ -4,6 +4,7 @@ import { Camera } from 'expo';
 import { Icon } from 'react-native-elements';
 import { Spinner, Error } from './common';
 import { Button } from 'react-native-elements';
+import { Actions } from 'react-native-router-flux';
 
 export default class CameraComponent extends Component {
   componentWillMount() {
@@ -17,6 +18,7 @@ export default class CameraComponent extends Component {
       imageSearch(photo);
     } else {
       savePhoto(photo);
+      Actions.pop();
     }
   }
 
