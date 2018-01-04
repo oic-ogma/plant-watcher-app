@@ -4,7 +4,9 @@ import {
   FETCH_ARTICLES_PROCESSING,
   IMAGE_SEARCH_SUCCESS,
   IMAGE_SEARCH_ERROR,
-  IMAGE_SEARCH_RESET
+  IMAGE_SEARCH_RESET,
+  STARTED_AS_SEARCH,
+  STARTED_AS_ADD_ARTICLE
 } from './types';
 import { Permissions } from 'expo';
 import axios from 'axios';
@@ -20,6 +22,10 @@ export const checkCameraPermissions = () => {
     });
   };
 };
+
+export const startAsSearch = () => ({ type: STARTED_AS_SEARCH });
+
+export const startAsAddArticle = () => ({ type: STARTED_AS_ADD_ARTICLE });
 
 export const resetState = () => ({ type: IMAGE_SEARCH_RESET });
 

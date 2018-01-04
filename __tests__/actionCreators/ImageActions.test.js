@@ -9,6 +9,18 @@ describe('カメラ機能関連のアクション', ()=> {
 
     expect(actions.resetState()).toEqual(expectedAction);
   });
+
+  it('検索モードで起動できる', () => {
+    const expectedAction = { type: types.STARTED_AS_SEARCH };
+
+    expect(actions.startAsSearch()).toEqual(expectedAction);
+  });
+
+  it('記事投稿モードで起動できる', () => {
+    const expectedAction = { type: types.STARTED_AS_ADD_ARTICLE };
+
+    expect(actions.startAsAddArticle()).toEqual(expectedAction);
+  });
 });
 
 const middlewares = [ thunk ];

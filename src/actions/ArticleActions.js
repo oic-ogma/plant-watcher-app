@@ -12,7 +12,8 @@ import {
   FETCH_ARTICLES_PROCESSING,
   TEXT_SEARCH_ARTICLE_SUCCESS,
   TEXT_SEARCH_ARTICLE_FAIL,
-  TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED
+  TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
+  PHOTO_CAPTURED
 } from './types';
 
 // addArticle
@@ -31,7 +32,7 @@ export const searchArticlePlantNameChanged = text => ({
   payload: text
 });
 
-export const saveArticle = (plantName, articleContents) => {
+export const saveArticle = (plantName, articleContents, base64) => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
 
@@ -48,15 +49,31 @@ export const saveArticle = (plantName, articleContents) => {
     };
   }
 
-  return dispatch => {
+  return async dispatch => {
     dispatch({ type: ADD_ARTICLE_PROCESSING });
-    const ref = firebase.database().ref('articles');
-    return ref
-      .push({ plantName, articleContents, uid, createdAt: firebase.database.ServerValue.TIMESTAMP })
-      .then(() => {
-        dispatch({ type: ADD_ARTICLE_SUCCESS });
-        Actions.pop();
+    try {
+      const ref = firebase.database().ref('articles');
+      await ref.push({
+        plantName, articleContents,
+        uid,
+        createdAt: firebase.database.ServerValue.TIMESTAMP,
+        image: `data:image/png;base64,${base64}`
       });
+      dispatch({ type: ADD_ARTICLE_SUCCESS });
+      Actions.pop();
+    } catch (error) {
+      dispatch({
+        type: ADD_ARTICLE_FAIL,
+        payload: '記事投稿に失敗しました'
+      });
+    }
+  };
+};
+
+export const savePhoto = photo => {
+  return {
+    type: PHOTO_CAPTURED,
+    payload: photo
   };
 };
 

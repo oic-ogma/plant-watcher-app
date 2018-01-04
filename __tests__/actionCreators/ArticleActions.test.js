@@ -32,8 +32,9 @@ describe('記事関連のアクション', () => {
       type: types.ADD_ARTICLE_FAIL,
       payload: '植物名は文字列かつ、25文字以下で入力してください。'
     };
+    const base64 = 'base64url';
 
-    expect(actions.saveArticle(plantName, articleContents)).toEqual(expectedAction);
+    expect(actions.saveArticle(plantName, articleContents, base64)).toEqual(expectedAction);
   });
 
   it('1001文字以上の記事を入力して失敗する', () => {
@@ -43,8 +44,9 @@ describe('記事関連のアクション', () => {
       type: types.ADD_ARTICLE_FAIL,
       payload: '記事内容は文字列かつ、1000文字以下で入力してください。'
     };
+    const base64 = 'base64url';
 
-    expect(actions.saveArticle(plantName, articleContents)).toEqual(expectedAction);
+    expect(actions.saveArticle(plantName, articleContents, base64)).toEqual(expectedAction);
   });
 
   it('検索フィールドで植物名の変更', () => {

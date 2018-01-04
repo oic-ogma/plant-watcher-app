@@ -5,7 +5,8 @@ const INITIAL_STATE = {
   plantName: '',
   articleContents: '',
   loading: false,
-  error: ''
+  error: '',
+  photo: ''
 };
 
 const MODIFIED_STATE = {
@@ -40,6 +41,16 @@ describe('Article reducer', () => {
     });
   });
 
+  it('PHOTO_CAPTUREDを処理できる', () => {
+    expect(reducer(INITIAL_STATE, {
+      type: types.PHOTO_CAPTURED,
+      payload: 'base64string'
+    })).toEqual({
+      ...INITIAL_STATE,
+      photo: 'base64string'
+    });
+  });
+
   it('ADD_ARTICLE_PROCESSINGを処理できる', () => {
     expect(reducer(INITIAL_STATE, {
       type: types.ADD_ARTICLE_PROCESSING,
@@ -64,6 +75,16 @@ describe('Article reducer', () => {
       ...MODIFIED_STATE,
       error: 'error',
       loading: false
+    });
+  });
+
+  it('CAMERA_PERMISSION_CHECKEDを処理できる', () => {
+    expect(reducer(INITIAL_STATE, {
+      type: types.CAMERA_PERMISSION_CHECKED,
+      payload: true
+    })).toEqual({
+      ...INITIAL_STATE,
+      hasCameraPermission: true
     });
   });
 });

@@ -8,7 +8,7 @@ import ArticleSearchContainer from '../containers/ArticleSearchContainer';
 import ListArticlesContainer from '../containers/ListArticlesContainer';
 import SearchResultsContainer from '../containers/SearchResultsContainer';
 import firebase from 'firebase';
-import ImageSearchContainer from '../containers/ImageSearchContainer';
+import CameraContainer from '../containers/CameraContainer';
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged(user => user ? Actions.main() : Actions.auth());
@@ -111,7 +111,7 @@ const RouterComponent = ({ pageMoved, fetchArticles }) => (
           />
         </Scene>
         <Scene key='searchresults' component={SearchResultsContainer} title='検索結果'/>
-        <Scene key='imagesearch' component={ImageSearchContainer} title='写真で検索'/>
+        <Scene key='camera' component={CameraContainer} title='写真の撮影'/>
       </Scene>
     </Scene>
   </Router>
