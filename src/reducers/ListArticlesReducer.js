@@ -5,7 +5,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE =  {
-  list: {},
+  articles: [],
   error: '',
   loading: false
 };
@@ -13,7 +13,7 @@ const INITIAL_STATE =  {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_ARTICLES_SUCCESS:
-      return { ...state, list: action.payload, error: '', loading: false };
+      return { ...state, articles: action.payload, error: '', loading: false };
     case FETCH_ARTICLES_FAIL:
       return { ...state, error: action.payload, loading: false };
     case FETCH_ARTICLES_PROCESSING:

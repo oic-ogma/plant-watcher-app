@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`記事の表示 snapshot-エラー 1`] = `
+exports[`ListArticles snapshot-画像がある時 1`] = `
 <View
   style={
     Array [
@@ -37,6 +37,44 @@ exports[`記事の表示 snapshot-エラー 1`] = `
       ]
     }
   >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {},
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Array [
+              Object {
+                "color": "#43484d",
+                "fontSize": 17.5,
+                "fontWeight": "bold",
+                "marginBottom": 15,
+                "textAlign": "center",
+              },
+              Object {
+                "marginTop": 15,
+              },
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        ひまわり
+      </Text>
+    </View>
     <View
       style={undefined}
     >
@@ -53,7 +91,11 @@ exports[`記事の表示 snapshot-エラー 1`] = `
       >
         <Image
           resizeMode="cover"
-          source={1}
+          source={
+            Object {
+              "uri": "base64url",
+            }
+          }
           style={
             Array [
               Object {
@@ -171,7 +213,7 @@ exports[`記事の表示 snapshot-エラー 1`] = `
             }
           }
         >
-          
+          黄色い
         </Text>
         <View
           style={
@@ -318,7 +360,7 @@ exports[`記事の表示 snapshot-エラー 1`] = `
 </View>
 `;
 
-exports[`記事の表示 snapshot-普通 1`] = `
+exports[`ListArticles snapshot-画像がない時 1`] = `
 <View
   style={
     Array [
@@ -390,7 +432,7 @@ exports[`記事の表示 snapshot-普通 1`] = `
           ]
         }
       >
-        testName
+        ひまわり
       </Text>
     </View>
     <View
@@ -527,8 +569,7 @@ exports[`記事の表示 snapshot-普通 1`] = `
             }
           }
         >
-          this is test contents. 
-           this contents is test data.
+          黄色い
         </Text>
         <View
           style={
