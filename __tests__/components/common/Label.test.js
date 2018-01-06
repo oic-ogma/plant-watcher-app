@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from '../../src/components/common';
+import { Label } from '../../../src/components/common';
 import renderer from 'react-test-renderer';
 
 describe('LabelComponent', () => {

@@ -6,7 +6,6 @@ import RegistrationFormContainer from '../containers/RegistrationFormContainer';
 import AddArticleContainer from '../containers/AddArticleContainer';
 import ArticleSearchContainer from '../containers/ArticleSearchContainer';
 import ListArticlesContainer from '../containers/ListArticlesContainer';
-import SearchResultsContainer from '../containers/SearchResultsContainer';
 import firebase from 'firebase';
 import CameraContainer from '../containers/CameraContainer';
 
@@ -110,7 +109,7 @@ const RouterComponent = ({ pageMoved, fetchArticles }) => (
             onEnter={fetchArticles}
           />
         </Scene>
-        <Scene key='searchresults' component={SearchResultsContainer} title='検索結果'/>
+        <Scene key='searchresults' component={ListArticlesContainer} title='検索結果'/>
         <Scene key='camera' component={CameraContainer} title='写真の撮影'/>
       </Scene>
     </Scene>

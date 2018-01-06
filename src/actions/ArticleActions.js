@@ -15,6 +15,7 @@ import {
   TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
   PHOTO_CAPTURED
 } from './types';
+import _ from 'lodash';
 
 // addArticle
 export const plantNameChanged = text => ({
@@ -77,28 +78,26 @@ export const savePhoto = photo => {
   };
 };
 
-
 // listArticles
 export const fetchArticles = () => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
   const ref = firebase.database().ref('articles');
-
-  return dispatch => {
+  return async dispatch => {
     dispatch({ type: FETCH_ARTICLES_PROCESSING });
-    ref.orderByChild('uid').equalTo(uid).on('value', snapshot => {
-      if (snapshot.val() != null) {
-        dispatch({
-          type: FETCH_ARTICLES_SUCCESS,
-          payload: snapshot.val()
-        });
-      } else {
-        dispatch({
-          type: FETCH_ARTICLES_FAIL,
-          payload: '記事が見つかりません',
-        });
-      }
-    });
+
+    let articles = await ref.orderByChild('uid').equalTo(uid).once('value');
+    if (articles) {
+      dispatch({
+        type: FETCH_ARTICLES_SUCCESS,
+        payload: _.map(articles.val(), (val, articleId) => ({ ...val, key: articleId })).reverse(),
+      });
+    } else {
+      dispatch({
+        type: FETCH_ARTICLES_FAIL,
+        payload: '記事が見つかりません',
+      });
+    }
   };
 };
 
@@ -122,21 +121,21 @@ export const textSearchArticle = plantName => {
   };
 };
 
-export const getSearchResults = (dispatch, plantName) => {
+export const getSearchResults = async (dispatch, plantName) => {
   Actions.searchresults();
   const ref = firebase.database().ref('articles');
 
-  ref.orderByChild('plantName').equalTo(plantName).on('value', snapshot => {
-    if (snapshot.val()) {
-      dispatch({
-        type: FETCH_ARTICLES_SUCCESS,
-        payload: snapshot.val()
-      });
-    } else {
-      dispatch({
-        type: FETCH_ARTICLES_FAIL,
-        payload: '一致する結果が見つかりませんでした。'
-      });
-    }
-  });
+  let articles = await ref.orderByChild('plantName').equalTo(plantName).once('value');
+  if (articles) {
+    articles = _.map(articles.val(), (val, articleId) => ({ ...val, key: articleId })).reverse();
+    dispatch({
+      type: FETCH_ARTICLES_SUCCESS,
+      payload: articles.reverse(),
+    });
+  } else {
+    dispatch({
+      type: FETCH_ARTICLES_FAIL,
+      payload: '記事が見つかりません',
+    });
+  }
 };

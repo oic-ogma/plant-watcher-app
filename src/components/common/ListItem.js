@@ -1,28 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { CardSection, Card, Error } from '../common';
+import { Text } from 'react-native';
+import { Card, Button } from 'react-native-elements';
 
-const ListItem = ({ plantName, articleContents, error }) => {
-  return (
-    <Card>
-      <Error message={error} />
-      <CardSection>
-        <View>
-          <Text>
-            {plantName}
-          </Text>
-        </View>
-      </CardSection>
-
-      <CardSection>
-        <View>
-          <Text>
-            {articleContents.length > 72 ? `${articleContents.slice(0,73)} ...` : articleContents}
-          </Text>
-        </View>
-      </CardSection>
-    </Card>
-  );
-};
-
-export { ListItem };
+export const ListItem = ({ plantName, articleContents, image }) => (
+  <Card
+    title={plantName}
+    image={image ? { uri: image } : require('../../assets/images/imageNotFound.png')}
+  >
+    <Text style={{ marginBottom: 20 }}>
+      {articleContents.length > 72 ? `${articleContents.slice(0,73)} ...` : articleContents}
+    </Text>
+    <Button
+      icon={{ name: 'notebook', type: 'simple-line-icon' }}
+      backgroundColor='#228b22'
+      title='読む'
+      onPress={()=>{}}
+    />
+  </Card>
+);
