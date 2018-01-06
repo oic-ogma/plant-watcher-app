@@ -3,7 +3,7 @@ import * as types from '../../src/actions/types';
 
 const INITIAL_STATE = {
   article: {},
-  articleDecision: false
+  editable: false
 };
 
 const MODIFIED_STATE = {
@@ -13,7 +13,7 @@ const MODIFIED_STATE = {
     createdAt: 1510641275203,
     currentRating: 3.0
   },
-  articleDecision: true
+  editable: true
 };
 
 describe('articleDetailsReducer', () => {
@@ -35,18 +35,27 @@ describe('articleDetailsReducer', () => {
       payload: list
     })).toEqual({
       ...MODIFIED_STATE,
-      articleDecision: false
+      editable: false
     });
   });
 
-  it('DECIDE_USER_ARTICLEを処理できる', () => {
+  it('CAN_EDITを処理できる', () => {
 
     expect(reducer(INITIAL_STATE, {
-      type: types.DECIDE_USER_ARTICLE,
-      payload: true
+      type: types.CAN_EDIT,
     })).toEqual({
       ...INITIAL_STATE,
-      articleDecision: true
+      editable: true
+    });
+  });
+
+  it('CANNOT_EDITを処理できる', () => {
+
+    expect(reducer(INITIAL_STATE, {
+      type: types.CANNOT_EDIT,
+    })).toEqual({
+      ...INITIAL_STATE,
+      editable: false
     });
   });
 });

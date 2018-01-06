@@ -13,9 +13,8 @@ describe('記事詳細', () => {
           currentRating: 3.0
         },
       },
-      articleDecision: false,
+      editable: false,
       fetchArticleDetails: () => {},
-      fetchArticleDecision: () => {}
     };
     const tree = renderer.create(<ArticleDetails {...INITIAL_STATE} />);
     expect(tree).toMatchSnapshot();
