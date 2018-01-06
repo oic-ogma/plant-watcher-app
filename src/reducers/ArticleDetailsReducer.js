@@ -1,19 +1,22 @@
 import {
   FETCH_ARTICLE_DETAILS,
-  DECIDE_USER_ARTICLE,
+  CAN_EDIT,
+  CANNOT_EDIT
 } from '../actions/types';
 
 const INITIAL_STATE = {
   article: {},
-  articleDecision: false
+  editable: false
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_ARTICLE_DETAILS:
       return { ...state, article: action.payload };
-    case DECIDE_USER_ARTICLE:
-      return { ...state, articleDecision: action.payload };
+    case CAN_EDIT:
+      return { ...state, editable: true };
+    case CANNOT_EDIT:
+      return { ...state, editable: false };
     default:
       return state;
   }

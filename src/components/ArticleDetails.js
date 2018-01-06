@@ -6,16 +6,15 @@ import { Icon } from 'react-native-elements';
 
 export default class ArticleDetails extends Component {
   componentWillMount() {
-    const { fetchArticleDetails, fetchArticleDecision } = this.props;
-    fetchArticleDetails();
-    fetchArticleDecision();
+    const { fetchArticleDetails } = this.props;
+    fetchArticleDetails('-KytE808ZYT-X8YPjwGv');
   }
 
-  computeDuration(ms) {
+  convertTimestamp(timestamp) {
     const dt = new Date();
-    const year = dt.getFullYear(ms);
-    const month = dt.getMonth(ms);
-    const date = dt.getDate(ms);
+    const year = dt.getFullYear(timestamp);
+    const month = dt.getMonth(timestamp);
+    const date = dt.getDate(timestamp);
 
     return year + '/' + month + '/' + date;
   }
@@ -35,6 +34,7 @@ export default class ArticleDetails extends Component {
       review,
       border,
       rating,
+      edit
     } = styles;
 
     const {
@@ -42,23 +42,13 @@ export default class ArticleDetails extends Component {
       articleContents,
       createdAt,
       currentRating,
-      articleDecision,
+      editable,
     } = this.props;
 
     const editOrBookmark = () => {
-      if (articleDecision === true) {
-        const style = {
-          fontSize: 18,
-          color: '#6BC6FD',
-          paddingVertical: 5,
-          paddingHorizontal: 10,
-          borderStyle: 'solid',
-          borderWidth: 1,
-          borderColor: '#6BC6FD',
-          borderRadius: 3
-        };
+      if (editable === true) {
         return (
-          <Text style={style}>編集</Text>
+          <Text style={styles.edit}>編集</Text>
         );
       } else {
         return (
@@ -80,7 +70,7 @@ export default class ArticleDetails extends Component {
             />
             <View style={blockChild1}>
               <Text style={articleTitle}>{plantName}</Text>
-              <Text style={uploadDay}>{this.computeDuration(createdAt)}</Text>
+              <Text style={uploadDay}>{this.convertTimestamp(createdAt)}</Text>
             </View>
           </View>
           <View style={block2}>
@@ -107,7 +97,6 @@ export default class ArticleDetails extends Component {
             style={rating}
           />
         </ScrollView>
-
       );
     }
     return <Spinner/>;
@@ -172,5 +161,15 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginBottom: 60
+  },
+  edit: {
+    fontSize: 18,
+    color: '#6BC6FD',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#6BC6FD',
+    borderRadius: 3
   }
 });

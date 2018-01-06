@@ -15,7 +15,8 @@ import {
   TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
   PHOTO_CAPTURED,
   FETCH_ARTICLE_DETAILS,
-  DECIDE_USER_ARTICLE,
+  CAN_EDIT,
+  CANNOT_EDIT
 } from './types';
 
 // addArticle
@@ -143,8 +144,10 @@ export const getSearchResults = (dispatch, plantName) => {
   });
 };
 
-export const fetchArticleDetails = () => {
-  const ref = firebase.database().ref('articles/-KytE808ZYT-X8YPjwGv');
+export const fetchArticleDetails = articleId => {
+  const ref = firebase.database().ref('articles/' + articleId);
+
+  checkOwnership(ref);
 
   return dispatch => {
     ref.on('value', snapshot => {
@@ -156,24 +159,13 @@ export const fetchArticleDetails = () => {
   };
 };
 
-export const fetchArticleDecision = () => {
+const checkOwnership = (ref) => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
-  const ref = firebase.database().ref('articles/-KytE808ZYT-X8YPjwGv');
 
   return dispatch => (
     ref.on('value', snapshot => {
-      if (uid === snapshot.val().uid) {
-        dispatch({
-          type: DECIDE_USER_ARTICLE,
-          payload: true
-        });
-      } else {
-        dispatch({
-          type: DECIDE_USER_ARTICLE,
-          payload: false
-        });
-      }
+      uid === snapshot.val().uid ? dispatch({ type: CAN_EDIT }) : dispatch({ type: CANNOT_EDIT });
     })
   );
 };

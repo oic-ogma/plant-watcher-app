@@ -1,25 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ArticleDetails from '../components/ArticleDetails';
-import { fetchArticleDetails, fetchArticleDecision } from '../actions';
+import { fetchArticleDetails } from '../actions';
 
 const ArticleDetailsContainer = props => (
   <ArticleDetails {...props} />
 );
 
 const mapStateToProps = ({ articleDetails }) => {
+  const { article, editable } = articleDetails;
+
   const {
     plantName,
     articleContents,
     createdAt,
     currentRating,
-  } = articleDetails.article;
+  } = article;
 
-  const articleDecision = articleDetails.articleDecision;
-
-  return { plantName, articleContents, createdAt, currentRating, articleDecision };
+  return { plantName, articleContents, createdAt, currentRating, editable };
 };
 
-const mapDispatchToProps = { fetchArticleDetails, fetchArticleDecision };
+const mapDispatchToProps = { fetchArticleDetails };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleDetailsContainer);
