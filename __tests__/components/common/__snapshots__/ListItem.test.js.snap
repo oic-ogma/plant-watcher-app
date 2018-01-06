@@ -209,7 +209,7 @@ exports[`ListArticles snapshot-画像がある時 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "paddingBottom": 8,
+              "marginBottom": 20,
             }
           }
         >
@@ -565,7 +565,7 @@ exports[`ListArticles snapshot-画像がない時 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "paddingBottom": 8,
+              "marginBottom": 20,
             }
           }
         >

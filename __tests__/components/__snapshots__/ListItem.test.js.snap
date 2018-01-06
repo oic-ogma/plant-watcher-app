@@ -167,7 +167,7 @@ exports[`記事の表示 snapshot-エラー 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "paddingBottom": 8,
+              "marginBottom": 20,
             }
           }
         >
@@ -523,7 +523,7 @@ exports[`記事の表示 snapshot-普通 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "paddingBottom": 8,
+              "marginBottom": 20,
             }
           }
         >
