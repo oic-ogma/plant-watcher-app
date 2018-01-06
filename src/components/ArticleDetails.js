@@ -33,8 +33,7 @@ export default class ArticleDetails extends Component {
       article,
       review,
       border,
-      rating,
-      edit
+      rating
     } = styles;
 
     const {
@@ -47,8 +46,18 @@ export default class ArticleDetails extends Component {
 
     const editOrBookmark = () => {
       if (editable === true) {
+        const style = {
+          fontSize: 18,
+          color: '#6BC6FD',
+          paddingVertical: 5,
+          paddingHorizontal: 10,
+          borderStyle: 'solid',
+          borderWidth: 1,
+          borderColor: '#6BC6FD',
+          borderRadius: 3
+        };
         return (
-          <Text style={styles.edit}>編集</Text>
+          <Text style={style}>編集</Text>
         );
       } else {
         return (
@@ -161,15 +170,5 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginBottom: 60
-  },
-  edit: {
-    fontSize: 18,
-    color: '#6BC6FD',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: '#6BC6FD',
-    borderRadius: 3
   }
 });
