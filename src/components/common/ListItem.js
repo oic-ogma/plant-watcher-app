@@ -7,7 +7,7 @@ export const ListItem = ({ plantName, articleContents, image }) => (
     title={plantName}
     image={image ? { uri: image } : require('../../assets/images/imageNotFound.png')}
   >
-    <Text style={{ paddingBottom: 8 }}>
+    <Text style={{ marginBottom: 20 }}>
       {articleContents.length > 72 ? `${articleContents.slice(0,73)} ...` : articleContents}
     </Text>
     <Button
