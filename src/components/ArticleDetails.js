@@ -19,6 +19,18 @@ export default class ArticleDetails extends Component {
     return year + '/' + month + '/' + date;
   }
 
+  editOrBookmark(editable) {
+    if (editable === true) {
+      return (
+        <Text style={styles.edit}>編集</Text>
+      );
+    } else {
+      return (
+        <Icon type='font-awesome' name='bookmark-o' color='#D04255' size={30}/>
+      );
+    }
+  }
+
   render() {
     const {
       body,
@@ -44,33 +56,11 @@ export default class ArticleDetails extends Component {
       editable,
     } = this.props;
 
-    const editOrBookmark = () => {
-      if (editable === true) {
-        const style = {
-          fontSize: 18,
-          color: '#6BC6FD',
-          paddingVertical: 5,
-          paddingHorizontal: 10,
-          borderStyle: 'solid',
-          borderWidth: 1,
-          borderColor: '#6BC6FD',
-          borderRadius: 3
-        };
-        return (
-          <Text style={style}>編集</Text>
-        );
-      } else {
-        return (
-          <Icon type='font-awesome' name='bookmark-o' color='#D04255' size={30}/>
-        );
-      }
-    };
-
     if (currentRating) {
       return (
         <ScrollView style={body}>
           <View style={editOrBookmarkBlock}>
-            {editOrBookmark()}
+            {this.editOrBookmark(editable)}
           </View>
           <View style={block1}>
             <Image
@@ -170,5 +160,15 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginBottom: 60
+  },
+  edit: {
+    fontSize: 18,
+    color: '#6BC6FD',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#6BC6FD',
+    borderRadius: 3
   }
 });
