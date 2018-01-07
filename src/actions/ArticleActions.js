@@ -13,7 +13,10 @@ import {
   TEXT_SEARCH_ARTICLE_SUCCESS,
   TEXT_SEARCH_ARTICLE_FAIL,
   TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
-  PHOTO_CAPTURED
+  PHOTO_CAPTURED,
+  FETCH_ARTICLE_DETAILS,
+  CAN_EDIT,
+  CANNOT_EDIT
 } from './types';
 import _ from 'lodash';
 
@@ -138,4 +141,30 @@ export const getSearchResults = async (dispatch, plantName) => {
       payload: '記事が見つかりません',
     });
   }
+};
+
+export const fetchArticleDetails = articleId => {
+  const ref = firebase.database().ref('articles/' + articleId);
+
+  checkOwnership(ref);
+
+  return dispatch => {
+    ref.on('value', snapshot => {
+      dispatch({
+        type: FETCH_ARTICLE_DETAILS,
+        payload: snapshot.val()
+      });
+    });
+  };
+};
+
+const checkOwnership = (ref) => {
+  const { currentUser } = firebase.auth();
+  const { uid } = currentUser;
+
+  return dispatch => (
+    ref.on('value', snapshot => {
+      uid === snapshot.val().uid ? dispatch({ type: CAN_EDIT }) : dispatch({ type: CANNOT_EDIT });
+    })
+  );
 };
