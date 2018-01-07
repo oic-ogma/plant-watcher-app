@@ -5,7 +5,8 @@ import {
   checkCameraPermissions,
   camera,
   resetState,
-  savePhoto
+  savePhoto,
+  imageSearch
 } from '../actions';
 
 const CameraContainer = props => (
@@ -21,7 +22,8 @@ const mapDispatchToProps = {
   checkCameraPermissions,
   camera,
   resetState,
-  savePhoto
+  savePhoto,
+  imageSearch
 };
 
 export default connect (mapStateToProps, mapDispatchToProps)(CameraContainer);
