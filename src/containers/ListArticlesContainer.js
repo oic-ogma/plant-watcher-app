@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ListArticles } from '../components/common';
+import ListArticles from '../components/ListArticles';
 import { fetchArticles, setArticleDetails } from '../actions';
 
 const ListArticlesContainer = props => {

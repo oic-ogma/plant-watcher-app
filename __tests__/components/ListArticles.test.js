@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListArticles } from '../../../src/components/common/ListArticles';
+import ListArticles from '../../src/components/ListArticles';
 import renderer from 'react-test-renderer';
 
 describe('ListArticles', () => {

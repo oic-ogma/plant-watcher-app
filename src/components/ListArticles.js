@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItem, Error, Spinner } from './';
+import { ListItem, Error, Spinner } from './common';
 import { FlatList } from 'react-native';
 
 const renderRow = (article, setArticleDetails) => (
@@ -9,7 +9,7 @@ const renderRow = (article, setArticleDetails) => (
   />
 );
 
-export const ListArticles = ({ articles, loading, error, setArticleDetails }) => {
+const ListArticles = ({ articles, loading, error, setArticleDetails }) => {
   if (loading) return <Spinner size='large' />;
   if (error) return <Error message={error} />;
   return (
@@ -19,3 +19,5 @@ export const ListArticles = ({ articles, loading, error, setArticleDetails }) =>
     />
   );
 };
+
+export default ListArticles;
