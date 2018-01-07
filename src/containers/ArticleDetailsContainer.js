@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ArticleDetails from '../components/ArticleDetails';
-import { fetchArticleDetails } from '../actions';
+import { setArticleDetails } from '../actions';
 
 const ArticleDetailsContainer = props => (
   <ArticleDetails {...props} />
@@ -15,11 +15,12 @@ const mapStateToProps = ({ articleDetails }) => {
     articleContents,
     createdAt,
     currentRating,
+    image
   } = article;
 
-  return { plantName, articleContents, createdAt, currentRating, editable };
+  return { plantName, articleContents, createdAt, currentRating, image, editable };
 };
 
-const mapDispatchToProps = { fetchArticleDetails };
+const mapDispatchToProps = { setArticleDetails };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleDetailsContainer);

@@ -93,7 +93,7 @@ exports[`ListArticles snapshot-画像がある時 1`] = `
           resizeMode="cover"
           source={
             Object {
-              "uri": "base64url",
+              "uri": "image URI",
             }
           }
           style={
@@ -213,7 +213,7 @@ exports[`ListArticles snapshot-画像がある時 1`] = `
             }
           }
         >
-          黄色い
+          テスト
         </Text>
         <View
           style={
@@ -569,7 +569,7 @@ exports[`ListArticles snapshot-画像がない時 1`] = `
             }
           }
         >
-          黄色い
+          テスト
         </Text>
         <View
           style={
