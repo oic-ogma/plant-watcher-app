@@ -4,21 +4,23 @@ import renderer from 'react-test-renderer';
 
 describe('ListArticles', () => {
   it('snapshot-画像がない時', () => {
-    const INITIAL_STATE = {
+    const article = {
       plantName: 'ひまわり',
-      articleContents: '黄色い'
+      articleContents: 'テスト',
+      createdAt: 1510641275203,
     };
-    const tree = renderer.create(<ListItem {...INITIAL_STATE} />).toJSON();
+    const tree = renderer.create(<ListItem article={article} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('snapshot-画像がある時', () => {
-    const INITIAL_STATE = {
+    const article = {
       plantName: 'ひまわり',
-      articleContents: '黄色い',
-      image: 'base64url'
+      articleContents: 'テスト',
+      createdAt: 1510641275203,
+      image: 'image URI',
     };
-    const tree = renderer.create(<ListItem {...INITIAL_STATE} />).toJSON();
+    const tree = renderer.create(<ListItem article={article} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

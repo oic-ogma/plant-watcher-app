@@ -21,7 +21,7 @@ describe('articleDetailsReducer', () => {
     expect(reducer(undefined, {})).toEqual(INITIAL_STATE);
   });
 
-  it('FETCH_ARTICLE_DETAILSを処理できる', () => {
+  it('SET_ARTICLE_DETAILSを処理できる', () => {
 
     const list = {
       plantName: 'ひまわり',
@@ -31,7 +31,7 @@ describe('articleDetailsReducer', () => {
     };
 
     expect(reducer(INITIAL_STATE, {
-      type: types.FETCH_ARTICLE_DETAILS,
+      type: types.SET_ARTICLE_DETAILS,
       payload: list
     })).toEqual({
       ...MODIFIED_STATE,

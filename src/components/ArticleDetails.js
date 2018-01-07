@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { Rating } from 'react-native-elements';
-import { Spinner } from './common';
 import { Icon } from 'react-native-elements';
 
 export default class ArticleDetails extends Component {
-  componentWillMount() {
-    const { fetchArticleDetails } = this.props;
-    fetchArticleDetails('-KytE808ZYT-X8YPjwGv');
-  }
-
   convertTimestamp(timestamp) {
     const dt = new Date();
     const year = dt.getFullYear(timestamp);
@@ -53,52 +47,50 @@ export default class ArticleDetails extends Component {
       articleContents,
       createdAt,
       currentRating,
+      image,
       editable,
     } = this.props;
 
-    if (currentRating) {
-      return (
-        <ScrollView style={body}>
-          <View style={editOrBookmarkBlock}>
-            {this.editOrBookmark(editable)}
+    return (
+      <ScrollView style={body}>
+        <View style={editOrBookmarkBlock}>
+          {this.editOrBookmark(editable)}
+        </View>
+        <View style={block1}>
+          <Image
+            source={image ? { uri: image } : require('../assets/images/image-not-found-small.png')}
+            style={uploadImage}
+          />
+          <View style={blockChild1}>
+            <Text style={articleTitle}>{plantName}</Text>
+            <Text style={uploadDay}>{this.convertTimestamp(createdAt)}</Text>
           </View>
-          <View style={block1}>
-            <Image
-              source={{ url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pZ0SHqgZhy-_ATEzJPpqXL3241NN8_Y0TKMiNSdO0rZc6STa7A' }}
-              style={uploadImage}
-            />
-            <View style={blockChild1}>
-              <Text style={articleTitle}>{plantName}</Text>
-              <Text style={uploadDay}>{this.convertTimestamp(createdAt)}</Text>
-            </View>
-          </View>
-          <View style={block2}>
-            <Text style={bookmarked}>0ブックマーク</Text>
-            <Rating
-              type='star'
-              readonly
-              imageSize={18}
-              startingValue={currentRating}
-            />
-          </View>
-          <View style={border}/>
-          <View>
-            <Text style={article}>{articleContents}</Text>
-          </View>
-          <Text style={review}>レビュー</Text>
-          <View style={border}/>
+        </View>
+        <View style={block2}>
+          <Text style={bookmarked}>0ブックマーク</Text>
           <Rating
             type='star'
-            showRating
-            startingValue={3}
-            imageSize={30}
-            onFinishRating={this.ratingCompleted}
-            style={rating}
+            readonly
+            imageSize={18}
+            startingValue={currentRating || 0}
           />
-        </ScrollView>
-      );
-    }
-    return <Spinner/>;
+        </View>
+        <View style={border}/>
+        <View>
+          <Text style={article}>{articleContents}</Text>
+        </View>
+        <Text style={review}>レビュー</Text>
+        <View style={border}/>
+        <Rating
+          type='star'
+          showRating
+          startingValue={3}
+          imageSize={30}
+          onFinishRating={this.ratingCompleted}
+          style={rating}
+        />
+      </ScrollView>
+    );
   }
 }
 
