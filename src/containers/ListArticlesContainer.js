@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ListArticles } from '../components/common';
-import { fetchArticles } from '../actions';
+import { fetchArticles, setArticleDetails } from '../actions';
 
 const ListArticlesContainer = props => {
   return <ListArticles {...props} />;
@@ -12,6 +12,6 @@ const mapStateToProps = ({ listArticles }) => {
   return { articles, error, loading };
 };
 
-const mapDispatchToProps = { fetchArticles };
+const mapDispatchToProps = { fetchArticles, setArticleDetails };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListArticlesContainer);
