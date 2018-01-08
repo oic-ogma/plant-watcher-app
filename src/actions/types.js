@@ -23,6 +23,6 @@ export const IMAGE_SEARCH_RESET = 'image_search_reset';
 export const PHOTO_CAPTURED = 'photo_captured';
 export const STARTED_AS_SEARCH = 'started_as_search';
 export const STARTED_AS_ADD_ARTICLE = 'started_as_add_article';
-export const FETCH_ARTICLE_DETAILS = 'fetch_article_details';
+export const SET_ARTICLE_DETAILS = 'SET_ARTICLE_DETAILS';
 export const CAN_EDIT = 'can_edit';
 export const CANNOT_EDIT = 'cannot_edit';

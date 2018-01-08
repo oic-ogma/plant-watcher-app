@@ -14,7 +14,7 @@ import {
   TEXT_SEARCH_ARTICLE_FAIL,
   TEXT_SEARCH_ARTICLE_PLANT_NAME_CHANGED,
   PHOTO_CAPTURED,
-  FETCH_ARTICLE_DETAILS,
+  SET_ARTICLE_DETAILS,
   CAN_EDIT,
   CANNOT_EDIT
 } from './types';
@@ -175,28 +175,20 @@ export const getSearchResults = async (dispatch, plantName) => {
   }
 };
 
-export const fetchArticleDetails = articleId => {
-  const ref = firebase.database().ref('articles/' + articleId);
-
-  checkOwnership(ref);
-
+// articleDetails
+export const setArticleDetails = article => {
   return dispatch => {
-    ref.on('value', snapshot => {
-      dispatch({
-        type: FETCH_ARTICLE_DETAILS,
-        payload: snapshot.val()
-      });
+    checkOwnership(article.uid, dispatch);
+    dispatch({
+      type: SET_ARTICLE_DETAILS,
+      payload: article
     });
   };
 };
 
-const checkOwnership = (ref) => {
+const checkOwnership = (articleUid, dispatch) => {
   const { currentUser } = firebase.auth();
   const { uid } = currentUser;
-
-  return dispatch => (
-    ref.on('value', snapshot => {
-      uid === snapshot.val().uid ? dispatch({ type: CAN_EDIT }) : dispatch({ type: CANNOT_EDIT });
-    })
-  );
+  uid === articleUid ? dispatch({ type: CAN_EDIT }) : dispatch({ type: CANNOT_EDIT });
 };
+

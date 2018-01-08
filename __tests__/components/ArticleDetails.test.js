@@ -14,7 +14,7 @@ describe('記事詳細', () => {
         },
       },
       editable: false,
-      fetchArticleDetails: () => {},
+      setArticleDetails: () => {},
     };
     const tree = renderer.create(<ArticleDetails {...INITIAL_STATE} />);
     expect(tree).toMatchSnapshot();
