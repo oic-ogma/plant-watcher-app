@@ -104,6 +104,38 @@ export const fetchArticles = () => {
   };
 };
 
+export const fetchBookmarks = () => {
+  const { currentUser } = firebase.auth();
+  const { uid } = currentUser;
+  const bookmarkRef = firebase.database().ref(`users/${uid}/bookmarks`);
+  const articleRef = firebase.database().ref('articles');
+  return async dispatch => {
+    dispatch({ type: FETCH_ARTICLES_PROCESSING });
+
+    let bookmarks = await bookmarkRef.once('value');
+    bookmarks = _.map(bookmarks.val(), val => val.articleId);
+
+    const articlePromises = bookmarks.map(async id => {
+      return await articleRef.child(id).once('value');
+    });
+
+    let articles = await Promise.all(articlePromises);
+    articles = articles.map(article => article.val());
+
+    if (articles) {
+      dispatch({
+        type: FETCH_ARTICLES_SUCCESS,
+        payload: _.map(articles, (val, articleId) => ({ ...val, key: articleId })),
+      });
+    } else {
+      dispatch({
+        type: FETCH_ARTICLES_FAIL,
+        payload: 'ブックマークがありません',
+      });
+    }
+  };
+};
+
 // articleSearch
 export const textSearchArticle = plantName => {
   if (!plantName) {

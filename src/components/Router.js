@@ -14,7 +14,7 @@ const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged(user => user ? Actions.main() : Actions.auth());
 };
 
-const RouterComponent = ({ pageMoved, fetchArticles }) => (
+const RouterComponent = ({ pageMoved, fetchArticles, fetchBookmarks }) => (
   <Router getSceneStyle={()=>({ backgroundColor: '#fff' })}>
     <Scene key='root' hideNavBar={true}>
       <Scene key='loading' onEnter={checkLoginStatus} component={Spinner}/>
@@ -94,11 +94,12 @@ const RouterComponent = ({ pageMoved, fetchArticles }) => (
           />
           <Scene
             key='bookmarks'
-            component={Spinner}
+            component={ListArticlesContainer}
             title='ブックマーク'
             icon={IconWrapper}
             type='font-awesome'
             name='bookmark-o'
+            onEnter={fetchBookmarks}
           />
           <Scene
             key='listarticles'
