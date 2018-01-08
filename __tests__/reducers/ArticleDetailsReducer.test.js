@@ -3,7 +3,9 @@ import * as types from '../../src/actions/types';
 
 const INITIAL_STATE = {
   article: {},
-  editable: false
+  editable: false,
+  bookmarked: false,
+  bookmarkProcessing: false
 };
 
 const MODIFIED_STATE = {
@@ -11,9 +13,23 @@ const MODIFIED_STATE = {
     plantName: 'ひまわり',
     articleContents: 'テスト',
     createdAt: 1510641275203,
-    currentRating: 3.0
+    currentRating: 3.0,
   },
-  editable: true
+  editable: true,
+  bookmarked: false,
+  bookmarkProcessing: false
+};
+
+const PROCESSING_STATE = {
+  article: {
+    plantName: 'ひまわり',
+    articleContents: 'テスト',
+    createdAt: 1510641275203,
+    currentRating: 3.0,
+  },
+  editable: true,
+  bookmarked: false,
+  bookmarkProcessing: true
 };
 
 describe('articleDetailsReducer', () => {
@@ -22,7 +38,6 @@ describe('articleDetailsReducer', () => {
   });
 
   it('SET_ARTICLE_DETAILSを処理できる', () => {
-
     const list = {
       plantName: 'ひまわり',
       articleContents: 'テスト',
@@ -40,7 +55,6 @@ describe('articleDetailsReducer', () => {
   });
 
   it('CAN_EDITを処理できる', () => {
-
     expect(reducer(INITIAL_STATE, {
       type: types.CAN_EDIT,
     })).toEqual({
@@ -50,12 +64,36 @@ describe('articleDetailsReducer', () => {
   });
 
   it('CANNOT_EDITを処理できる', () => {
-
     expect(reducer(INITIAL_STATE, {
       type: types.CANNOT_EDIT,
     })).toEqual({
       ...INITIAL_STATE,
       editable: false
+    });
+  });
+
+  it('IS_BOOKMARKEDを処理できる', () => {
+    expect(reducer(PROCESSING_STATE, {
+      type: types.IS_BOOKMARKED,
+    })).toEqual({
+      ...MODIFIED_STATE,
+      bookmarked: true
+    });
+  });
+
+  it('IS_NOT_BOOKMARKEDを処理できる', () => {
+    expect(reducer(PROCESSING_STATE, {
+      type: types.IS_NOT_BOOKMARKED,
+    })).toEqual({
+      ...MODIFIED_STATE,
+    });
+  });
+
+  it('BOOKMARK_PROCESSINGを処理できる', () => {
+    expect(reducer(MODIFIED_STATE, {
+      type: types.BOOKMARK_PROCESSING,
+    })).toEqual({
+      ...PROCESSING_STATE
     });
   });
 });
