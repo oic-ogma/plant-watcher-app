@@ -26,3 +26,6 @@ export const STARTED_AS_ADD_ARTICLE = 'started_as_add_article';
 export const SET_ARTICLE_DETAILS = 'SET_ARTICLE_DETAILS';
 export const CAN_EDIT = 'can_edit';
 export const CANNOT_EDIT = 'cannot_edit';
+export const IS_BOOKMARKED = 'is_bookmarked';
+export const IS_NOT_BOOKMARKED = 'is_not_bookmarked';
+export const BOOKMARK_PROCESSING = 'bookmark_processing';

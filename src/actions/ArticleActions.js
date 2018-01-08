@@ -16,7 +16,10 @@ import {
   PHOTO_CAPTURED,
   SET_ARTICLE_DETAILS,
   CAN_EDIT,
-  CANNOT_EDIT
+  CANNOT_EDIT,
+  IS_BOOKMARKED,
+  IS_NOT_BOOKMARKED,
+  BOOKMARK_PROCESSING
 } from './types';
 import _ from 'lodash';
 
@@ -179,6 +182,7 @@ export const getSearchResults = async (dispatch, plantName) => {
 export const setArticleDetails = article => {
   return dispatch => {
     checkOwnership(article.uid, dispatch);
+    checkBookmark(article.key, dispatch);
     dispatch({
       type: SET_ARTICLE_DETAILS,
       payload: article
@@ -192,3 +196,33 @@ const checkOwnership = (articleUid, dispatch) => {
   uid === articleUid ? dispatch({ type: CAN_EDIT }) : dispatch({ type: CANNOT_EDIT });
 };
 
+const checkBookmark = async (articleId, dispatch) => {
+  const { currentUser } = firebase.auth();
+  const { uid } = currentUser;
+  const ref = firebase.database().ref(`users/${uid}/bookmarks`);
+  const bookmarks = await ref.orderByChild('articleId').equalTo(articleId).once('value');
+  bookmarks.val() ? dispatch({ type: IS_BOOKMARKED }) : dispatch({ type: IS_NOT_BOOKMARKED });
+};
+
+export const addBookmark = articleId => {
+  return async dispatch => {
+    dispatch({ type: BOOKMARK_PROCESSING });
+    const { currentUser } = firebase.auth();
+    const { uid } = currentUser;
+    const ref = firebase.database().ref(`users/${uid}/bookmarks`);
+    await ref.push({ articleId });
+    dispatch({ type: IS_BOOKMARKED });
+  };
+};
+
+export const removeBookmark = articleId => {
+  return async dispatch => {
+    dispatch({ type: BOOKMARK_PROCESSING });
+    const { currentUser } = firebase.auth();
+    const { uid } = currentUser;
+    const ref = firebase.database().ref(`users/${uid}/bookmarks`);
+    const article = await ref.orderByChild('articleId').equalTo(articleId).once('value');
+    await ref.child(Object.keys(article.val())[0]).remove();
+    dispatch({ type: IS_NOT_BOOKMARKED });
+  };
+};

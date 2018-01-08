@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { Rating } from 'react-native-elements';
-import { Icon } from 'react-native-elements';
+import Bookmark from './Bookmark';
 
 export default class ArticleDetails extends Component {
   convertTimestamp(timestamp) {
@@ -14,13 +14,20 @@ export default class ArticleDetails extends Component {
   }
 
   editOrBookmark(editable) {
+    const { bookmarked, addBookmark, removeBookmark, articleId, bookmarkProcessing } = this.props;
     if (editable === true) {
       return (
         <Text style={styles.edit}>編集</Text>
       );
     } else {
       return (
-        <Icon type='font-awesome' name='bookmark-o' color='#D04255' size={30}/>
+        <Bookmark
+          bookmarked={bookmarked}
+          addBookmark={addBookmark}
+          removeBookmark={removeBookmark}
+          articleId={articleId}
+          processing={bookmarkProcessing}
+        />
       );
     }
   }
