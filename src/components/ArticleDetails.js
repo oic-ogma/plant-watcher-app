@@ -5,12 +5,12 @@ import { Icon } from 'react-native-elements';
 
 export default class ArticleDetails extends Component {
   convertTimestamp(timestamp) {
-    const dt = new Date();
-    const year = dt.getFullYear(timestamp);
-    const month = dt.getMonth(timestamp);
-    const date = dt.getDate(timestamp);
+    const dt = new Date(timestamp);
+    const year = dt.getFullYear();
+    const month = dt.getMonth();
+    const date = dt.getDate();
 
-    return year + '/' + month + '/' + date;
+    return `${year}/${month + 1}/${date}`;
   }
 
   editOrBookmark(editable) {
