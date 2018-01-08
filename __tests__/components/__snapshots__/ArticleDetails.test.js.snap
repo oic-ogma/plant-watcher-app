@@ -112,7 +112,7 @@ exports[`記事詳細 snapshot-記事が表示される 1`] = `
             }
           }
         >
-          2018/0/7
+          NaN/NaN/NaN
         </Text>
       </View>
     </View>
