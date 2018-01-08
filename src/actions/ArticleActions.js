@@ -90,7 +90,7 @@ export const fetchArticles = () => {
     dispatch({ type: FETCH_ARTICLES_PROCESSING });
 
     let articles = await ref.orderByChild('uid').equalTo(uid).once('value');
-    if (articles) {
+    if (articles.val()) {
       dispatch({
         type: FETCH_ARTICLES_SUCCESS,
         payload: _.map(articles.val(), (val, articleId) => ({ ...val, key: articleId })).reverse(),
@@ -161,7 +161,7 @@ export const getSearchResults = async (dispatch, plantName) => {
   const ref = firebase.database().ref('articles');
 
   let articles = await ref.orderByChild('plantName').equalTo(plantName).once('value');
-  if (articles) {
+  if (articles.val()) {
     articles = _.map(articles.val(), (val, articleId) => ({ ...val, key: articleId })).reverse();
     dispatch({
       type: FETCH_ARTICLES_SUCCESS,
