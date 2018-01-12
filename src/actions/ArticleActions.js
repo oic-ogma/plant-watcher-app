@@ -129,7 +129,7 @@ export const fetchBookmarks = () => {
       return data;
     });
 
-    if (articles) {
+    if (articles[0]) {
       dispatch({
         type: FETCH_ARTICLES_SUCCESS,
         payload: articles,
