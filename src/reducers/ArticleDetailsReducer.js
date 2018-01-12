@@ -4,14 +4,15 @@ import {
   CANNOT_EDIT,
   IS_BOOKMARKED,
   IS_NOT_BOOKMARKED,
-  BOOKMARK_PROCESSING
+  BOOKMARK_PROCESSING,
 } from '../actions/types';
 
 const INITIAL_STATE = {
   article: {},
   editable: false,
   bookmarked: false,
-  bookmarkProcessing: false
+  bookmarkProcessing: false,
+  loggedIn: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -23,9 +24,9 @@ export default (state = INITIAL_STATE, action) => {
     case CANNOT_EDIT:
       return { ...state, editable: false };
     case IS_BOOKMARKED:
-      return { ...state, bookmarked: true, bookmarkProcessing: false };
+      return { ...state, bookmarked: true, bookmarkProcessing: false, loggedIn: true };
     case IS_NOT_BOOKMARKED:
-      return { ...state, bookmarked: false, bookmarkProcessing: false };
+      return { ...state, bookmarked: false, bookmarkProcessing: false, loggedIn: true };
     case BOOKMARK_PROCESSING:
       return { ...state, bookmarkProcessing: true };
     default:
