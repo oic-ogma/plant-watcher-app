@@ -5,7 +5,8 @@ const INITIAL_STATE = {
   article: {},
   editable: false,
   bookmarked: false,
-  bookmarkProcessing: false
+  bookmarkProcessing: false,
+  loggedIn: false
 };
 
 const MODIFIED_STATE = {
@@ -50,7 +51,8 @@ describe('articleDetailsReducer', () => {
       payload: list
     })).toEqual({
       ...MODIFIED_STATE,
-      editable: false
+      editable: false,
+      loggedIn: false
     });
   });
 
@@ -77,7 +79,8 @@ describe('articleDetailsReducer', () => {
       type: types.IS_BOOKMARKED,
     })).toEqual({
       ...MODIFIED_STATE,
-      bookmarked: true
+      bookmarked: true,
+      loggedIn: true
     });
   });
 
@@ -86,6 +89,7 @@ describe('articleDetailsReducer', () => {
       type: types.IS_NOT_BOOKMARKED,
     })).toEqual({
       ...MODIFIED_STATE,
+      loggedIn: true
     });
   });
 
