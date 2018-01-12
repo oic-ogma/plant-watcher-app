@@ -5,6 +5,7 @@ import { Text } from 'react-native-elements';
 import { SearchBarComponent } from './common/SearchBar';
 import { Actions } from 'react-native-router-flux';
 import { HideKeyboardOnPress } from './common';
+import firebase from 'firebase';
 
 export default class ArticleSearch extends Component {
   onSubmit() {
@@ -15,7 +16,8 @@ export default class ArticleSearch extends Component {
 
   takePhoto() {
     this.props.startAsSearch();
-    Actions.camera();
+    const { currentUser } = firebase.auth();
+    currentUser ?  Actions.camera() : Actions.cameraauth();
   }
 
   render() {

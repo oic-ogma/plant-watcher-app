@@ -14,8 +14,10 @@ export default class ArticleDetails extends Component {
   }
 
   editOrBookmark(editable) {
-    const { bookmarked, addBookmark, removeBookmark, articleId, bookmarkProcessing } = this.props;
-    if (editable === true) {
+    const { bookmarked, addBookmark, removeBookmark, articleId, bookmarkProcessing, loggedIn } = this.props;
+    if (!loggedIn) {
+      return null;
+    } else if (editable === true) {
       return (
         <Text style={styles.edit}>編集</Text>
       );

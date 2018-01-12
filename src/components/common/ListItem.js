@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
+import firebase from 'firebase';
 
 export class ListItem extends Component {
   handlePress() {
     const { article, setArticleDetails } = this.props;
     setArticleDetails(article);
-    Actions.articledetails();
+    const { currentUser } = firebase.auth();
+    currentUser ? Actions.articledetails() : Actions.articledetailsauth();
   }
 
   render() {

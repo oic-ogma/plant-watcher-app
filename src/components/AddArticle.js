@@ -4,6 +4,7 @@ import { FormValidationMessage, Button } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 import { ImagePicker } from 'expo';
 import { Label, FormInputComponent, HideKeyboardOnPress } from './common';
+import firebase from 'firebase';
 
 export default class AddArticle extends Component {
   saveArticle() {
@@ -14,7 +15,8 @@ export default class AddArticle extends Component {
 
   takePhoto() {
     this.props.startAsAddArticle();
-    Actions.camera();
+    const { currentUser } = firebase.auth();
+    currentUser ?  Actions.camera() : Actions.cameraauth();
   }
 
   async pickImage() {

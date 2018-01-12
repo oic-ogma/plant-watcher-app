@@ -8,7 +8,7 @@ const ArticleDetailsContainer = props => (
 );
 
 const mapStateToProps = ({ articleDetails }) => {
-  const { article, editable, bookmarked, bookmarkProcessing } = articleDetails;
+  const { article, editable, bookmarked, bookmarkProcessing, loggedIn } = articleDetails;
 
   const {
     plantName,
@@ -16,7 +16,7 @@ const mapStateToProps = ({ articleDetails }) => {
     createdAt,
     currentRating,
     image,
-    key,
+    key
   } = article;
 
   return {
@@ -28,7 +28,8 @@ const mapStateToProps = ({ articleDetails }) => {
     articleId: key,
     editable,
     bookmarked,
-    bookmarkProcessing
+    bookmarkProcessing,
+    loggedIn
   };
 };
 

@@ -19,7 +19,7 @@ import {
   CANNOT_EDIT,
   IS_BOOKMARKED,
   IS_NOT_BOOKMARKED,
-  BOOKMARK_PROCESSING
+  BOOKMARK_PROCESSING,
 } from './types';
 import _ from 'lodash';
 
@@ -164,7 +164,8 @@ export const textSearchArticle = plantName => {
 };
 
 export const getSearchResults = async (dispatch, plantName) => {
-  Actions.searchresults();
+  const { currentUser } = firebase.auth();
+  currentUser ? Actions.searchresults() : Actions.searchresultsauth();
   const ref = firebase.database().ref('articles');
 
   let articles = await ref.orderByChild('plantName').equalTo(plantName).once('value');
@@ -185,8 +186,12 @@ export const getSearchResults = async (dispatch, plantName) => {
 // articleDetails
 export const setArticleDetails = article => {
   return dispatch => {
-    checkOwnership(article.uid, dispatch);
-    checkBookmark(article.key, dispatch);
+    const { currentUser } = firebase.auth();
+
+    if (currentUser) {
+      checkOwnership(article.uid, dispatch);
+      checkBookmark(article.key, dispatch);
+    }
     dispatch({
       type: SET_ARTICLE_DETAILS,
       payload: article
