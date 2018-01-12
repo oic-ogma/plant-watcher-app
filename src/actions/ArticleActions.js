@@ -123,12 +123,16 @@ export const fetchBookmarks = () => {
     });
 
     let articles = await Promise.all(articlePromises);
-    articles = articles.map(article => article.val());
+    articles = articles.map((article, index)=> {
+      let data = article.val();
+      data.key = bookmarks[index];
+      return data;
+    });
 
     if (articles) {
       dispatch({
         type: FETCH_ARTICLES_SUCCESS,
-        payload: _.map(articles, (val, articleId) => ({ ...val, key: articleId })),
+        payload: articles,
       });
     } else {
       dispatch({
